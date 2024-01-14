@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE TITLE</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors:
+                    {
+                        'teal': {
+                            '50': '#f0fdfa',
+                            '100': '#ccfbf1',
+                            '200': '#99f6e4',
+                            '300': '#5eead4',
+                            '400': '#2dd4bf',
+                            '500': '#14b8a6',
+                            '600': '#0d9488',
+                            '700': '#0f766e',
+                            '800': '#115e59',
+                            '900': '#134e4a',
+                            '950': '#042f2e',
+                        },
+                    },
+                }
+            }
+                }
+        
+    </script>
+</head>
+
+<body>
+    <div id="_home" x-data="_home">
+
+        <!------- header start ------->
+
+        <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
+            <div class="container mx-auto flex justify-between">
+                <img src="/images/logo.jpg" alt="Department of Wildlife Conservation" class="w-[100px] h-20">
+                <nav class="grid content-center ml-[35%]">
+                    <ul class="flex space-x-7 text-xl">
+                        <li>
+                            <a href="/home.html" class="hover:text-teal-500">Home</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white" href="/about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/wildlife-dept.html">Wildlife Dept</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/leopard.html">Leopard</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/our-wildlife.html">Our Wildlife</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/yala.html">Yala</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/wilpattu.html">Wilpattu</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="https://www.dwc.gov.lk/">
+                    <img src="/images/sl-flag.png" alt="Sri Lanka" class="h-4 mt-2">
+                </a>
+            </div>
+        </header>
+        <main>
+            
+        <!------- header end ------->
+
+        <!-------about start ------->
+        <main>
+            <div class="image-only image-wrapper relative group">
+              <img src="/images/aboutpic.jpg" alt="Placeholder" class="w-full h-auto">
+          
+              <div id="main" class="absolute inset-0 flex items-center justify-left">
+                <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                  <span>The Sri Lankan Wildlife Exploration</span>
+                </div>
+              </div>
+            </div>
+        <!-------about end ------->
+
+
+        <!-------wildlife locations start ------->
+                <div class="container">
+                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Horton Plains National Park</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
+                        <img src="/images/hp2.jpg" alt="Placeholder" class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/images/hp1.jpg" alt="Placeholder" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/images/hp3.jpg" alt="Placeholder" class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    </div>
+
+                        <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
+                            <p>
+                                Horton Plains National Park, nestled in the central highlands of Sri Lanka near Nuwara Eliya, is a captivating expanse of natural beauty spanning over 31,000 acres. 
+                                Renowned for its panoramic vistas and diverse ecosystems, the park boasts iconic attractions like "World's End," a dramatic cliff offering breathtaking views, and the serene Baker's Falls. Its unique montane cloud forests shelter endemic species, including the rare Horton Plains slender loris and various bird species. Visitors can traverse scenic trails, 
+                                immersing themselves in the park's rich biodiversity, which contributes to the conservation of the island's highland ecosystems. Designated a UNESCO World Heritage Site, Horton Plains promises a remarkable journey through rolling hills, grasslands, and lush forests, 
+                                making it a haven for nature enthusiasts and a vital sanctuary for Sri Lanka's remarkable biodiversity.
+                            </p>
+                        </div>
+
+                            <div>
+                                <a href="https://maps.app.goo.gl/Wrrz4XpCVzx5yiTD6" class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit us to know more</a>
+                           </div>
+                </div>
+
+                <div class="container">
+                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Sinharaja Forest Reserve</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
+                        <img src="/images/sf1.jpg" alt="Placeholder" class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/images/sf2.jpp" alt="Placeholder" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/images/sf3.jpg" alt="Placeholder" class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    </div>
+
+                        <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
+                            <p>
+                                Sinharaja Forest Reserve, a UNESCO World Heritage Site nestled in the southwestern lowland wet zone of Sri Lanka, stands as a verdant testament to the island's ecological richness. Spanning approximately 11,187 hectares, this tropical rainforest is a biodiversity hotspot, 
+                                boasting a profusion of endemic flora and fauna found nowhere else on Earth. 
+                                With its dense canopy, Sinharaja shelters a remarkable array of wildlife, including the vibrant Sri Lanka blue magpie, the elusive purple-faced langur, and a kaleidoscope of endemic amphibians and insects. 
+                                Trekking through its labyrinthine trails unveils towering trees, glistening streams, and the symphony of bird calls, offering a immersive experience for nature enthusiasts. The reserve's conservation significance extends beyond its borders, 
+                                contributing to the preservation of Sri Lanka's unique biological heritage and providing a living classroom for those eager to explore the wonders of a tropical rainforest ecosystem
+                            </p>
+                        </div>
+
+                            <div>
+                                <a href="https://maps.app.goo.gl/psNkuhGDPV9DzLD59" class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit us to know more</a>
+                           </div>
+                </div>
+
+                <div class="container">
+                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Minneriya National Park</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
+                        <img src="/images/mf1.jpg" alt="Placeholder" class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/images/mf2.jpg" alt="Placeholder" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/images/mf3.jpg" alt="Placeholder" class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    </div>
+
+                        <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
+                            <p>
+                                Located in the North Central Province of Sri Lanka, 8,889 hectares of magical refuge that is Minneriya National Park is well-known for its breathtaking yearly event called the "Gathering." 
+                                The park, which revolves on the historic Minneriya Tank, comes to life from June to September, when hundreds of Asian elephants gather close to the reservoir to feed and mingle, producing a breathtaking display. 
+                                Beyond the famous Gathering, the park is home to a variety of habitats including as marshes and grasslands that support a rich biodiversity that includes many different species of birds, sloth bears, leopards, sambar deer, and Sri Lankan axis deer. 
+                                The park's historical charm is enhanced by the opportunity for tourists to examine old inscriptions and ruins among its natural beauty. 
+                                A safari via Minneriya provides
+                            </p>
+                        </div>
+
+                            <div>
+                                <a href="https://maps.app.goo.gl/xaRtRcg7WEyhokqL6" class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit us to know more</a>
+                           </div>
+                </div>
+        
+        </main>
+        <!-------wildlife locations start ------->
+        <div>
+            <h2 class="text-5xl font-bold mb-4 ml-[30%] text-teal-700">Biodiversity Snapshot</h2>
+         </div>
+
+        <div class="bg-gray-200 p-2 mb-[5%] mt-[5%]">
+
+            <div class="grid grid-cols-3 gap-2">
+
+                <div class="col-span-1 bg-white p-5 font-bold text-2xl">Animal Name</div>
+                <div class="col-span-1 bg-white p-5 font-bold text-2xl">Interesting Facts</div>
+                <div class="col-span-1 bg-white p-5 font-bold text-2xl">Search More</div>
+        
+                <div class="col-span-1 bg-white p-5">Horton Plains Slender Loris</div>
+                <div class="col-span-1 bg-white p-5">Endemic to Horton Plains, nocturnal primate</div>
+                <div class="col-span-1 bg-white p-5">
+                    <div>
+                        <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Red_slender_loris">Link</a>
+                    </div>
+                </div>
+        
+                <div class="col-span-1 bg-white p-5">Sambar Deer</div>
+                <div class="col-span-1 bg-white p-5">Large herbivore found in Horton Plains</div>
+                <div class="col-span-1 bg-white p-5">
+                    <div>
+                        <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Sambar_deer">Link</a>
+                    </div>
+                </div>
+        
+                <div class="col-span-1 bg-white p-5">Sri Lanka Blue Magpie</div>
+                <div class="col-span-1 bg-white p-5">Colorful and endemic bird in Sinharaja</div>
+                <div class="col-span-1 bg-white p-5">
+                    <div>
+                        <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Sri_Lanka_blue_magpie">Link</a>
+                    </div>
+                </div>
+        
+                <div class="col-span-1 bg-white p-5">Sri Lanka Kangaroo Lizard</div>
+                <div class="col-span-1 bg-white p-5">Endemic reptile species in Sinharaja</div>
+                <div class="col-span-1 bg-white p-5">
+                    <div>
+                        <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Otocryptis_wiegmanni">Link</a>
+                    </div>
+                </div>
+        
+                <div class="col-span-1 bg-white p-5">Asian Elephant</div>
+                <div class="col-span-1 bg-white p-5">Featured in the "Gathering" at Minneriya</div>
+                <div class="col-span-1 bg-white p-5">
+                    <div>
+                        <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Asian_elephant">Link</a>
+                    </div>
+                </div>
+
+                <div class="col-span-1 bg-white p-5">Sri Lankan Axis Deer</div>
+                <div class="col-span-1 bg-white p-5">Common herbivore in Minneriya National Park</div>
+                <div class="col-span-1 bg-white p-5">
+                    <div>
+                        <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Sri_Lankan_axis_deer">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+      
+
+
+        <!------- footer ------->
+
+        <footer class="text-white ">
+            <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
+                <div class="col-span-1">
+                    <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
+                    <p class="text-s ml-[5%] pt-[2%]">
+                        The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
+                    <p class="text-s pt-[5%] ml-[40%] ">
+                        <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
+                            <li>
+                                Sri Lankan Elephant
+                            </li>
+                            <li>
+                                Purple-faced Langur
+                            </li>
+                            <li>
+                                Sri Lankan Leopard,Fishing Cat
+                            </li>
+                            <li>
+                                Fishing Cat
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-span-1">
+                    <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
+                    <p class="text-s ml-[75%] pt-[2%]">
+                        <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                            <li>
+                                Sri Lankan Wildlife,<br>
+                                11B,Dewala Rd,<br>
+                                Colombo,Sri Lanka.
+                            </li>
+                            <li>
+                                Email:Wildlife@sl.lk
+                            </li>
+                            <li>
+                                Phone:+94 772517094<br>
+                                Fax:+94 772517094
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+
+                
+                <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
+                
+                    <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram" class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+               
+                </div>
+            <div class="teal-950 text-white">
+                <div class="container text-xs mt-[2%]">
+                    <div class="flex justify-between">
+                        <p class="text-center py-2 ml-[2%]">
+                            All Copyrights Reserved © Department of Wildlife Conservation
+                        </p>
+                        <p class="text-center py-2">
+                            Developed by <a href="">SM Sandaruwan</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+           
+        </footer>
+
+
+   
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('_home', () => ({
+                init() {
+                    var swiper = new Swiper(".swiper-container", {                    
+                        loop: true,
+                        autoplay: {
+                            delay: 10000,
+                            disableOnInteraction: false,
+                        },
+    
+                    });
+                }
+            }))
+        })
+    </script>
+
+</html>

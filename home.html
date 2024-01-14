@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE TITLE</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal': {
+                            '50': '#f0fdfa',
+                            '100': '#ccfbf1',
+                            '200': '#99f6e4',
+                            '300': '#5eead4',
+                            '400': '#2dd4bf',
+                            '500': '#14b8a6',
+                            '600': '#0d9488',
+                            '700': '#0f766e',
+                            '800': '#115e59',
+                            '900': '#134e4a',
+                            '950': '#042f2e',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="_home" x-data="_home">
+
+        <!------- header ------->
+
+        <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
+            <div class="container mx-auto flex justify-between">
+                <img src="/images/logo.jpg" class="w-[100px] h-20 bg-teal-950">
+                <nav class="grid content-center ml-[35%]">
+                    <ul class="flex space-x-7 text-xl">
+                        <li>
+                            <a href="/home.html" class="hover:text-teal-500 decoration-2 border-b-2 border-white">Home</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/wildlife-dept.html">Wildlife Dept</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/leopard.html">Leopard</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/our-wildlife.html">Our Wildlife</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/yala.html">Yala</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/wilpattu.html">Wilpattu</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="https://www.dwc.gov.lk/">
+                    <img src="/images/sl-flag.png" alt="Sri Lanka" class="h-4 mt-2">
+                </a>
+            </div>
+        </header>
+        <main>
+            
+            <!-- Slideshow Start -->
+            <div class="container mx-auto overflow-hidden">
+                <div class="swiper-container h-screen">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide relative">
+                            <img src="/images/SS1.jpg" alt="Placeholder">
+                        </div>
+                        <div class="swiper-slide relative">
+                            <img src="/images/SS2.jpg" alt="Placeholder">
+                        </div>
+                        <div class="swiper-slide relative">
+                            <img src="/images/SS3.jpg" alt="Placeholder">
+                        </div>
+                        <div id="main" class="absolute inset-0 flex items-center justify-left">
+                            <div id="show" class="text-white text-7xl font-bold ml-10 pt-[45%]">
+                              <span>Welcome to Sri Lankan Wildlife</span>
+                            </div>
+                          </div>
+                    </div>             
+                </div>
+            </div>
+            <!-- Slideshow End -->
+
+             <!------- intro start ------->
+            <div class="container mx-auto">
+                <h2 class="text-5xl font-semibold text-teal-700 mt-[10%]">
+                    INTRODUCTION
+                </h2>
+                <p class="text-s mt-10 pt-5 leading-8 font-thin">
+                    Welcome to Sri Lanka's rich wildlife tapestry. From rainforests to coastal wonders, 
+                    the island's biodiversity captivates. Explore Sinharaja Forest, Horton Plains, and Yala Park for unique flora and fauna. 
+                    Dive into pristine coral reefs and witness whales off Mirissa. Engage in local conservation and sustainable tourism. Sri 
+                    Lanka invites you to a compact, immersive encounter with its vibrant natural treasures.
+                </p>
+            </div>
+
+             <!------- intro end ------->
+
+             
+            <!-- Leopard Block start -->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div class="relative">
+                        <h4 class="text-m text-black">Our Leopard</h4>
+                        <h2 class="text-2xl font-bold text-black mt-2">
+                            Sri Lankan Leopard
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+                            The Sri Lankan Leopard, scientifically known as Panthera pardus kotiya, graces the island's landscapes with its captivating presence. 
+                            Endemic to Sri Lanka, this elusive big cat is a symbol of the country's unique biodiversity. With its golden coat adorned by distinctive dark rosettes, 
+                            the Sri Lankan Leopard is a master of stealth, 
+                            navigating the diverse habitats of dense jungles and open plains.
+                            <br>
+                            Thriving in protected areas such as Yala and Wilpattu National Parks, the leopard has become an icon of wildlife conservation in Sri Lanka. 
+                            Its agile movements and remarkable adaptability have earned it a reputation as a skilled hunter, 
+                            primarily preying on deer and other small mammals.
+                        <a href="/leopard.html" class="absolute inset-0"></a>
+                    </div>
+                    <div>
+                        <img src="/images/leopard.jpg" class="rounded-lg" alt="Placeholder">
+                    </div>
+                </div>
+            </div>
+            <!-- Leopard Block end -->
+
+            <!-- Yala Block Start -->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img src="/images/yala.jpg" class="rounded-lg" alt="Placeholder">
+                    </div>
+                    <div class="relative">
+                        <h4 class="text-m text-black">Yala Sri Lanka</h4>
+                        <h2 class="text-2xl font-bold text-leopard-700 mt-2">
+                            Yala National Park
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+
+                            Nestled in the southeast of Sri Lanka, Yala National Park is a testament to the country's awe-inspiring biodiversity. 
+                            Its diverse ecosystems, ranging from dense forests to expansive grasslands, harbor a rich tapestry of wildlife. 
+                            The park is renowned as a global hotspot for leopard sightings, adding a touch of the extraordinary to its lush landscapes. 
+                            Beyond the majestic leopards, Yala is a sanctuary for elephants, sloth bears, crocodiles, and over 200 species of birds. 
+                            The intertwining of varied landscapes, complemented by ancient ruins and historical sites, creates a truly immersive experience. 
+                            A safari through Yala's open plains and verdant vegetation unveils the delicate balance of nature, where both flora and fauna thrive harmoniously. 
+                            It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound connection with Sri Lanka's exceptional natural heritage.
+                        <a href="/yala.html" class="absolute inset-0"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Yala Block End -->
+
+            <!-- Wilpattu Block Start -->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div class="relative">
+                        <h4 class="text-m text-black">Wilpattu Sri Lanka</h4>
+                        <h2 class="text-2xl font-bold text-black mt-2">
+                            Wilpattu National Park
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+
+                            Wilpattu National Park, the oldest and largest national park in Sri Lanka, 
+                            beckons with its untouched landscapes and diverse ecosystems. Nestled on the northwest coast, 
+                            the park boasts dense forests, expansive grasslands, and serene lakes. Noted for its resident leopard population, 
+                            Wilpattu provides a unique opportunity to observe these majestic big cats in their natural environment. 
+                            The park is also a habitat for elephants, sloth bears, and a myriad of bird species. Its natural lakes, 
+                            known as "villus," serve as vital watering holes for the diverse wildlife. Beyond its rich biodiversity, 
+                            Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the wilderness. 
+                            A safari through Wilpattu unfolds a captivating narrative of conservation, 
+                            where nature thrives in harmony with the park's breathtaking landscapes
+                        </p>
+                        <a href="/willpattu.html" class="absolute inset-0"></a>
+                    </div>
+                    <div>
+                        <img src="/images/wilpattu.jpeg" class="rounded-lg" alt="Placeholder">
+                    </div>
+                </div>
+            </div>
+            <!-- Wilpattu Block End -->
+
+            <!------- Explore the Wonders start ------->
+
+        <section class="min-h-[155vh] w-full bg-cover relative" style="background-color:white;">
+            <div
+                class="text-box absolute top-[25%] left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-white w-[90%] text-center">
+                <h1 class="text-7xl font-bold text-black">Explore the Wonders</h1>
+
+                <div class="container ml-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
+                        <div>
+                            <img src="/images/wonders1.jpg" class="rounded-lg" alt="Placeholder">
+                            <div class="text-sm text-black leading-7 p-10 m-4 text-left">
+                                <h2 class="text-2xl font-bold mb-4">1. The Rainforests</h2>
+                                <p> Delve into the heart of Sri Lanka's rainforests, where towering trees and exotic creatures create a mesmerizing ecosystem. 
+                                    Dense canopies shelter rare species, such as the vibrant Ceylon Frogmouth, while cascading waterfalls provide a picturesque backdrop to this lush haven.</p>
+                                <p> Venture through winding trails and let the symphony of bird calls guide you to hidden treasures. 
+                                    As you explore, encounter playful troops of macaques swinging through the trees and elusive leopards prowling in the undergrowth.</p>
+                            </div>
+                            <a href="/rainforest.html" class="absolute inset-0"></a>
+                        </div>
+
+                        <dev>
+                            <img src="/images/wonders2.jpg" class="rounded-lg" alt="Placeholder">
+                            <div class="text-sm text-black leading-7 p-10 m-4 text-left">
+                                <h2 class="text-2xl font-bold mb-4">2. Coastal Marvels</h2>
+                                <p>Embrace the serene beauty of Sri Lanka's coastal regions, where sandy shores meet the azure waters of the Indian Ocean. 
+                                    Witness ancient sea turtles nesting along the beaches, a heartwarming testament to the country's commitment to conservation.</p>
+                                <p>Dive into the vibrant coral reefs that teem with colorful fish, showcasing the underwater wonders of Sri Lanka. 
+                                    Learn about the efforts to protect these fragile ecosystems and the importance of sustainable tourism in preserving the marine environment.</p>
+                            </div>
+                             <a href="/Coastal Marvels.html" class="absolute inset-0"></a>
+                        </dev>
+
+                        
+
+                        <div>
+                            <img src="/images/wonders3.jpg" class="rounded-lg" alt="Placeholder">
+                            <div class="text-sm text-black leading-7 p-10 m-4 text-left">
+                                <h2 class="text-2xl font-bold mb-4">3. Highland Sanctuary</h2>
+                                <p>Ascend to the misty highlands, where emerald tea plantations and rolling hills create a picturesque setting for unique wildlife encounters. 
+                                Marvel at the graceful dance of Sri Lanka's national bird, the majestic Sri Lankan Junglefowl, against the backdrop of scenic tea estates.</p>
+                                <p>Encounter herds of majestic elephants peacefully grazing in expansive grasslands, 
+                                and gain insight into the delicate balance between wildlife conservation and human activities in this enchanting region.</p>
+                            </div>
+                            <a href="/Highland Sanctuary.html" class="absolute inset-0"></a>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+            <!------- Explore the Wonders end ------->
+            </div>
+        </section>
+        </main>
+
+        <!------- footer ------->
+
+        <footer class="text-white ">
+            <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
+                <div class="col-span-1">
+                    <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
+                    <p class="text-s ml-[5%] pt-[2%]">
+                        The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
+                    <p class="text-s pt-[5%] ml-[40%] ">
+                        <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
+                            <li>
+                                Sri Lankan Elephant
+                            </li>
+                            <li>
+                                Purple-faced Langur
+                            </li>
+                            <li>
+                                Sri Lankan Leopard,Fishing Cat
+                            </li>
+                            <li>
+                                Fishing Cat
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-span-1">
+                    <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
+                    <p class="text-s ml-[75%] pt-[2%]">
+                        <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                            <li>
+                                Sri Lankan Wildlife,<br>
+                                11B,Dewala Rd,<br>
+                                Colombo,Sri Lanka.
+                            </li>
+                            <li>
+                                Email:Wildlife@sl.lk
+                            </li>
+                            <li>
+                                Phone:+94 772517094<br>
+                                Fax:+94 772517094
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+
+                
+            <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
+                
+                <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram" class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-skype" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+           
+            </div>
+            <div class="teal-950 text-white">
+                <div class="container text-xs mt-[2%]">
+                    <div class="flex justify-between">
+                        <p class="text-center py-2 ml-[2%]">
+                            All Copyrights Reserved © Department of Wildlife Conservation
+                        </p>
+                        <p class="text-center py-2">
+                            Developed by <a href="">SM Sandaruwan</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+           
+        </footer>
+
+
+   
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
+    
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('_home', () => ({
+                    init() {
+                        var swiper = new Swiper(".swiper-container", {                    
+                            loop: true,
+                            autoplay: {
+                                delay: 10000,
+                                disableOnInteraction: false,
+                            },
+        
+                        });
+                    }
+                }))
+            })
+        </script>
+    </body>
+
+</html>

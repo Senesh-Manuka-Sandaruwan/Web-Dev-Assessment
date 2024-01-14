@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE TITLE</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors:
+                    {
+                        'teal': {
+                            '50': '#f0fdfa',
+                            '100': '#ccfbf1',
+                            '200': '#99f6e4',
+                            '300': '#5eead4',
+                            '400': '#2dd4bf',
+                            '500': '#14b8a6',
+                            '600': '#0d9488',
+                            '700': '#0f766e',
+                            '800': '#115e59',
+                            '900': '#134e4a',
+                            '950': '#042f2e',
+                        },
+                    },
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="_home" x-data="_home">
+
+        <!------- header stsrt ------->
+
+        <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
+            <div class="container mx-auto flex justify-between">
+                <img src="/images/logo.jpg" alt="Department of Wildlife Conservation" class="w-[100px] h-20">
+                <nav class="grid content-center ml-[35%]">
+                    <ul class="flex space-x-7 text-xl">
+                        <li>
+                            <a href="/home.html" class="hover:text-teal-500">Home</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/wildlife-dept.html">Wildlife Dept</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/leopard.html">Leopard</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white" href="/our-wildlife.html">Our Wildlife</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/yala.html">Yala</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/wilpattu.html">Wilpattu</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="https://www.dwc.gov.lk/">
+                    <img src="/images/sl-flag.png" alt="Sri Lanka" class="h-4 mt-2">
+                </a>
+            </div>
+        </header>
+        <main>
+
+            <!------- header stsrt ------->
+
+            <main>
+                <!------- our wildlife start ------->
+                <div class="image-only image-wrapper relative group">
+                    <img src="/images/animal.jpeg" alt="Placeholder" class="w-full h-auto">
+
+                    <div id="main"
+                        class="absolute inset-0 flex items-center justify-left">
+                        <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                            <span>Indigenous Animals of Sri Lanka</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-------our wildlife end ------->
+            </main>
+
+            <!-------introduction start ------->
+
+            <div class="container mx-auto">
+                <h2 class="text-5xl font-semibold text-teal-700 mt-10">
+                    INTRODUCTION
+                </h2>
+                <p class="text-s mt-10 pt-5 leading-8 font-thin">
+                    Sri Lanka, a tropical island nestled in the Indian Ocean, boasts a rich biodiversity that includes a
+                    variety of indigenous animals.
+                    The country's diverse ecosystems, ranging from lush rainforests to arid plains, provide a habitat
+                    for a wide array of unique wildlife.
+                    Here's a brief overview of some notable indigenous animals in Sri Lanka.
+                </p>
+            </div>
+            <!-------introduction start ------->
+
+
+            <!------- Asian Elephant block start ------->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img src="/images/animal2.jpg" class="rounded-full" alt="Placeholder">
+                    </div>
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic">Elephas maximus maximus</h4>
+                        <h2 class="text-2xl font-bold text-teal-500 mt-2">
+                            Asian Elephant
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+
+                            The Asian Elephant (Elephas maximus maximus) is the largest land animal in Asia,
+                            characterized by its
+                            immense size, distinctive trunk, and complex social structure.
+                            Indigenous to Sri Lanka, these majestic creatures inhabit a range of ecosystems, from
+                            grasslands to
+                            forests. Adult males, weighing between 4,500 to 11,000 pounds
+                            and standing 8.2 to 13 feet tall at the shoulder, exhibit smaller ears compared to their
+                            African
+                            counterparts. Living in family groups led by a matriarch,
+                            Asian elephants are revered in Sri Lankan culture, playing essential roles in religious
+                            ceremonies and
+                            festivals. Unfortunately, this species faces endangerment
+                            due to habitat loss, fragmentation, and human-elephant conflicts. Conservation efforts in
+                            Sri Lanka aim
+                            to protect these elephants through initiatives such as
+                            establishing protected areas and raising awareness about coexistence. Witnessing these
+                            incredible
+                            creatures
+                            in national parks like Yala and Wilpattu offers a glimpse into their vital role in shaping
+                            ecosystems
+                            and contributes to ongoing conservation endeavors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!------- Asian Elephant block start end ------->
+
+
+            <!-- Sloth Bear Block start -->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-8">
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic">Melursus ursinus inornatus</h4>
+                        <h2 class="text-2xl font-bold text-teal-500 mt-2">
+                            Sloth Bear
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+            
+                            The Sloth Bear (Melursus ursinus inornatus), a distinctive and charismatic species native to
+                            Sri Lanka, captures attention with its shaggy coat and long claws.
+                            This medium-sized bear is recognized for its unique feeding habits, primarily relying on a
+                            diet of insects, particularly termites and ants,
+                            which it extracts with its specialized long, curved claws. With a robust build and a
+                            distinctively shaped snout, sloth bears have a keen sense of smell,
+                            aiding them in foraging for their preferred prey. These bears are known to be solitary
+                            creatures, and their encounters with humans are generally rare.
+                            However, habitat loss, poaching, and conflicts with humans pose significant threats to their
+                            survival. Conservation efforts in Sri Lanka focus on safeguarding
+                            the sloth bear population by preserving their habitats and raising awareness about the
+                            importance of coexistence. Observing these fascinating creatures in the wild,
+                            particularly in protected areas like Yala and Wilpattu National Parks,
+                            provides a unique opportunity to appreciate the natural behaviors of this intriguing species
+                            while contributing to their conservation.
+                    </div>
+                    <div>
+                        <img src="/images/animal3.jpg" class="rounded-full" alt="Placeholder">
+                    </div>
+                </div>
+            </div>
+            <!-- Sloth Bear Block end -->
+            
+            <!------- Spotted Deer block start ------->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img src="/images/animal4.jpg" class="rounded-full" alt="Placeholder">
+                    </div>
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic">Axis axis ceylonensis</h4>
+                        <h2 class="text-2xl font-bold text-teal-500 mt-2">
+                            Spotted Deer
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+            
+                            The Spotted Deer (Axis axis ceylonensis), a prominent herbivore indigenous to Sri Lanka, adds to the
+                            country's vibrant wildlife tapestry with its distinctively marked coat.
+                            Found in various ecosystems ranging from grasslands to forests, the spotted deer is a common sight in
+                            Sri Lanka's national parks, notably Yala and Wilpattu. Recognized for
+                            its elegant stature and the striking pattern of white spots on its reddish-brown fur, this species plays
+                            a vital role in the ecological balance of its habitats.
+                            As a favored prey of predators like leopards, the spotted deer's presence also contributes to the
+                            dynamic interplay of predator-prey relationships in these ecosystems.
+                            Conservation efforts in Sri Lanka aim to safeguard the populations of these deer by preserving their
+                            habitats and addressing challenges such as
+                            habitat fragmentation and human-wildlife conflicts, ensuring the continued existence of this iconic
+                            species in the island nation's natural landscapes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!------- Spotted Deer block start end ------->
+            
+            <!-- Purple-faced Langur Block start -->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-8">
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic">Semnopithecus vetulus</h4>
+                        <h2 class="text-2xl font-bold text-teal-500 mt-2">
+                            Purple-faced Langur
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+            
+            
+                            The Purple-faced Langur (Semnopithecus vetulus), an endemic primate species to Sri Lanka, occupies the
+                            montane forests of the island, showcasing a distinctive and
+                            enchanting appearance. Characterized by its vibrant purple face, the langur is a medium-sized monkey
+                            with a long tail and a coat that ranges from dark brown to gray.
+                            This species is recognized for its arboreal lifestyle, adeptly navigating the treetops in search of a
+                            varied diet consisting of leaves, fruits, and flowers. Facing
+                            threats such as habitat loss and fragmentation, conservation initiatives in Sri Lanka focus on
+                            preserving the montane forests and raising awareness about the
+                            importance of protecting the Purple-faced Langur. As an integral part of Sri Lanka's unique
+                            biodiversity, observing these langurs in
+                            their natural habitat provides a rare opportunity to witness the intricate behaviors of this endemic
+                            primate while contributing to the ongoing efforts to ensure its survival.
+                    </div>
+                    <div>
+                        <img src="/images/animal5.jpg" class="rounded-full" alt="Placeholder">
+                    </div>
+                </div>
+            </div>
+            <!-- Purple-faced Langur Block end -->
+            
+            <!------- The Saltwater Crocodile  block start ------->
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img src="/images/animal6.jpg" class="rounded-full" alt="Placeholder">
+                    </div>
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic">Crocodylus porosus</h4>
+                        <h2 class="text-2xl font-bold text-teal-500 mt-2">
+                            The Saltwater Crocodile 
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+            
+                            The Saltwater Crocodile (Crocodylus porosus) is a formidable reptile that inhabits the coastal areas and
+                            estuaries of Sri Lanka,
+                            adding to the country's diverse wildlife. Known for its adaptability to saltwater environments, this
+                            species is the largest living reptile
+                            and occasionally ventures into Sri Lankan waters. Recognized for its robust build, powerful jaws, and
+                            ability to thrive in both marine and freshwater habitats,
+                            the Saltwater Crocodile plays a crucial role in maintaining the ecological balance of aquatic
+                            ecosystems.
+                            Conservation efforts in Sri Lanka focus on promoting coexistence with these crocodiles, balancing the
+                            need for habitat preservation with human safety measures.
+                            As an apex predator, the Saltwater Crocodile exemplifies the intricate interplay of species in Sri
+                            Lanka's coastal ecosystems,
+                            highlighting the importance of conserving these habitats for the overall health of the region's
+                            biodiversity.
+            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!------- The Saltwater Crocodile  block start end ------->
+
+
+
+
+
+            <!------- footer ------->
+
+            <footer class="text-white ">
+                <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
+                    <div class="col-span-1">
+                        <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
+                        <p class="text-s ml-[5%] pt-[2%]">
+                            The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
+                        <p class="text-s pt-[5%] ml-[40%] ">
+                        <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
+                            <li>
+                                Sri Lankan Elephant
+                            </li>
+                            <li>
+                                Purple-faced Langur
+                            </li>
+                            <li>
+                                Sri Lankan Leopard,Fishing Cat
+                            </li>
+                            <li>
+                                Fishing Cat
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="col-span-1">
+                        <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
+                        <p class="text-s ml-[75%] pt-[2%]">
+                        <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                            <li>
+                                Sri Lankan Wildlife,<br>
+                                11B,Dewala Rd,<br>
+                                Colombo,Sri Lanka.
+                            </li>
+                            <li>
+                                Email:Wildlife@sl.lk
+                            </li>
+                            <li>
+                                Phone:+94 772517094<br>
+                                Fax:+94 772517094
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+
+
+                    <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
+                
+                        <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram" class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                        <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                   
+                    </div>
+                    <div class="teal-950 text-white">
+                        <div class="container text-xs mt-[2%]">
+                            <div class="flex justify-between">
+                                <p class="text-center py-2 ml-[2%]">
+                                    All Copyrights Reserved © Department of Wildlife Conservation
+                                </p>
+                                <p class="text-center py-2">
+                                    Developed by <a href="">SM Sandaruwan</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+            </footer>
+
+
+
+            <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+            <script type="text/javascript" src="/js/app.js"></script>
+
+            <script>
+                document.addEventListener('alpine:init', () => {
+                    Alpine.data('_home', () => ({
+                        init() {
+                            var swiper = new Swiper(".swiper-container", {
+                                loop: true,
+                                autoplay: {
+                                    delay: 10000,
+                                    disableOnInteraction: false,
+                                },
+
+                            });
+                        }
+                    }))
+                })
+            </script>
+
+</html>
