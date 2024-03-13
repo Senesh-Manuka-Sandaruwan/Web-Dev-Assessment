@@ -77,65 +77,73 @@
         </header>
         <main>
 
-            <!-- Slideshow Start -->
+        <!-- Slideshow Start -->
             <div class="container mx-auto overflow-hidden bg-cover">
                 <div class="swiper-container h-screen">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide relative">
-                            <img src="/Web-Dev-Assessment/images/SS1.jpg" alt="Placeholder">
-
-                            <div id="main" class="absolute inset-0 flex items-center justify-left">
-                                <div id="show" class="text-white text-7xl font-bold ml-10 pt-[45%]">
-                                    <span>Welcome to Sri Lankan Wildlife</span>
-                                </div>
+                        <template x-for="slide in $store.home.slideshow">
+                            <div class="swiper-slide relative">
+                                <img x-bind:src="slide.image" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
+                                <h1 class="text-4xl absolute top-0" x-text="slide.title"></h1>
                             </div>
-                            
-                        </div>
-                        <div class="swiper-slide relative">
-                            <img src="/Web-Dev-Assessment/images/SS2.jpg" alt="Placeholder">
-
-                            <div id="main" class="absolute inset-0 flex items-center justify-left">
-                                <div id="show" class="text-white text-7xl font-bold ml-10 pt-[45%]">
-                                    <span>Welcome to Sri Lankan Wildlife</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="swiper-slide relative">
-                            <img src="/Web-Dev-Assessment/images/SS3.jpg" alt="Placeholder">
-
-                            <div id="main" class="absolute inset-0 flex items-center justify-left">
-                                <div id="show" class="text-white text-7xl font-bold ml-10 pt-[45%]">
-                                    <span>Welcome to Sri Lankan Wildlife</span>
-                                </div>
-                            </div>
-
-                        </div>
+                        </template>
                     </div>
                 </div>
             </div>
-            <!-- Slideshow End -->
+        <!-- Slideshow End -->
 
-            <!------- intro start ------->
-            <div class="container mx-auto">
-                <h2 class="text-5xl font-semibold text-teal-700 mt-[10%]">
-                    INTRODUCTION
-                </h2>
-                <p class="text-s mt-10 pt-5 leading-8 font-thin">
-                    Welcome to Sri Lanka's rich wildlife tapestry. From rainforests to coastal wonders,
-                    the island's biodiversity captivates. Explore Sinharaja Forest, Horton Plains, and Yala Park for
-                    unique flora and fauna.
-                    Dive into pristine coral reefs and witness whales off Mirissa. Engage in local conservation and
-                    sustainable tourism. Sri
-                    Lanka invites you to a compact, immersive encounter with its vibrant natural treasures.
-                </p>
+
+        <!------- intro start ------->
+              <div class="container mx-auto relative">
+
+                <div class="gap-6 my-8">
+                    <div class="relative">
+                        <h2 x-text="$store.home.block_one.title" class="text-5xl font-semibold text-teal-700 mt-[10%]"></h2>
+                        <p class="text-s mt-10 pt-5 leading-8 font-thin" x-text="$store.home.block_one.body"></p>
+
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(1)" class="bg-teal-950 text-white px-4 py-2 mt-4 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 1">
+                            <form action="" class=" space-y-6" x-on:submit.prevent="$store.home.saveBlock(1)">
+                                
+                                <div>
+                                    <label for="title" class="">Title</label>
+                                    <input type="text" id="title" 
+                                    class="text-5xl font-semibold text-teal-700 mt-[10%]"
+                                            x-model="$store.home.block_one.title">
+                                </div>
+                                
+                                <div>
+                                    <label for="body" class="text-s mt-10 pt-5 leading-8 font-thin">Content</label>
+                                    <textarea id="body" 
+                                    class="text-s mt-10 pt-5 leading-8 font-thin"
+                                            x-model="$store.home.block_one.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <button type="submit"                                         
+                                    class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
             </div>
+        <!------- intro end ------->
 
-            <!------- intro end ------->
+
+            
 
 
-            <!-- Leopard Block start -->
-            <div class="container mx-auto">
+        <!-- Leopard Block start -->
+            <!-- <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
                     <div class="relative">
                         <h4 class="text-m text-black">Our Leopard</h4>
@@ -161,8 +169,88 @@
                         <img src="/Web-Dev-Assessment/images/leopard.jpg" class="rounded-lg" alt="Placeholder">
                     </div>
                 </div>
+            </div> -->
+
+            <div class="container mx-auto relative">
+
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                   
+                    <div class="relative">
+                        <h4 class="text-sm" x-text="$store.home.block_two.sub_title"></h4>
+                        <h2 x-text="$store.home.block_two.title" class="text-2xl font-bold mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.home.block_two.body1"></p>
+                        <p class="text-sm leading-7" x-text="$store.home.block_two.body2"></p>
+                        <a x-bind:href="$store.home.block_two.link" class="absolute inset-0"></a>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_two.image)" alt="Placeholder">
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(1)" class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 1">
+                            <form action="" class="grid lg:grid-cols-2 gap-6 my-8" x-on:submit.prevent="$store.home.saveBlock(2)">
+
+                                <div>
+                                    <label for="sub_title" class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title" 
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.home.block_two.sub_title">
+                                </div>
+                                
+                                <div>
+                                    <label for="title" class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title" 
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.home.block_two.title">
+                                </div>
+                                
+                                <div>
+                                    <label for="body" class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body" 
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.home.block_two.body1"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="body" class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body" 
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.home.block_two.body2"></textarea>
+                                </div>
+    
+                                <div>
+                                    <label for="image" class=" block text-xs font-semibold text-gray-600 uppercase rounded-lg grid lg:grid-cols-2 gap-6 my-[10%]">Image</label>
+                                    <input type="text" id="image" 
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.home.block_two.image">
+                                </div> 
+                                
+                                <div>
+                                    <label for="link" class=" block text-xs font-semibold text-gray-600 uppercase absolute inset-0">Link</label>
+                                    <input type="text" id="link" 
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.home.block_two.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"                                         
+                                    class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
-            <!-- Leopard Block end -->
+
+
+        <!-- Leopard Block end -->
 
             <!-- Yala Block Start -->
             <div class="container mx-auto">
@@ -386,6 +474,7 @@
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/store/home.js"></script>
 
     <script>
         document.addEventListener('alpine:init', () => {
