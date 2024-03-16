@@ -3,15 +3,15 @@ document.addEventListener('alpine:init', () => {
         is_editor_visible: false,
         slideshow: [
             {
-                image: '/images/SS1.jpg',
+                image: '/Web-Dev-Assessment/images/SS1.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: '/images/SS2.jpg',
+                image: '/Web-Dev-Assessment/images/SS2.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: '/images/SS3.jpg',
+                image: '/Web-Dev-Assessment/images/SS3.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             }
         ],
@@ -42,12 +42,74 @@ document.addEventListener('alpine:init', () => {
         },
 
         block_three : {
-            sub_title: 'Our Leopard',
-            title: 'Sri Lankan Leopard',
-            body: "The Department of Wildlife Conservation has been entrusted with the responsibility of preserving eco system endowed with various plants and animal species which has inherited the country with enormous bio-diversity. The main function of the Department of Wildlife Conservation established in 1949 is the conservation of wildlife resources in Sri Lanka. The Sri Lankan leopard (Panthera pardus kotiya) is a leopard subspecies native to Sri Lanka. It was first described in 1956 by Sri Lankan zoologist Paules Edward Pieris Deraniyagala.[2] ",
-            image: '/images/kotiya.jpeg',
-            link: '#',
+            sub_title: 'Yala Sri Lanka',
+            title: ' Yala National Park',
+            body: "Nestled in the southeast of Sri Lanka, Yala National Park is a testament to the country's"
+            +"awe-inspiring biodiversity."
+            +"Its diverse ecosystems, ranging from dense forests to expansive grasslands, harbor a rich"
+            +"tapestry of wildlife."
+            +"The park is renowned as a global hotspot for leopard sightings, adding a touch of the"
+            +"extraordinary to its lush landscapes."
+            +"Beyond the majestic leopards, Yala is a sanctuary for elephants, sloth bears, crocodiles,"
+            +"and over 200 species of birds."
+            +"The intertwining of varied landscapes, complemented by ancient ruins and historical sites,"
+            +"creates a truly immersive experience."
+            +"A safari through Yala's open plains and verdant vegetation unveils the delicate balance of"
+            +"nature, where both flora and fauna thrive harmoniously."
+            +"It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound connection"
+            +"with Sri Lanka's exceptional natural heritage. ",
+            image: '/Web-Dev-Assessment/images/yala.jpg',
+            link: '/Web-Dev-Assessment/yala.html',
         },
 
+        block_four : {
+            sub_title: 'Wilpattu Sri Lanka',
+            title: ' WilpattuNational Park',
+            body: "Wilpattu National Park, the oldest and largest national park in Sri Lanka,"
+            +"beckons with its untouched landscapes and diverse ecosystems. Nestled on the northwest"
+            +"coast,"
+            +"the park boasts dense forests, expansive grasslands, and serene lakes. Noted for its"
+            +"resident leopard population,"
+            +"Wilpattu provides a unique opportunity to observe these majestic big cats in their natural"
+            +"environment."
+            +"The park is also a habitat for elephants, sloth bears, and a myriad of bird species. Its"
+            +"natural lakes,"
+            +"known as 'villus',"
+            +"serve as vital watering holes for the diverse wildlife. Beyond its rich"
+            +"biodiversity,"
+            +"Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the"
+            +"wilderness."
+            +"A safari through Wilpattu unfolds a captivating narrative of conservation,"
+            +"where nature thrives in harmony with the park's breathtaking landscapes,",
+            image: '/Web-Dev-Assessment/images/wilpattu.jpeg',
+            link: '/Web-Dev-Assessment/willpattu.html',
+        },
+
+        // block_four : {
+        //     title: 'Explore the Wonders',
+        //     sub_title1: '1.The Rainforests',
+        //     body: "",
+        //     image: '',
+        //     link: '',
+
+        //     sub_title2: '2. Coastal Marvels',
+        //     body: "",
+        //     image: '',
+        //     link: '',
+
+        //     sub_title3: '3. Highland Sanctuary',
+        //     body: "",
+        //     image: '',
+        //     link: '',
+        // },
+
+        toggleEditor(block_id){
+            this.is_editor_visible = block_id;
+        },
+        saveBlock(block_id){
+
+            this.toggleEditor(false);
+        }
+    });
+
     })
-})
