@@ -3,15 +3,15 @@ document.addEventListener('alpine:init', () => {
         is_editor_visible: false,
         slideshow: [
             {
-                image: '/Web-Dev-Assessment/images/SS1.jpg',
+                image: 'Web Dev Assessment\images\SS1.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: '/Web-Dev-Assessment/images/SS2.jpg',
+                image: 'Web Dev Assessment\images\SS2.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: '/Web-Dev-Assessment/images/SS3.jpg',
+                image: 'Web Dev Assessment\images\SS3.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             }
         ],
