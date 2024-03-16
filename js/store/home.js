@@ -3,15 +3,15 @@ document.addEventListener('alpine:init', () => {
         is_editor_visible: false,
         slideshow: [
             {
-                image: '/Web-Dev-Assessment/images/SS1.jpg',
+                image: '/Senesh-Manuka-Sandruwan Web-Dev-Assessment/images/SS1.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: '/Web-Dev-Assessment/images/SS2.jpg',
+                image: '/Senesh-Manuka-Sandruwan Web-Dev-Assessment/images/SS2.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: '/Web-Dev-Assessment/images/SS3.jpg',
+                image: '/Senesh-Manuka-Sandruwan Web-Dev-Assessment/images/SS3.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             }
         ],
@@ -37,8 +37,8 @@ document.addEventListener('alpine:init', () => {
             +"Its agile movements and remarkable adaptability have earned it a reputation as a skilled"
             +"hunter,"
             +"primarily preying on deer and other small mammals. ",
-            image: '/Web-Dev-Assessment/images/leopard.jpg',
-            link: '/Web-Dev-Assessment/leopard.html"',
+            image: '/Senesh-Manuka-Sandruwan Web-Dev-Assessment/images/leopard.jpg',
+            link: '/Senesh-Manuka-Sandruwan Web-Dev-Assessment/leopard.html"',
         },
 
         block_three : {
