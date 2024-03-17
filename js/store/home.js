@@ -3,15 +3,15 @@ document.addEventListener('alpine:init', () => {
         is_editor_visible: false,
         slideshow: [
             {
-                image: 'Web Dev Assessment\images\SS1.jpg',
+                image: 'Web-Dev-Assessment\images\SS1.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: 'Web Dev Assessment\images\SS2.jpg',
+                image: 'Web-Dev-Assessment\images\SS2.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image: 'Web Dev Assessment\images\SS3.jpg',
+                image: 'Web-Dev-Assessment\images\SS3.jpg',
                 title: 'Welcome to Sri Lankan Wildlife',
             }
         ],
@@ -32,8 +32,8 @@ document.addEventListener('alpine:init', () => {
                 + "navigating the diverse habitats of dense jungles and open plains. Thriving in protected areas such as Yala and Wilpattu National Parks, "
                 + "the leopard has become an icon of wildlife conservation in Sri Lanka. Its agile movements and remarkable adaptability have earned it a reputation as a skilled "
                 + "hunter, primarily preying on deer and other small mammals.",
-            image: 'https://github.com/Senesh-Manuka-Sandaruwan/Web Dev Assessment/blob/main/images/leopard.jpg?raw=true',
-            link: '/Senesh-Manuka-Sandruwan Web Dev Assessment/leopard.html',
+            image: 'https://github.com/Senesh-Manuka-Sandaruwan/Web-Dev-Assessment/blob/main/images/leopard.jpg?raw=true',
+            link: '/Senesh-Manuka-Sandruwan Web-Dev-Assessment/leopard.html',
         },
 
         block_three: {
@@ -47,8 +47,8 @@ document.addEventListener('alpine:init', () => {
                 + "creates a truly immersive experience. A safari through Yala's open plains and verdant vegetation unveils the delicate balance of "
                 + "nature, where both flora and fauna thrive harmoniously. It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound connection "
                 + "with Sri Lanka's exceptional natural heritage.",
-            image: '/Web Dev Assessment/images/yala.jpg',
-            link: '/Web Dev Assessment/yala.html',
+            image: '/Web-Dev-Assessment/images/yala.jpg',
+            link: '/Web-Dev-Assessment/yala.html',
         },
 
         block_four: {
@@ -63,8 +63,8 @@ document.addEventListener('alpine:init', () => {
                 + "biodiversity, Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the "
                 + "wilderness. A safari through Wilpattu unfolds a captivating narrative of conservation, "
                 + "where nature thrives in harmony with the park's breathtaking landscapes.",
-            image: '/Web Dev Assessment/images/wilpattu.jpeg',
-            link: '/Web Dev Assessment/willpattu.html',
+            image: '/Web-Dev-Assessment/images/wilpattu.jpeg',
+            link: '/Web-Dev-Assessment/willpattu.html',
         },
 
         toggleEditor(block_id) {
