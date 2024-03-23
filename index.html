@@ -43,7 +43,8 @@
 
         <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
             <div class="container mx-auto flex justify-between">
-                <img src="/Web-Dev-Assessment/images/logo.jpg" class="w-[100px] h-20 bg-teal-950">
+                <img x-bind:src="$store.common.imageSrc('/Web-Dev-Assessment/images/logo.jpg')"
+                    class="w-[100px] h-20 bg-teal-950">
                 <nav class="grid content-center ml-[35%]">
                     <ul class="flex space-x-7 text-xl">
                         <li>
@@ -84,18 +85,16 @@
                 <div class="swiper-container h-screen">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide relative">
-                            <img src="/Web-Dev-Assessment/images/SS1.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
-                            <div id="main"
-                                class="absolute inset-0 flex items-center justify-left">
+                            <img src="images/SS1.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
+                            <div id="main" class="absolute inset-0 flex items-center justify-left">
                                 <div id="show" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]">
                                     <span>Welcome to Sri Lankan Wildlife</span>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <img src="/Web-Dev-Assessment/images/SS2.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
-                            <div id="main"
-                                class="absolute inset-0 flex items-center justify-left">
+                            <img src="images/SS2.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
+                            <div id="main" class="absolute inset-0 flex items-center justify-left">
                                 <div id="show" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]">
                                     <span>Welcome to Sri Lankan Wildlife</span>
                                 </div>
@@ -103,9 +102,8 @@
 
                         </div>
                         <div class="swiper-slide">
-                            <img src="/Web-Dev-Assessment/images/SS3.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
-                            <div id="main"
-                                class="absolute inset-0 flex items-center justify-left">
+                            <img src="images/SS3.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
+                            <div id="main" class="absolute inset-0 flex items-center justify-left">
                                 <div id="show" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]">
                                     <span>Welcome to Sri Lankan Wildlife</span>
                                 </div>
@@ -120,7 +118,7 @@
 
             <!------- intro start ------->
 
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <h2 class="text-5xl font-semibold text-teal-700 mt-10">
                     INTRODUCTION
                 </h2>
@@ -131,6 +129,51 @@
                     in local conservation and sustainable tourism. Sri Lanka invites you to a compact, immersive
                     encounter with its vibrant natural treasures
                 </p>
+            </div> -->
+
+            <div class="container mx-auto relative">
+
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.home.block_one.title" class="text-5xl font-semibold text-teal-700 mt-10">
+                        </h2>
+                        <p class="text-s mt-10 pt-5 leading-8 font-thin" x-text="$store.home.block_one.body"></p>
+                    </div>
+                </div>
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(1)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+    
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 1">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(1)">
+    
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_one.title">
+                                </div>
+    
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_one.body"></textarea>
+                                </div>
+    
+                                <div>
+                                    <button type="submit" class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+    
             </div>
 
             <!------- intro end ------->
@@ -139,7 +182,7 @@
 
 
             <!-- Leopard Block start -->
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
                     <div class="relative">
                         <h4 class="text-m text-black">Our Leopard</h4>
@@ -165,7 +208,85 @@
                         <img src="/Web-Dev-Assessment/images/leopard.jpg" class="rounded-lg" alt="Placeholder">
                     </div>
                 </div>
+            </div> -->
+
+
+
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+              
+                    <div class="relative">
+                        <h4 class="text-m text-black" x-text="$store.home.block_two.sub_title"></h4>
+                        <h2 x-text="$store.home.block_two.title" class="text-2xl font-bold text-black mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.home.block_two.body"></p>
+                        <a x-bind:href="$store.home.block_two.link" class="absolute inset-0"></a>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_two.image)" alt="Placeholder">
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(2)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 2">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(2)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.image">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+             
             </div>
+
             <!-- Leopard Block end -->
 
 
@@ -182,19 +303,25 @@
                         </h2>
                         <p class="text-sm leading-7 mt-2">
 
-                            Nestled in the southeast of Sri Lanka, Yala National Park is a testament to the country's
+                            Nestled in the southeast of Sri Lanka, Yala National Park is a testament to the
+                            country's
                             awe-inspiring biodiversity.
-                            Its diverse ecosystems, ranging from dense forests to expansive grasslands, harbor a rich
+                            Its diverse ecosystems, ranging from dense forests to expansive grasslands, harbor a
+                            rich
                             tapestry of wildlife.
                             The park is renowned as a global hotspot for leopard sightings, adding a touch of the
                             extraordinary to its lush landscapes.
-                            Beyond the majestic leopards, Yala is a sanctuary for elephants, sloth bears, crocodiles,
+                            Beyond the majestic leopards, Yala is a sanctuary for elephants, sloth bears,
+                            crocodiles,
                             and over 200 species of birds.
-                            The intertwining of varied landscapes, complemented by ancient ruins and historical sites,
+                            The intertwining of varied landscapes, complemented by ancient ruins and historical
+                            sites,
                             creates a truly immersive experience.
-                            A safari through Yala's open plains and verdant vegetation unveils the delicate balance of
+                            A safari through Yala's open plains and verdant vegetation unveils the delicate balance
+                            of
                             nature, where both flora and fauna thrive harmoniously.
-                            It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound connection
+                            It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound
+                            connection
                             with Sri Lanka's exceptional natural heritage.
                             <a href="/Web-Dev-Assessment/yala.html" class="absolute inset-0"></a>
                     </div>
@@ -219,13 +346,16 @@
                             coast,
                             the park boasts dense forests, expansive grasslands, and serene lakes. Noted for its
                             resident leopard population,
-                            Wilpattu provides a unique opportunity to observe these majestic big cats in their natural
+                            Wilpattu provides a unique opportunity to observe these majestic big cats in their
+                            natural
                             environment.
                             The park is also a habitat for elephants, sloth bears, and a myriad of bird species. Its
                             natural lakes,
-                            known as "villus," serve as vital watering holes for the diverse wildlife. Beyond its rich
+                            known as "villus," serve as vital watering holes for the diverse wildlife. Beyond its
+                            rich
                             biodiversity,
-                            Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the
+                            Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to
+                            the
                             wilderness.
                             A safari through Wilpattu unfolds a captivating narrative of conservation,
                             where nature thrives in harmony with the park's breathtaking landscapes
@@ -253,13 +383,17 @@
                                 <img src="/Web-Dev-Assessment/images/wonders1.jpg" class="rounded-lg" alt="Placeholder">
                                 <div class="text-sm text-black leading-7 p-10 m-4 text-left">
                                     <h2 class="text-2xl font-bold mb-4">1. The Rainforests</h2>
-                                    <p> Delve into the heart of Sri Lanka's rainforests, where towering trees and exotic
+                                    <p> Delve into the heart of Sri Lanka's rainforests, where towering trees and
+                                        exotic
                                         creatures create a mesmerizing ecosystem.
-                                        Dense canopies shelter rare species, such as the vibrant Ceylon Frogmouth, while
+                                        Dense canopies shelter rare species, such as the vibrant Ceylon Frogmouth,
+                                        while
                                         cascading waterfalls provide a picturesque backdrop to this lush haven.</p>
-                                    <p> Venture through winding trails and let the symphony of bird calls guide you to
+                                    <p> Venture through winding trails and let the symphony of bird calls guide you
+                                        to
                                         hidden treasures.
-                                        As you explore, encounter playful troops of macaques swinging through the trees
+                                        As you explore, encounter playful troops of macaques swinging through the
+                                        trees
                                         and elusive leopards prowling in the undergrowth.</p>
                                 </div>
                                 <a href="/Web-Dev-Assessment/rainforest.html" class="absolute inset-0"></a>
@@ -269,13 +403,17 @@
                                 <img src="/Web-Dev-Assessment/images/wonders2.jpg" class="rounded-lg" alt="Placeholder">
                                 <div class="text-sm text-black leading-7 p-10 m-4 text-left">
                                     <h2 class="text-2xl font-bold mb-4">2. Coastal Marvels</h2>
-                                    <p>Embrace the serene beauty of Sri Lanka's coastal regions, where sandy shores meet
+                                    <p>Embrace the serene beauty of Sri Lanka's coastal regions, where sandy shores
+                                        meet
                                         the azure waters of the Indian Ocean.
-                                        Witness ancient sea turtles nesting along the beaches, a heartwarming testament
+                                        Witness ancient sea turtles nesting along the beaches, a heartwarming
+                                        testament
                                         to the country's commitment to conservation.</p>
-                                    <p>Dive into the vibrant coral reefs that teem with colorful fish, showcasing the
+                                    <p>Dive into the vibrant coral reefs that teem with colorful fish, showcasing
+                                        the
                                         underwater wonders of Sri Lanka.
-                                        Learn about the efforts to protect these fragile ecosystems and the importance
+                                        Learn about the efforts to protect these fragile ecosystems and the
+                                        importance
                                         of sustainable tourism in preserving the marine environment.</p>
                                 </div>
                                 <a href="/Web-Dev-Assessment/Coastal Marvels.html" class="absolute inset-0"></a>
@@ -287,11 +425,13 @@
                                 <img src="/Web-Dev-Assessment/images/wonders3.jpg" class="rounded-lg" alt="Placeholder">
                                 <div class="text-sm text-black leading-7 p-10 m-4 text-left">
                                     <h2 class="text-2xl font-bold mb-4">3. Highland Sanctuary</h2>
-                                    <p>Ascend to the misty highlands, where emerald tea plantations and rolling hills
+                                    <p>Ascend to the misty highlands, where emerald tea plantations and rolling
+                                        hills
                                         create a picturesque setting for unique wildlife encounters.
                                         Marvel at the graceful dance of Sri Lanka's national bird, the majestic Sri
                                         Lankan Junglefowl, against the backdrop of scenic tea estates.</p>
-                                    <p>Encounter herds of majestic elephants peacefully grazing in expansive grasslands,
+                                    <p>Encounter herds of majestic elephants peacefully grazing in expansive
+                                        grasslands,
                                         and gain insight into the delicate balance between wildlife conservation and
                                         human activities in this enchanting region.</p>
                                 </div>
