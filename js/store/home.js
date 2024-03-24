@@ -60,8 +60,8 @@ document.addEventListener('alpine:init', () => {
                 + "biodiversity, Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the "
                 + "wilderness. A safari through Wilpattu unfolds a captivating narrative of conservation, "
                 + "where nature thrives in harmony with the park's breathtaking landscapes.",
-            image: 'Web-Dev-Assessment/images/wilpattu.jpeg',
-            link: 'Web-Dev-Assessment/willpattu.html',
+            image: '/Web-Dev-Assessment/images/wilpattu.jpeg',
+            link: '/Web-Dev-Assessment/willpattu.html',
         },
 
         toggleEditor(block_id){
