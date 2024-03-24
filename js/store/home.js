@@ -48,21 +48,21 @@ document.addEventListener('alpine:init', () => {
             image: '/Web-Dev-Assessment/images/yala.jpg',
             link: '/Web-Dev-Assessment/yala.html',
         },
-         // block_four: {
-        //     sub_title: 'Wilpattu Sri Lanka',
-        //     title: 'Wilpattu National Park',
-        //     body: "Wilpattu National Park, the oldest and largest national park in Sri Lanka, "
-        //         + "beckons with its untouched landscapes and diverse ecosystems. Nestled on the northwest "
-        //         + "coast, the park boasts dense forests, expansive grasslands, and serene lakes. Noted for its "
-        //         + "resident leopard population, Wilpattu provides a unique opportunity to observe these majestic big cats in their natural "
-        //         + "environment. The park is also a habitat for elephants, sloth bears, and a myriad of bird species. Its "
-        //         + "natural lakes, known as 'villus', serve as vital watering holes for the diverse wildlife. Beyond its rich "
-        //         + "biodiversity, Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the "
-        //         + "wilderness. A safari through Wilpattu unfolds a captivating narrative of conservation, "
-        //         + "where nature thrives in harmony with the park's breathtaking landscapes.",
-        //     image: '/Web-Dev-Assessment/images/wilpattu.jpeg',
-        //     link: '/Web-Dev-Assessment/willpattu.html',
-        // },
+         block_four: {
+            sub_title: 'Wilpattu Sri Lanka',
+            title: 'Wilpattu National Park',
+            body: "Wilpattu National Park, the oldest and largest national park in Sri Lanka, "
+                + "beckons with its untouched landscapes and diverse ecosystems. Nestled on the northwest "
+                + "coast, the park boasts dense forests, expansive grasslands, and serene lakes. Noted for its "
+                + "resident leopard population, Wilpattu provides a unique opportunity to observe these majestic big cats in their natural "
+                + "environment. The park is also a habitat for elephants, sloth bears, and a myriad of bird species. Its "
+                + "natural lakes, known as 'villus', serve as vital watering holes for the diverse wildlife. Beyond its rich "
+                + "biodiversity, Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the "
+                + "wilderness. A safari through Wilpattu unfolds a captivating narrative of conservation, "
+                + "where nature thrives in harmony with the park's breathtaking landscapes.",
+            image: 'Web-Dev-Assessment/images/wilpattu.jpeg',
+            link: 'Web-Dev-Assessment/willpattu.html',
+        },
 
         toggleEditor(block_id){
             this.is_editor_visible = block_id;
