@@ -31,23 +31,23 @@ document.addEventListener('alpine:init', () => {
                 + "navigating the diverse habitats of dense jungles and open plains. Thriving in protected areas such as Yala and Wilpattu National Parks, "
                 + "the leopard has become an icon of wildlife conservation in Sri Lanka. Its agile movements and remarkable adaptability have earned it a reputation as a skilled "
                 + "hunter, primarily preying on deer and other small mammals.",
-            image: 'images/leopard.jpg',
+            image: '/Web-Dev-Assessment/images/leopard.jpg',
             link: '/Web-Dev-Assessment/leopard.html',
         },
-          // block_three: {
-        //     sub_title: 'Yala Sri Lanka',
-        //     title: 'Yala National Park',
-        //     body: "Nestled in the southeast of Sri Lanka, Yala National Park is a testament to the country's "
-        //         + "awe-inspiring biodiversity. Its diverse ecosystems, ranging from dense forests to expansive grasslands, harbor a rich "
-        //         + "tapestry of wildlife. The park is renowned as a global hotspot for leopard sightings, adding a touch of the "
-        //         + "extraordinary to its lush landscapes. Beyond the majestic leopards, Yala is a sanctuary for elephants, sloth bears, crocodiles, "
-        //         + "and over 200 species of birds. The intertwining of varied landscapes, complemented by ancient ruins and historical sites, "
-        //         + "creates a truly immersive experience. A safari through Yala's open plains and verdant vegetation unveils the delicate balance of "
-        //         + "nature, where both flora and fauna thrive harmoniously. It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound connection "
-        //         + "with Sri Lanka's exceptional natural heritage.",
-        //     image: '/Web-Dev-Assessment/images/yala.jpg',
-        //     link: '/Web-Dev-Assessment/yala.html',
-        // },
+          block_three: {
+            sub_title: 'Yala Sri Lanka',
+            title: 'Yala National Park',
+            body: "Nestled in the southeast of Sri Lanka, Yala National Park is a testament to the country's "
+                + "awe-inspiring biodiversity. Its diverse ecosystems, ranging from dense forests to expansive grasslands, harbor a rich "
+                + "tapestry of wildlife. The park is renowned as a global hotspot for leopard sightings, adding a touch of the "
+                + "extraordinary to its lush landscapes. Beyond the majestic leopards, Yala is a sanctuary for elephants, sloth bears, crocodiles, "
+                + "and over 200 species of birds. The intertwining of varied landscapes, complemented by ancient ruins and historical sites, "
+                + "creates a truly immersive experience. A safari through Yala's open plains and verdant vegetation unveils the delicate balance of "
+                + "nature, where both flora and fauna thrive harmoniously. It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound connection "
+                + "with Sri Lanka's exceptional natural heritage.",
+            image: '/Web-Dev-Assessment/images/yala.jpg',
+            link: '/Web-Dev-Assessment/yala.html',
+        },
          // block_four: {
         //     sub_title: 'Wilpattu Sri Lanka',
         //     title: 'Wilpattu National Park',
