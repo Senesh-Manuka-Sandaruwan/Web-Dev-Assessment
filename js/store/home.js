@@ -3,15 +3,15 @@ document.addEventListener('alpine:init', () => {
         is_editor_visible: false,
         block_six: [
             {
-                image1: 'https://github.com/Senesh-Manuka-Sandaruwan/Web-Dev-Assessment/blob/main/images/SS1.jpg?raw=true',
+                image1: '/Web-Dev-Assessment/images/SS1.jpg',
                 title1: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image2: 'images/SS2.jpg',
+                image2: '/Web-Dev-Assessment/images/SS2.jpg',
                 title2: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image3: 'images/SS3.jpg',
+                image3: '/Web-Dev-Assessment/images/SS3.jpg',
                 title3: 'Welcome to Sri Lankan Wildlife',
             },
         ],
