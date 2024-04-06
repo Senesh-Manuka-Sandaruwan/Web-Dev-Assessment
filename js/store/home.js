@@ -3,15 +3,15 @@ document.addEventListener('alpine:init', () => {
         is_editor_visible: false,
         block_six: [
             {
-                image1: 'images/SS1.jpg',
+                image1: '/Web-Dev-Assessment/images/SS1.jpg',
                 title1: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image2: 'images/SS2.jpg',
+                image2: '/Web-Dev-Assessment/images/SS2.jpg',
                 title2: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image3: 'images/SS3.jpg',
+                image3: '/Web-Dev-Assessment/images/SS3.jpg',
                 title3: 'Welcome to Sri Lankan Wildlife',
             },
         ],
@@ -31,8 +31,8 @@ document.addEventListener('alpine:init', () => {
                 + "navigating the diverse habitats of dense jungles and open plains. Thriving in protected areas such as Yala and Wilpattu National Parks, "
                 + "the leopard has become an icon of wildlife conservation in Sri Lanka. Its agile movements and remarkable adaptability have earned it a reputation as a skilled "
                 + "hunter, primarily preying on deer and other small mammals.",
-            image: 'images/leopard.jpg',
-            link: 'leopard.html',
+            image: '/Web-Dev-Assessment/images/leopard.jpg',
+            link: '/Web-Dev-Assessment/leopard.html',
         },
           block_three: {
             sub_title: 'Yala Sri Lanka',
@@ -45,8 +45,8 @@ document.addEventListener('alpine:init', () => {
                 + "creates a truly immersive experience. A safari through Yala's open plains and verdant vegetation unveils the delicate balance of "
                 + "nature, where both flora and fauna thrive harmoniously. It beckons wildlife enthusiasts, nature lovers, and those yearning for a profound connection "
                 + "with Sri Lanka's exceptional natural heritage.",
-            image: 'images/yala.jpg',
-            link: 'yala.html',
+            image: '/Web-Dev-Assessment/images/yala.jpg',
+            link: '/Web-Dev-Assessment/yala.html',
         },
          block_four: {
             sub_title: 'Wilpattu Sri Lanka',
@@ -60,8 +60,8 @@ document.addEventListener('alpine:init', () => {
                 + "biodiversity, Wilpattu is adorned with ancient ruins, adding a historical and cultural dimension to the "
                 + "wilderness. A safari through Wilpattu unfolds a captivating narrative of conservation, "
                 + "where nature thrives in harmony with the park's breathtaking landscapes.",
-            image: 'images/wilpattu.jpeg',
-            link: 'willpattu.html',
+            image: '/Web-Dev-Assessment/images/wilpattu.jpeg',
+            link: '/Web-Dev-Assessment/willpattu.html',
         },
         block_five: {
             title: 'Explore the Wonders',
@@ -79,8 +79,8 @@ document.addEventListener('alpine:init', () => {
                 +"As you explore, encounter playful troops of macaques swinging through the"
                 +"trees"
                 +"and elusive leopards prowling in the undergrowth.", 
-            image2: 'images/wonders1.jpg',
-            link1: 'rainforest.html',
+            image2: '/Web-Dev-Assessment/images/wonders1.jpg',
+            link1: '/Web-Dev-Assessment/rainforest.html',
 
             sub_title2: '2. Coastal Marvels',
             body3:"Embrace the serene beauty of Sri Lanka's coastal regions, where sandy shores"
@@ -95,8 +95,8 @@ document.addEventListener('alpine:init', () => {
                 +"Learn about the efforts to protect these fragile ecosystems and the"
                 +"importance"
                 +"of sustainable tourism in preserving the marine environment.",
-            image1: 'images/wonders2.jpg',
-            link2: 'Coastal Marvels.html',
+            image1: '/Web-Dev-Assessment/images/wonders2.jpg',
+            link2: '/Web-Dev-Assessment/Coastal Marvels.html',
 
             sub_title3: '3. Highland Sanctuary',
             body5:"Ascend to the misty highlands, where emerald tea plantations and rolling"
@@ -108,8 +108,8 @@ document.addEventListener('alpine:init', () => {
                 +"grasslands,"
                 +"and gain insight into the delicate balance between wildlife conservation and"
                 +"human activities in this enchanting region.",
-            image3: 'images/wonders3.jpg',
-            link3: 'Highland Sanctuary.html',
+            image3: '/Web-Dev-Assessment/images/wonders3.jpg',
+            link3: '/Web-Dev-Assessment/Highland Sanctuary.html',
         },
 
         toggleEditor(block_id){
