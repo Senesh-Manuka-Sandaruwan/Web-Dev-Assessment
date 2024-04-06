@@ -76,9 +76,6 @@
                         </li>
                     </ul>
                 </nav>
-                <a href="https://www.dwc.gov.lk/">
-                    <img src="/Web-Dev-Assessment/images/sl-flag.png" alt="Sri Lanka" class="h-4 mt-2">
-                </a>
             </div>
         </header>
         <main>
@@ -675,12 +672,12 @@
                 <template x-if="$store.auth.user">
                     <div>
                         <div class="flex justify-end">
-                            <button x-on:click="$store.leopard.toggleEditor(4)"
+                            <button x-on:click="$store.leopard.toggleEditor(5)"
                                 class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
                         </div>
 
-                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 4">
-                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(4)">
+                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 5">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(5)">
 
                                 <div>
                                     <label for="title"
