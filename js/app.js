@@ -1,3 +1,4 @@
+import authStore from './auth.js';
 document.addEventListener('alpine:init', () => {
     Alpine.store('auth', {
         user : null,    
@@ -51,4 +52,5 @@ document.addEventListener('alpine:init', () => {
             return 'http://127.0.0.1:5500' + src;
         }
     });
+    
 });
