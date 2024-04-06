@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE TITLE</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body>
+    <div id="_app" x-data="application">
+
+        <div x-show="$store.auth.user">
+            <div x-text="$store.auth.user.username"></div>
+            <button x-on:click="$store.auth.logout()">Logout</button>
+        </div>
+
+        <template x-if="!$store.auth.user">
+            <form x-on:submit.prevent="authSubmit">
+                <input type="text" x-model="username" placeholder="Username">
+                <input type="password" x-model="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </template>
+
+    </div>
+
+    <script src="/Web-Dev-Assessment/js/app.js"></script>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('application', () => ({
+
+                username: '',
+                password: '',
+
+                authSubmit() {
+                    let user = this.$store.auth.authenticate(this.username, this.password);
+
+                    if (user) {
+                        alert('Successfully Login ' + user.username + ' !!!');
+                        location.href = '/index.html';
+                    } else {
+                        alert('Incorrect user name or password !!!');
+                    }
+                },
+
+                init() {
+
+                }
+            }))
+        })
+    </script>
+</body>
+
+</html>
