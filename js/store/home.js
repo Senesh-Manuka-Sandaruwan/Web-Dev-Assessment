@@ -31,7 +31,7 @@ document.addEventListener('alpine:init', () => {
                 + "navigating the diverse habitats of dense jungles and open plains. Thriving in protected areas such as Yala and Wilpattu National Parks, "
                 + "the leopard has become an icon of wildlife conservation in Sri Lanka. Its agile movements and remarkable adaptability have earned it a reputation as a skilled "
                 + "hunter, primarily preying on deer and other small mammals.",
-            image: '/Web-Dev-Assessment/images/leopard.jpg',
+            image: 'https://senesh-manuka-sandaruwan.github.io/Web-Dev-Assessment/images/leopard.jpg',
             link: '/Web-Dev-Assessment/leopard.html',
         },
           block_three: {
