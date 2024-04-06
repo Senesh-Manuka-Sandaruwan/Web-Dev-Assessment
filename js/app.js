@@ -1,4 +1,3 @@
-import authStore from './auth.js';
 document.addEventListener('alpine:init', () => {
     Alpine.store('auth', {
         user : null,    
