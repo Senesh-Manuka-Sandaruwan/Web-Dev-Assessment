@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="/Web-Dev-Assessment/css/styles.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
+    <script>lwind.config = {
             theme: {
                 extend: {
                     colors:
@@ -40,11 +39,12 @@
 <body>
     <div id="_home" x-data="_home">
 
-        <!------- header stsrt ------->
+        <!------- header start ------->
 
         <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
             <div class="container mx-auto flex justify-between">
-                <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation" class="w-[100px] h-20">
+                <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation"
+                    class="w-[100px] h-20">
                 <nav class="grid content-center ml-[35%]">
                     <ul class="flex space-x-7 text-xl">
                         <li>
@@ -54,7 +54,8 @@
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/about.html">About</a>
                         </li>
                         <li>
-                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife-dept.html">Wildlife Dept</a>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife-dept.html">Wildlife
+                                Dept</a>
                         </li>
                         <li>
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/leopard.html">Leopard</a>
@@ -66,7 +67,8 @@
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/yala.html">Yala</a>
                         </li>
                         <li>
-                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white" href="/Web-Dev-Assessment/wilpattu.html">Wilpattu</a>
+                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white"
+                                href="/Web-Dev-Assessment/wilpattu.html">Wilpattu</a>
                         </li>
                     </ul>
                 </nav>
@@ -77,26 +79,80 @@
         </header>
         <main>
 
-            <!------- header stsrt ------->
+            <!------- header end ------->
 
 
             <!-- wilpattu Start -->
-            <main>
-                <div class="image-only image-wrapper relative group">
-                    <img src="/Web-Dev-Assessment/images/wilpattu1.JPG" alt="Placeholder" class="w-full h-auto">
+            <!-- <div class="image-only image-wrapper relative group">
+                    <img src="images/wilpattu1.JPG" alt="Placeholder" class="w-full h-auto">
 
-                    <div id="main"
-                        class="absolute inset-0 flex items-center justify-left">
+                    <div id="main" class="absolute inset-0 flex items-center justify-left">
                         <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
                             <span>WILPATTU NATIONAL PARK</span>
                         </div>
                     </div>
+                </div> -->
+            <div class="container mx-auto relative">
+                <div class="container mx-auto">
+                    <div class="image-only image-wrapper relative group">
+                        <div>
+                            <img x-bind:src="$store.common.imageSrc($store.wilpattu.block_one.image)"
+                                class="w-full h-auto" alt="Placeholder">
+                        </div>
+                        <div class="relative">
+                            <h2 x-text="$store.wilpattu.block_one.title"
+                                class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                            </h2>
+
+                        </div>
+                    </div>
                 </div>
-            </main>
+
+
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wilpattu.toggleEditor(1)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wilpattu.is_editor_visible == 1">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wilpattu.saveBlock(1)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_one.title">
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_one.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+
             <!-- wilpattu End -->
 
+
+
             <!------- wilpattu introduction start ------->
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <h2 class="text-5xl font-semibold text-teal-700 mt-10">
                     INTRODUCTION
                 </h2>
@@ -107,39 +163,98 @@
                     kilometers (508 square miles) and is renowned for its diverse wildlife and pristine natural
                     surroundings. The park is situated in the dry zone of Sri Lanka and features a mix of dense
                     scrubland, open grassy plains, and numerous lakes, or "villus."
+            </div> -->
+
+            <div class="container mx-auto relative">
+
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.wilpattu.block_two.title" class="text-5xl font-semibold text-teal-700 mt-10">
+                        </h2>
+                        <p class="text-s mt-10 pt-5 leading-8 font-thin" x-text="$store.wilpattu.block_two.body">
+                        </p>
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wilpattu.toggleEditor(2)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wilpattu.is_editor_visible == 2">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wilpattu.saveBlock(2)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_two.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_two.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
             </div>
             <!-------wilpattu introduction start ------->
 
-            <!-------Yala National Park start------->
 
-            <div>
-                <img src="/Web-Dev-Assessment/images/wilpattu2.jpg" alt="Placeholder" class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
+
+            <!-------Wilpattu National Park start------->
+
+            <!-- <div>
+                <img src="/Web-Dev-Assessment/images/wilpattu2.jpg" alt="Placeholder"
+                    class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
             </div>
 
             <div>
                 <p class="container mx-auto text-sm leading-5 mt-8">
                     One of the distinctive features of Wilpattu is its role as a sanctuary for a variety of wildlife
-                    species, including elephants, leopards, sloth bears, spotted deer, and numerous bird species. The
-                    park's thickets and water bodies offer an ideal environment for these creatures, making it a prime
-                    location for wildlife enthusiasts and photographers. The elusive Sri Lankan leopard, in particular,
+                    species, including elephants, leopards, sloth bears, spotted deer, and numerous bird species.
+                    The
+                    park's thickets and water bodies offer an ideal environment for these creatures, making it a
+                    prime
+                    location for wildlife enthusiasts and photographers. The elusive Sri Lankan leopard, in
+                    particular,
                     draws attention as one of the park's iconic and endangered inhabitants.
                     <br><br>
                     Apart from its ecological significance, Wilpattu also boasts a rich historical and cultural
                     background. The park's name, derived from the Sinhalese words "Wil" (meaning lakes) and "Pattu"
-                    (meaning ten), reflects the numerous natural lakes scattered throughout the area. These lakes not
-                    only contribute to the park's picturesque landscape but also play a crucial role in supporting the
+                    (meaning ten), reflects the numerous natural lakes scattered throughout the area. These lakes
+                    not
+                    only contribute to the park's picturesque landscape but also play a crucial role in supporting
+                    the
                     diverse ecosystems within. Additionally, Wilpattu is home to ancient ruins and sacred sites,
                     providing glimpses into the region's historical importance.
                     <br><br>
-                    Conservation efforts and responsible tourism play a pivotal role in maintaining the delicate balance
+                    Conservation efforts and responsible tourism play a pivotal role in maintaining the delicate
+                    balance
                     of Wilpattu's ecosystems. While visitors have the opportunity to witness the untamed beauty of
                     nature and observe wildlife in their natural habitat, it is essential to prioritize sustainable
-                    practices to ensure the continued preservation of this unique national park for future generations
+                    practices to ensure the continued preservation of this unique national park for future
+                    generations
                     to appreciate and enjoy.
                     <br><br>
-                    From December 1988 to 16 March 2003, the park was closed due to security concerns surrounding the
+                    From December 1988 to 16 March 2003, the park was closed due to security concerns surrounding
+                    the
                     Sri Lankan Civil War, before being reopened to visitors sixteen years later. Visitor access is
-                    currently limited to approximately 25% of the park, the remainder of which is dense forest or scrub.
+                    currently limited to approximately 25% of the park, the remainder of which is dense forest or
+                    scrub.
                     Popular visiting periods span between the months of February and October, although there are a
                     number of private ecotourism groups that conduct safaris year-round.
                 </p>
@@ -147,33 +262,189 @@
             </div>
 
             <div>
-                <img src="/Web-Dev-Assessment/images/wilpattu3.jpg" alt="Placeholder" class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
+                <img src="/Web-Dev-Assessment/images/wilpattu3.jpg" alt="Placeholder"
+                    class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
+            </div> -->
+
+            <div class="container mx-auto relative">
+
+                <div class="container mx-auto">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wilpattu.block_three.image1)"
+                            class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]" alt="Placeholder">
+                    </div>
+                    <div class="relative">
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_three.body1">
+                        </p>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_three.body2">
+                        </p>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_three.body3">
+                        </p>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_three.body4">
+                        </p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wilpattu.block_three.image2)"
+                            class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]" alt="Placeholder">
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wilpattu.toggleEditor(3)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wilpattu.is_editor_visible == 3">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wilpattu.saveBlock(3)">
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_three.image1">
+                                </div>
+
+                                <div>
+                                    <label for="body1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 1</label>
+                                    <textarea id="body1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_three.body1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 2</label>
+                                    <textarea id="body2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_three.body2"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 3</label>
+                                    <textarea id="body3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_three.body3"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body4"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 4</label>
+                                    <textarea id="body4"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_three.body4"></textarea>
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_three.image2">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
             </div>
 
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <h2 class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
                     LOCATION
                 </h2>
 
 
                 <p class="container mx-auto text-sm leading-5 mt-8">
-                    Wilpattu lies inland on the northwest coast of Sri Lanka, approximately 26 km north of Puttalam and
-                    185 km north of Colombo. It spans towards the ancient capital of Anuradhapura. The park spans the
-                    border of North Central and North Western Province of Sri Lanka and covers an impressive 131, 693
-                    hectares, making it the largest national park in the country! The west border of the park stretches
-                    35 km along the north-western coast of Sri Lanka. Wilpattu was declared as a wildlife sanctuary in
+                    Wilpattu lies inland on the northwest coast of Sri Lanka, approximately 26 km north of Puttalam
+                    and
+                    185 km north of Colombo. It spans towards the ancient capital of Anuradhapura. The park spans
+                    the
+                    border of North Central and North Western Province of Sri Lanka and covers an impressive 131,
+                    693
+                    hectares, making it the largest national park in the country! The west border of the park
+                    stretches
+                    35 km along the north-western coast of Sri Lanka. Wilpattu was declared as a wildlife sanctuary
+                    in
                     1905, and was upgraded to National Park status on 25th February 1938. Wilpattu is bounded to the
-                    north and south by 2 main rivers, the Modara Gamaru towards the north of the park and the Kala Oya
+                    north and south by 2 main rivers, the Modara Gamaru towards the north of the park and the Kala
+                    Oya
                     to the south of the park.
                 </p>
 
 
                 <div>
-                    <img src="/Web-Dev-Assessment/images/wilpattumap.webp" alt="Placeholder" class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
+                    <img src="/Web-Dev-Assessment/images/wilpattumap.webp" alt="Placeholder"
+                        class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
                 </div>
+            </div> -->
+
+            <div class="container mx-auto relative">
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.wilpattu.block_four.title"
+                            class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
+                        </h2>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_four.body">
+                        </p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wilpattu.block_four.image)"
+                            class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]" alt="Placeholder">
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wilpattu.toggleEditor(4)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wilpattu.is_editor_visible == 4">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wilpattu.saveBlock(4)">
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_four.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_four.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_four.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
 
-            <div class="container mx-auto">
+
+
+            <!-- <div class="container mx-auto">
                 <h2 class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
                     HISTORY
                 </h2>
@@ -181,89 +452,257 @@
                 <p class="container mx-auto text-sm leading-5 mt-8">
                     While Wilpattu was first designated a wildlife sanctuary as far back as 1905, it wasn’t until
                     February 1938 that this 13,500-hectare park was elevated to national park status. Yet, its story
-                    begins much earlier than this. The copper shoreline of the reserve, specifically at Kudiramalai, a
-                    rocky promontory, is widely believed to have been the landing spot of the Indian Prince Vijaya in
+                    begins much earlier than this. The copper shoreline of the reserve, specifically at Kudiramalai,
+                    a
+                    rocky promontory, is widely believed to have been the landing spot of the Indian Prince Vijaya
+                    in
                     the 5th century BC. He married Princess Kuveni of Sri Lanka, and together they established the
-                    Sinhalese race. The region’s alternative name – Thambapanni or the ‘colour of copper’ – came about
+                    Sinhalese race. The region’s alternative name – Thambapanni or the ‘colour of copper’ – came
+                    about
                     due to the reddish colour of the sand that stained the hands and feet of Prince Vijaya and his
                     700-odd followers when they came ashore. The ruins of Kuveni’s palace is just one of 68
                     archeological sites within Wilpattu National Park.
 
                 </p>
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.wilpattu.block_five.title"
+                            class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
+                        </h2>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_five.body">
+                        </p>
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wilpattu.toggleEditor(5)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wilpattu.is_editor_visible == 5">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wilpattu.saveBlock(5)">
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_five.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_five.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
 
-            <div class="container mx-auto">
+
+
+            <!-- <div class="container mx-auto">
                 <h2 class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
                     CLIMATE
                 </h2>
 
 
                 <p class="container mx-auto text-sm leading-5 mt-8">
-                    Wilpattu National Park is situated in the dry zone, and is unlike any other wildlife sanctuary in
-                    Sri Lanka. A unique complex of over 50 wetlands called “Villu” is the most prominent topographical
+                    Wilpattu National Park is situated in the dry zone, and is unlike any other wildlife sanctuary
+                    in
+                    Sri Lanka. A unique complex of over 50 wetlands called “Villu” is the most prominent
+                    topographical
                     feature of the national park and creates a favorable atmosphere for the experience of a leading
-                    wildlife safari in Sri Lanka. In the dense scrub forest, 'Villu' are shallow natural lakes filled
-                    with rainwater and flanked by broad grassy plains. The presence of these Villus with an abundance of
-                    water is best explained by the weather patterns that prevail over the park: while the drought lasts
-                    only from May to early September, the main rainy season lasts from September to December, with the
+                    wildlife safari in Sri Lanka. In the dense scrub forest, 'Villu' are shallow natural lakes
+                    filled
+                    with rainwater and flanked by broad grassy plains. The presence of these Villus with an
+                    abundance of
+                    water is best explained by the weather patterns that prevail over the park: while the drought
+                    lasts
+                    only from May to early September, the main rainy season lasts from September to December, with
+                    the
                     north eastern monsoon's heavy downpours; the inter monsoon season visits the park in March and
-                    April. The Park's annual temperature is at 27.2 degrees Celsius, and its annual rainfall is around
-                    1000 MM. The climate is typical of the dry and arid zone of Sri Lanka, in which wet (monsoon) and
+                    April. The Park's annual temperature is at 27.2 degrees Celsius, and its annual rainfall is
+                    around
+                    1000 MM. The climate is typical of the dry and arid zone of Sri Lanka, in which wet (monsoon)
+                    and
                     dry seasons alternate.
                 </p>
                 <p class="text-s pt-[5%] ml-[40%] ">
-                    <ul class="space-y-2 list-disc mt-[-3%]">
-                        <li>
-                            The altitude ranges from the sea level to 240 m.
-                        </li>
-                        <li>
-                            Annual rainfall is approximately 1,000 mm.
-                        </li>
-                        <li>
-                            Wet seasons: September to December, and March to May. 
-                        </li>
-                        <li>
-                            Dry seasons: January to February, and May to September.
-                        </li>
-                    </ul>
-                    </p>
+                <ul class="space-y-2 list-disc mt-[-3%]">
+                    <li>
+                        The altitude ranges from the sea level to 240 m.
+                    </li>
+                    <li>
+                        Annual rainfall is approximately 1,000 mm.
+                    </li>
+                    <li>
+                        Wet seasons: September to December, and March to May.
+                    </li>
+                    <li>
+                        Dry seasons: January to February, and May to September.
+                    </li>
+                </ul>
+                </p>
             </div>
 
             <div>
-                <img src="/Web-Dev-Assessment/images/wilpattu4.jpg" alt="Placeholder" class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
+                <img src="/Web-Dev-Assessment/images/wilpattu4.jpg" alt="Placeholder"
+                    class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]">
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.wilpattu.block_six.title"
+                            class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
+                        </h2>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_six.body">
+                        </p>
+                    </div>
+                    <p class="text-s pt-[5%] ml-[40%] ">
+                    <ul class="space-y-2 list-disc mt-[-3%]">
+                        <li x-text="$store.wilpattu.block_six.point1">
+                        </li>
+                        <li x-text="$store.wilpattu.block_six.point2">
+                        </li>
+                        <li x-text="$store.wilpattu.block_six.point3">
+                        </li>
+                        <li x-text="$store.wilpattu.block_six.point4">
+                        </li>
+                    </ul>
+                    </p>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wilpattu.block_six.image)"
+                            class="rounded-lg w-[75%] h-auto ml-[13.5%] mt-[5%]" alt="Placeholder">
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wilpattu.toggleEditor(6)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wilpattu.is_editor_visible == 6">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wilpattu.saveBlock(6)">
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_six.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_six.body"></textarea>
+                                </div>
+                                <div>
+                                    <label for="point1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Point 1</label>
+                                    <textarea id="point1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_six.point1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="point2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Point 2</label>
+                                    <textarea id="point2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_six.point2"></textarea>
+                                </div>
+                                <div>
+                                    <label for="point3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Point 3</label>
+                                    <textarea id="point3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_six.point3"></textarea>
+                                </div>
+                                <div>
+                                    <label for="point4"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Point 4</label>
+                                    <textarea id="point4"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_six.point4"></textarea>
+                                </div>
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_six.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
 
-            <div class="container mx-auto">
+
+
+            <!-- <div class="container mx-auto">
                 <h2 class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
                     ANIMALS
                     AND PLANTS
                 </h2>
                 <p class="container mx-auto text-sm leading-5 mt-8">
                     Wilpattu is a shelter for many species of flora and some of them are Palu (Manilkara hexandra),
-                    Satin (Chloroxylon swietenia), Milla (Vitex altissima), Weera (Drypetes sepiaria), Ebony (Diospyros
-                    ebenum) and Wewarna (Alseodaphne semecarpifolia). The flora at the Wilpattu National Park is even
+                    Satin (Chloroxylon swietenia), Milla (Vitex altissima), Weera (Drypetes sepiaria), Ebony
+                    (Diospyros
+                    ebenum) and Wewarna (Alseodaphne semecarpifolia). The flora at the Wilpattu National Park is
+                    even
                     more diverse and help support much of its wildlife. A survey report released by the World
                     Conservation Union (IUCN) in 2006 records six hundred and twenty-three flowering plant species
                     belonging to one hundred and twenty-three plant families. Among them, twenty-seven plants were
                     endemic and a further twenty-one plants were recorded as threatened.
                     <br><br>
-                    Wilpattu's western half is covered with dense forests, meadows, grasslands, and a few significant
-                    water bodies that provide the area with water. There are three types of vegetation to be found here.
+                    Wilpattu's western half is covered with dense forests, meadows, grasslands, and a few
+                    significant
+                    water bodies that provide the area with water. There are three types of vegetation to be found
+                    here.
                     Coast vegetation, including salt marsh and low scrub immediately near to the beach, as well as
-                    monsoon forest with towering emergent, are found in close proximity to the shoreline. Around 70% of
+                    monsoon forest with towering emergent, are found in close proximity to the shoreline. Around 70%
+                    of
                     Wilpattu National Park is covered in deciduous thorn scrub and dry evergreen forest of varying
-                    heights depending on soil quality. During the rainy season, little grasslands surrounding the villu
+                    heights depending on soil quality. During the rainy season, little grasslands surrounding the
+                    villu
                     are vulnerable to floods.
                     <br><br>
-                    A total of 621 species of plants have been recorded in Wilpattu, and the large Palu tree (Manilkara
+                    A total of 621 species of plants have been recorded in Wilpattu, and the large Palu tree
+                    (Manilkara
                     hexandra) is conspicuous in the forest. There are also permanent and seasonal rivers as well as
                     irrigation tanks up to 2,000 years old, coastal salt marshes and scrub lie behind the beach. The
                     Kala Oya estuary contains one of the largest mangrove forests in Sri Lanka. The shallow sea is
-                    highly productive, supporting artisanal fishermen, and contains beds of sea grass, supplying food
+                    highly productive, supporting artisanal fishermen, and contains beds of sea grass, supplying
+                    food
                     for globally endangered Dugong.
                     <br><br>
                     31 species of mammals have been identified within Wilpattu national park. Mammals that are
-                    identified as threatened species living within the Wilpattu National Park are the elephant (Elephas
+                    identified as threatened species living within the Wilpattu National Park are the elephant
+                    (Elephas
                     maximus maximus), sloth bear (Melursus ursinus inornatus), leopard (Panthera pardus kotiya) and
                     water buffalo (Bubalus bubalis). sambar (Rusa unicolor unicolor), spotted deer (Axis axis
                     ceylonensis), mongoose, mouse and shrew are more of Wilpattu's residents.
@@ -277,108 +716,212 @@
                         <img src="/Web-Dev-Assessment/images/wilpattuanimal.jpg" alt="Placeholder">
                     </div>
                 </div>
-            </div>
-
-            <!-------Yala National Park end------->
-
-
-
-
-
-            <!------- footer start ------->
-
-            <footer class="text-white ">
-                <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
-                    <div class="col-span-1">
-                        <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
-                        <p class="text-s ml-[5%] pt-[2%]">
-                            The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.wilpattu.block_seven.title"
+                            class="text-4xl font-normal text-black mt-[10%] ml-[-4%] decoration-2 border-b-2 border-black">
+                        </h2>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_seven.body1">
+                        </p>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_seven.body2">
+                        </p>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_seven.body3">
+                        </p>
+                        <p class="container mx-auto text-sm leading-5 mt-8" x-text="$store.wilpattu.block_seven.body4">
                         </p>
                     </div>
+                    <div class="grid lg:grid-cols-2 gap-6 my-8">
+                        <img x-bind:src="$store.common.imageSrc($store.wilpattu.block_seven.image)" class="rounded-lg"
+                            alt="Placeholder">
+                        <img x-bind:src="$store.common.imageSrc($store.wilpattu.block_seven.image)" class="rounded-lg"
+                            alt="Placeholder">
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
                     <div>
-                        <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
-                        <p class="text-s pt-[5%] ml-[40%] ">
-                        <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
-                            <li>
-                                Sri Lankan Elephant
-                            </li>
-                            <li>
-                                Purple-faced Langur
-                            </li>
-                            <li>
-                                Sri Lankan Leopard,Fishing Cat
-                            </li>
-                            <li>
-                                Fishing Cat
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
-                    <div class="col-span-1">
-                        <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
-                        <p class="text-s ml-[75%] pt-[2%]">
-                        <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
-                            <li>
-                                Sri Lankan Wildlife,<br>
-                                11B,Dewala Rd,<br>
-                                Colombo,Sri Lanka.
-                            </li>
-                            <li>
-                                Email:Wildlife@sl.lk
-                            </li>
-                            <li>
-                                Phone:+94 772517094<br>
-                                Fax:+94 772517094
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wilpattu.toggleEditor(6)"
+                                class="bg-teal-950 text-white px-4 py-2 mb-4 rounded-lg">Edit</button>
+                        </div>
 
+                        <div class="max-w-xl mx-auto" x-show="$store.wilpattu.is_editor_visible == 6">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wilpattu.saveBlock(6)">
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_seven.title">
+                                </div>
 
-                    <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
-                
-                        <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                        <a href="https://www.instagram.com/wildlifepages/?hl=en"><ion-icon name="logo-instagram" class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                        <a href="https://twitter.com/wildnetorg?lang=en"><ion-icon name="logo-twitter" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                        <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                        <a href="https://lk.linkedin.com/company/wildlife-and-nature-protection-society-of-sri-lanka"><ion-icon name="logo-linkedin" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                   
-                    </div>
-                    <div class="teal-950 text-white">
-                        <div class="container text-xs mt-[2%]">
-                            <div class="flex justify-between">
-                                <p class="text-center py-2 ml-[2%]">
-                                    All Copyrights Reserved © Department of Wildlife Conservation
-                                </p>
-                                <p class="text-center py-2">
-                                    Developed by <a href="">SM Sandaruwan</a>
-                                </p>
-                            </div>
+                                <div>
+                                    <label for="body1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 1</label>
+                                    <textarea id="body1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_seven.body1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 2</label>
+                                    <textarea id="body2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_seven.body2"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 3</label>
+                                    <textarea id="body3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_seven.body3"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body4"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 4</label>
+                                    <textarea id="body4"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_seven.body4"></textarea>
+                                </div>
+                                \
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_seven.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wilpattu.block_seven.image2">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-            </footer>
-            <!------- footer end------->
+                </template>
+
+            </div>
+        </main>
+
+        <!-------wilpattu National Park end------->
 
 
 
-            <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-            <script type="text/javascript" src="/js/app.js"></script>
 
-            <script>
-                document.addEventListener('alpine:init', () => {
-                    Alpine.data('_home', () => ({
-                        init() {
-                            var swiper = new Swiper(".swiper-container", {
-                                loop: true,
-                                autoplay: {
-                                    delay: 5000,
-                                    disableOnInteraction: false,
-                                },
 
-                            });
-                        }
-                    }))
-                })
-            </script>
+        <!------- footer start ------->
+
+        <footer class="text-white ">
+            <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
+                <div class="col-span-1">
+                    <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
+                    <p class="text-s ml-[5%] pt-[2%]">
+                        The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
+                    <p class="text-s pt-[5%] ml-[40%] ">
+                    <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
+                        <li>
+                            Sri Lankan Elephant
+                        </li>
+                        <li>
+                            Purple-faced Langur
+                        </li>
+                        <li>
+                            Sri Lankan Leopard,Fishing Cat
+                        </li>
+                        <li>
+                            Fishing Cat
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-span-1">
+                    <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
+                    <p class="text-s ml-[75%] pt-[2%]">
+                    <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                        <li>
+                            Sri Lankan Wildlife,<br>
+                            11B,Dewala Rd,<br>
+                            Colombo,Sri Lanka.
+                        </li>
+                        <li>
+                            Email:Wildlife@sl.lk
+                        </li>
+                        <li>
+                            Phone:+94 772517094<br>
+                            Fax:+94 772517094
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+
+
+                <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
+
+                    <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://www.instagram.com/wildlifepages/?hl=en"><ion-icon name="logo-instagram"
+                            class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://twitter.com/wildnetorg?lang=en"><ion-icon name="logo-twitter"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://lk.linkedin.com/company/wildlife-and-nature-protection-society-of-sri-lanka"><ion-icon
+                            name="logo-linkedin"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+
+                </div>
+                <div class="teal-950 text-white">
+                    <div class="container text-xs mt-[2%]">
+                        <div class="flex justify-between">
+                            <p class="text-center py-2 ml-[2%]">
+                                All Copyrights Reserved © Department of Wildlife Conservation
+                            </p>
+                            <p class="text-center py-2">
+                                Developed by <a href="">SM Sandaruwan</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <!------- footer end------->
+
+
+
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script type="text/javascript" src="/Web-Dev-Assessment/js/store/wilpattu.js"></script>
+
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('_home', () => ({
+                    init() {
+                        var swiper = new Swiper(".swiper-container", {
+                            loop: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                            },
+
+                        });
+                    }
+                }))
+            })
+        </script>
+    </div>
+</body>
 
 </html>

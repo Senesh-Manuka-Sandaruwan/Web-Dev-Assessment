@@ -32,8 +32,8 @@
                     },
                 }
             }
-                }
-        
+        }
+
     </script>
 </head>
 
@@ -41,20 +41,23 @@
     <div id="_home" x-data="_home">
 
         <!------- header start ------->
-+
+
         <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
             <div class="container mx-auto flex justify-between">
-                <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation" class="w-[100px] h-20">
+                <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation"
+                    class="w-[100px] h-20">
                 <nav class="grid content-center ml-[35%]">
                     <ul class="flex space-x-7 text-xl">
                         <li>
                             <a href="/Web-Dev-Assessment/index.html" class="hover:text-teal-500">Home</a>
                         </li>
                         <li>
-                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white" href="/Web-Dev-Assessment/about.html">About</a>
+                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white"
+                                href="/Web-Dev-Assessment/about.html">About</a>
                         </li>
                         <li>
-                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife-dept.html">Wildlife Dept</a>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife-dept.html">Wildlife
+                                Dept</a>
                         </li>
                         <li>
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/leopard.html">Leopard</a>
@@ -76,100 +79,484 @@
             </div>
         </header>
         <main>
-            
-        <!------- header end ------->
 
-        <!-------about start ------->
-        <main>
-            <div class="image-only image-wrapper relative group">
-              <img src="/Web-Dev-Assessment/images/aboutpic.jpg" alt="Placeholder" class="w-full h-auto">
-          
-              <div id="main" class="absolute inset-0 flex items-center justify-left">
-                <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
-                  <span>The Sri Lankan Wildlife Exploration</span>
+            <!------- header end ------->
+
+            <!-------about start ------->
+            <!-- <div class="image-only image-wrapper relative group">
+                    <img src="/Web-Dev-Assessment/images/aboutpic.jpg" alt="Placeholder" class="w-full h-auto">
+
+                    <div id="main" class="absolute inset-0 flex items-center justify-left">
+                        <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                            <span>The Sri Lankan Wildlife Exploration</span>
+                        </div>
+                    </div>
+                </div> -->
+            <div class="container mx-auto relative">
+                <div class="container mx-auto">
+                    <div class="image-only image-wrapper relative group">
+                        <div>
+                            <img x-bind:src="$store.common.imageSrc($store.about.block_one.image)" class="w-full h-auto"
+                                alt="Placeholder">
+                        </div>
+                        <div class="relative">
+                            <h2 x-text="$store.about.block_one.title"
+                                class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                            </h2>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.about.toggleEditor(1)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 1">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(1)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_one.title">
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_one.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
             </div>
-        <!-------about end ------->
+            <!-------about end ------->
 
 
-        <!-------wildlife locations start ------->
-                <div class="container">
-                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Horton Plains National Park</h2>
+            <!-------wildlife locations start ------->
+            <!-- <div class="container">
+                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Horton Plains
+                        National Park</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
-                        <img src="/Web-Dev-Assessment/images/hp2.jpg" alt="Placeholder" class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-                        <img src="/Web-Dev-Assessment/images/hp1.jpg" alt="Placeholder" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-                        <img src="/Web-Dev-Assessment/images/hp3.jpg" alt="Placeholder" class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/Web-Dev-Assessment/images/hp2.jpg" alt="Placeholder"
+                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/Web-Dev-Assessment/images/hp1.jpg" alt="Placeholder"
+                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/Web-Dev-Assessment/images/hp3.jpg" alt="Placeholder"
+                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                     </div>
 
-                        <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
-                            <p>
-                                Horton Plains National Park, nestled in the central highlands of Sri Lanka near Nuwara Eliya, is a captivating expanse of natural beauty spanning over 31,000 acres. 
-                                Renowned for its panoramic vistas and diverse ecosystems, the park boasts iconic attractions like "World's End," a dramatic cliff offering breathtaking views, and the serene Baker's Falls. Its unique montane cloud forests shelter endemic species, including the rare Horton Plains slender loris and various bird species. Visitors can traverse scenic trails, 
-                                immersing themselves in the park's rich biodiversity, which contributes to the conservation of the island's highland ecosystems. Designated a UNESCO World Heritage Site, Horton Plains promises a remarkable journey through rolling hills, grasslands, and lush forests, 
-                                making it a haven for nature enthusiasts and a vital sanctuary for Sri Lanka's remarkable biodiversity.
-                            </p>
-                        </div>
-
-                            <div>
-                                <a href="https://maps.app.goo.gl/Wrrz4XpCVzx5yiTD6" class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
-                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit us to know more</a>
-                           </div>
-                </div>
-
-                <div class="container">
-                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Sinharaja Forest Reserve</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
-                        <img src="/Web-Dev-Assessment/images/sf1.jpg" alt="Placeholder" class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-                        <img src="/Web-Dev-Assessment/images/sf2.jpp" alt="Placeholder" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-                        <img src="/Web-Dev-Assessment/images/sf3.jpg" alt="Placeholder" class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
+                        <p>
+                            Horton Plains National Park, nestled in the central highlands of Sri Lanka near Nuwara
+                            Eliya, is a captivating expanse of natural beauty spanning over 31,000 acres.
+                            Renowned for its panoramic vistas and diverse ecosystems, the park boasts iconic attractions
+                            like "World's End," a dramatic cliff offering breathtaking views, and the serene Baker's
+                            Falls. Its unique montane cloud forests shelter endemic species, including the rare Horton
+                            Plains slender loris and various bird species. Visitors can traverse scenic trails,
+                            immersing themselves in the park's rich biodiversity, which contributes to the conservation
+                            of the island's highland ecosystems. Designated a UNESCO World Heritage Site, Horton Plains
+                            promises a remarkable journey through rolling hills, grasslands, and lush forests,
+                            making it a haven for nature enthusiasts and a vital sanctuary for Sri Lanka's remarkable
+                            biodiversity.
+                        </p>
                     </div>
 
-                        <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
-                            <p>
-                                Sinharaja Forest Reserve, a UNESCO World Heritage Site nestled in the southwestern lowland wet zone of Sri Lanka, stands as a verdant testament to the island's ecological richness. Spanning approximately 11,187 hectares, this tropical rainforest is a biodiversity hotspot, 
-                                boasting a profusion of endemic flora and fauna found nowhere else on Earth. 
-                                With its dense canopy, Sinharaja shelters a remarkable array of wildlife, including the vibrant Sri Lanka blue magpie, the elusive purple-faced langur, and a kaleidoscope of endemic amphibians and insects. 
-                                Trekking through its labyrinthine trails unveils towering trees, glistening streams, and the symphony of bird calls, offering a immersive experience for nature enthusiasts. The reserve's conservation significance extends beyond its borders, 
-                                contributing to the preservation of Sri Lanka's unique biological heritage and providing a living classroom for those eager to explore the wonders of a tropical rainforest ecosystem
-                            </p>
-                        </div>
+                    <div>
+                        <a href="https://maps.app.goo.gl/Wrrz4XpCVzx5yiTD6"
+                            class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
+                            us to know more</a>
+                    </div>
+                </div> -->
 
-                            <div>
-                                <a href="https://maps.app.goo.gl/psNkuhGDPV9DzLD59" class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
-                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit us to know more</a>
-                           </div>
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.about.block_two.title"
+                    class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_two.image1)"
+                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_two.image2)"
+                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_two.image2)"
+                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                </div>
+                <div class="relative">
+                    <p class="text-sm text-black leading-7 p-8 m-4 ml-[10%]" x-text="$store.about.block_two.body"></p>
                 </div>
 
-                <div class="container">
-                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Minneriya National Park</h2>
+                <div>
+                    <button x-bind:href="$store.about.block_two.link"
+                        class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                            px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
+                        us to know more</button>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.about.toggleEditor(2)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 2">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(2)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_two.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_two.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_two.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_two.image2">
+                                </div>
+                                <div>
+                                    <label for="image3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
+                                    <input type="text" id="image3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_two.image3">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_two.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+
+            <!-- <div class="container">
+                    <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Sinharaja Forest
+                        Reserve</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
-                        <img src="/Web-Dev-Assessment/images/mf1.jpg" alt="Placeholder" class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-                        <img src="/Web-Dev-Assessment/images/mf2.jpg" alt="Placeholder" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-                        <img src="/Web-Dev-Assessment/images/mf3.jpg" alt="Placeholder" class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/Web-Dev-Assessment/images/sf1.jpg" alt="Placeholder"
+                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/Web-Dev-Assessment/images/sf2.jpp" alt="Placeholder"
+                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img src="/Web-Dev-Assessment/images/sf3.jpg" alt="Placeholder"
+                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                     </div>
 
-                        <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
-                            <p>
-                                Located in the North Central Province of Sri Lanka, 8,889 hectares of magical refuge that is Minneriya National Park is well-known for its breathtaking yearly event called the "Gathering." 
-                                The park, which revolves on the historic Minneriya Tank, comes to life from June to September, when hundreds of Asian elephants gather close to the reservoir to feed and mingle, producing a breathtaking display. 
-                                Beyond the famous Gathering, the park is home to a variety of habitats including as marshes and grasslands that support a rich biodiversity that includes many different species of birds, sloth bears, leopards, sambar deer, and Sri Lankan axis deer. 
-                                The park's historical charm is enhanced by the opportunity for tourists to examine old inscriptions and ruins among its natural beauty. 
-                                A safari via Minneriya provides
-                            </p>
+                    <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
+                        <p>
+                            Sinharaja Forest Reserve, a UNESCO World Heritage Site nestled in the southwestern lowland
+                            wet zone of Sri Lanka, stands as a verdant testament to the island's ecological richness.
+                            Spanning approximately 11,187 hectares, this tropical rainforest is a biodiversity hotspot,
+                            boasting a profusion of endemic flora and fauna found nowhere else on Earth.
+                            With its dense canopy, Sinharaja shelters a remarkable array of wildlife, including the
+                            vibrant Sri Lanka blue magpie, the elusive purple-faced langur, and a kaleidoscope of
+                            endemic amphibians and insects.
+                            Trekking through its labyrinthine trails unveils towering trees, glistening streams, and the
+                            symphony of bird calls, offering a immersive experience for nature enthusiasts. The
+                            reserve's conservation significance extends beyond its borders,
+                            contributing to the preservation of Sri Lanka's unique biological heritage and providing a
+                            living classroom for those eager to explore the wonders of a tropical rainforest ecosystem
+                        </p>
+                    </div>
+
+                    <div>
+                        <a href="https://maps.app.goo.gl/psNkuhGDPV9DzLD59"
+                            class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
+                            us to know more</a>
+                    </div>
+                </div> -->
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.about.block_three.title"
+                    class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_three.image1)"
+                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_three.image2)"
+                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_three.image2)"
+                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                </div>
+                <div class="relative">
+                    <p class="text-sm text-black leading-7 p-8 m-4 ml-[10%]" x-text="$store.about.block_three.body"></p>
+                </div>
+
+                <div>
+                    <button x-bind:href="$store.about.block_three.link"
+                        class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                            px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
+                        us to know more</button>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.about.toggleEditor(3)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
                         </div>
 
-                            <div>
-                                <a href="https://maps.app.goo.gl/xaRtRcg7WEyhokqL6" class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
-                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit us to know more</a>
-                           </div>
+                        <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 3">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(3)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_three.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_three.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_three.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_three.image2">
+                                </div>
+                                <div>
+                                    <label for="image3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
+                                    <input type="text" id="image3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_three.image3">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_three.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+
+
+
+            <!-- <div class="container">
+                <h2 class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black">Minneriya
+                    National Park</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
+                    <img src="/Web-Dev-Assessment/images/mf1.jpg" alt="Placeholder"
+                        class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/mf2.jpg" alt="Placeholder"
+                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/mf3.jpg" alt="Placeholder"
+                        class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                 </div>
-        
-        </main>
-        <!-------wildlife locations start ------->
-        <div>
+
+                <div class="text-sm text-black leading-7 p-8 m-4 ml-[10%]">
+                    <p>
+                        Located in the North Central Province of Sri Lanka, 8,889 hectares of magical refuge that is
+                        Minneriya National Park is well-known for its breathtaking yearly event called the
+                        "Gathering."
+                        The park, which revolves on the historic Minneriya Tank, comes to life from June to
+                        September, when hundreds of Asian elephants gather close to the reservoir to feed and
+                        mingle, producing a breathtaking display.
+                        Beyond the famous Gathering, the park is home to a variety of habitats including as marshes
+                        and grasslands that support a rich biodiversity that includes many different species of
+                        birds, sloth bears, leopards, sambar deer, and Sri Lankan axis deer.
+                        The park's historical charm is enhanced by the opportunity for tourists to examine old
+                        inscriptions and ruins among its natural beauty.
+                        A safari via Minneriya provides
+                    </p>
+                </div>
+
+                <div>
+                    <a href="https://maps.app.goo.gl/xaRtRcg7WEyhokqL6"
+                        class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                                 px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
+                        us to know more</a>
+                </div>
+            </div> -->
+
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.about.block_four.title"
+                    class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_four.image1)"
+                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_four.image2)"
+                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.about.block_four.image2)"
+                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                            alt="Placeholder">
+                    </div>
+                </div>
+                <div class="relative">
+                    <p class="text-sm text-black leading-7 p-8 m-4 ml-[10%]" x-text="$store.about.block_four.body"></p>
+                </div>
+
+                <div>
+                    <button x-bind:href="$store.about.block_four.link"
+                        class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                            px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
+                        us to know more</button>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.about.toggleEditor(4)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 4">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(4)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_four.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_four.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_four.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_four.image2">
+                                </div>
+                                <div>
+                                    <label for="image3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
+                                    <input type="text" id="image3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_four.image3">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_four.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <!-------wildlife locations end ------->
+
+
+            <!-- <div>
             <h2 class="text-5xl font-bold mb-4 ml-[30%] text-teal-700">Biodiversity Snapshot</h2>
-         </div>
+        </div>
 
         <div class="bg-gray-200 p-2 mb-[5%] mt-[5%] ml-10 mr-10">
 
@@ -178,49 +565,54 @@
                 <div class="col-span-1 bg-white p-5 font-bold text-2xl">Animal Name</div>
                 <div class="col-span-1 bg-white p-5 font-bold text-2xl">Interesting Facts</div>
                 <div class="col-span-1 bg-white p-5 font-bold text-2xl">Search More</div>
-        
+
                 <div class="col-span-1 bg-white p-5">Horton Plains Slender Loris</div>
                 <div class="col-span-1 bg-white p-5">Endemic to Horton Plains, nocturnal primate</div>
                 <div class="col-span-1 bg-white p-5">
                     <div>
                         <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
-                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Red_slender_loris">Link</a>
+                                  hover:bg-teal-900 transition duration-200 hover:text-white"
+                            href="https://en.wikipedia.org/wiki/Red_slender_loris">Link</a>
                     </div>
                 </div>
-        
+
                 <div class="col-span-1 bg-white p-5">Sambar Deer</div>
                 <div class="col-span-1 bg-white p-5">Large herbivore found in Horton Plains</div>
                 <div class="col-span-1 bg-white p-5">
                     <div>
                         <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
-                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Sambar_deer">Link</a>
+                                  hover:bg-teal-900 transition duration-200 hover:text-white"
+                            href="https://en.wikipedia.org/wiki/Sambar_deer">Link</a>
                     </div>
                 </div>
-        
+
                 <div class="col-span-1 bg-white p-5">Sri Lanka Blue Magpie</div>
                 <div class="col-span-1 bg-white p-5">Colorful and endemic bird in Sinharaja</div>
                 <div class="col-span-1 bg-white p-5">
                     <div>
                         <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
-                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Sri_Lanka_blue_magpie">Link</a>
+                                  hover:bg-teal-900 transition duration-200 hover:text-white"
+                            href="https://en.wikipedia.org/wiki/Sri_Lanka_blue_magpie">Link</a>
                     </div>
                 </div>
-        
+
                 <div class="col-span-1 bg-white p-5">Sri Lanka Kangaroo Lizard</div>
                 <div class="col-span-1 bg-white p-5">Endemic reptile species in Sinharaja</div>
                 <div class="col-span-1 bg-white p-5">
                     <div>
                         <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
-                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Otocryptis_wiegmanni">Link</a>
+                                  hover:bg-teal-900 transition duration-200 hover:text-white"
+                            href="https://en.wikipedia.org/wiki/Otocryptis_wiegmanni">Link</a>
                     </div>
                 </div>
-        
+
                 <div class="col-span-1 bg-white p-5">Asian Elephant</div>
                 <div class="col-span-1 bg-white p-5">Featured in the "Gathering" at Minneriya</div>
                 <div class="col-span-1 bg-white p-5">
                     <div>
                         <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
-                                  hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Asian_elephant">Link</a>
+                                  hover:bg-teal-900 transition duration-200 hover:text-white"
+                            href="https://en.wikipedia.org/wiki/Asian_elephant">Link</a>
                     </div>
                 </div>
 
@@ -229,13 +621,250 @@
                 <div class="col-span-1 bg-white p-5">
                     <div>
                         <a class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
-                                hover:bg-teal-900 transition duration-200 hover:text-white" href="https://en.wikipedia.org/wiki/Sri_Lankan_axis_deer">Link</a>
+                                hover:bg-teal-900 transition duration-200 hover:text-white"
+                            href="https://en.wikipedia.org/wiki/Sri_Lankan_axis_deer">Link</a>
                     </div>
                 </div>
             </div>
-        </div>
-          
-      
+        </div> -->
+
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.about.block_five.title" class="text-5xl font-bold mb-4 ml-[30%] text-teal-700"></h2>
+                <div class="bg-gray-200 p-2 mb-[5%] mt-[5%] ml-10 mr-10">
+                    <div class="grid grid-cols-3 gap-2">
+                        <h4 class="col-span-1 bg-white p-5 font-bold text-2xl"
+                            x-text="$store.about.block_five.sub_title1"></h4>
+                        <h4 class="col-span-1 bg-white p-5 font-bold text-2xl"
+                            x-text="$store.about.block_five.sub_title2"></h4>
+                        <h4 class="col-span-1 bg-white p-5 font-bold text-2xl"
+                            x-text="$store.about.block_five.sub_title3"></h4>
+
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.name1"></p>
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.fact1"></p>
+                        <div class="col-span-1 bg-white p-5">
+                            <button x-bind:href="$store.about.block_five.link1" class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                hover:bg-teal-900 transition duration-200 hover:text-white">Link</button>
+                        </div>
+
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.name2"></p>
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.fact2"></p>
+                        <div class="col-span-1 bg-white p-5">
+                            <button x-bind:href="$store.about.block_five.link2" class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                hover:bg-teal-900 transition duration-200 hover:text-white">Link</button>
+                        </div>
+
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.name3"></p>
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.fact3"></p>
+                        <div class="col-span-1 bg-white p-5">
+                            <button x-bind:href="$store.about.block_five.link3" class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                hover:bg-teal-900 transition duration-200 hover:text-white">Link</button>
+                        </div>
+
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.name4"></p>
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.fact4"></p>
+                        <div class="col-span-1 bg-white p-5">
+                            <button x-bind:href="$store.about.block_five.link4" class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                hover:bg-teal-900 transition duration-200 hover:text-white">Link</button>
+                        </div>
+
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.name5"></p>
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.fact5"></p>
+                        <div class="col-span-1 bg-white p-5">
+                            <button x-bind:href="$store.about.block_five.link5" class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                hover:bg-teal-900 transition duration-200 hover:text-white">Link</button>
+                        </div>
+
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.name6"></p>
+                        <p class="col-span-1 bg-white p-5" x-text="$store.about.block_five.fact6"></p>
+                        <div class="col-span-1 bg-white p-5">
+                            <button x-bind:href="$store.about.block_five.link6" class="inline-block font-semibold no-underline rounded-full px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black 
+                                hover:bg-teal-900 transition duration-200 hover:text-white">Link</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.about.toggleEditor(4)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg mb-4">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 4">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(4)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.title">
+                                </div>
+
+                                <div>
+                                    <label for="sub_title1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 1</label>
+                                    <input type="text" id="sub_title11"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.sub_title1">
+                                </div>
+                                <div>
+                                    <label for="name1" class="block text-xs font-semibold text-gray-600 uppercase">Name
+                                        1</label>
+                                    <textarea id="name1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.name1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="name2" class="block text-xs font-semibold text-gray-600 uppercase">Name
+                                        2</label>
+                                    <textarea id="name2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.name2"></textarea>
+                                </div>
+                                <div>
+                                    <label for="name3" class="block text-xs font-semibold text-gray-600 uppercase">Name
+                                        3</label>
+                                    <textarea id="name3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.name3"></textarea>
+                                </div>
+                                <div>
+                                    <label for="name4" class="block text-xs font-semibold text-gray-600 uppercase">Name
+                                        4</label>
+                                    <textarea id="name4"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.name4"></textarea>
+                                </div>
+                                <div>
+                                    <label for="name5" class="block text-xs font-semibold text-gray-600 uppercase">Name
+                                        5</label>
+                                    <textarea id="name5"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.name5"></textarea>
+                                </div>
+                                <div>
+                                    <label for="name6" class="block text-xs font-semibold text-gray-600 uppercase">Name
+                                        6</label>
+                                    <textarea id="name6"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.name6"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="sub_title2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 2</label>
+                                    <input type="text" id="sub_title2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.sub_title2">
+                                </div>
+                                <div>
+                                    <label for="fact1" class="block text-xs font-semibold text-gray-600 uppercase">Facts
+                                        1</label>
+                                    <textarea id="fact1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.fact1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="fact2" class="block text-xs font-semibold text-gray-600 uppercase">Facts
+                                        2</label>
+                                    <textarea id="fact2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.fact2"></textarea>
+                                </div>
+                                <div>
+                                    <label for="fact3" class="block text-xs font-semibold text-gray-600 uppercase">Facts
+                                        3</label>
+                                    <textarea id="fact3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.fact3"></textarea>
+                                </div>
+                                <div>
+                                    <label for="fact4" class="block text-xs font-semibold text-gray-600 uppercase">Facts
+                                        4</label>
+                                    <textarea id="fact4"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.fact4"></textarea>
+                                </div>
+                                <div>
+                                    <label for="fact5" class="block text-xs font-semibold text-gray-600 uppercase">Facts
+                                        5</label>
+                                    <textarea id="fact5"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.fact5"></textarea>
+                                </div>
+                                <div>
+                                    <label for="fact6" class="block text-xs font-semibold text-gray-600 uppercase">Facts
+                                        6</label>
+                                    <textarea id="fact6"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.fact6"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="sub_title3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 3</label>
+                                    <input type="text" id="sub_title3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.sub_title3">
+                                </div>
+                                <div>
+                                    <label for="link1" class="block text-xs font-semibold text-gray-600 uppercase">Link
+                                        1</label>
+                                    <input type="text" id="link1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.link1">
+                                </div>
+                                <div>
+                                    <label for="link2" class="block text-xs font-semibold text-gray-600 uppercase">Link
+                                        2</label>
+                                    <input type="text" id="link2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.link2">
+                                </div>
+                                <div>
+                                    <label for="link3" class="block text-xs font-semibold text-gray-600 uppercase">Link
+                                        3</label>
+                                    <input type="text" id="link3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.link3">
+                                </div>
+                                <div>
+                                    <label for="link4" class="block text-xs font-semibold text-gray-600 uppercase">Link
+                                        4</label>
+                                    <input type="text" id="link4"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.link4">
+                                </div>
+                                <div>
+                                    <label for="link5" class="block text-xs font-semibold text-gray-600 uppercase">Link
+                                        5</label>
+                                    <input type="text" id="link5"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.link5">
+                                </div>
+                                <div>
+                                    <label for="link6" class="block text-xs font-semibold text-gray-600 uppercase">Link
+                                        6</label>
+                                    <input type="text" id="link6"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.about.block_five.link6">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </main>
+
+
 
 
         <!------- footer ------->
@@ -251,89 +880,98 @@
                 <div>
                     <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
                     <p class="text-s pt-[5%] ml-[40%] ">
-                        <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
-                            <li>
-                                Sri Lankan Elephant
-                            </li>
-                            <li>
-                                Purple-faced Langur
-                            </li>
-                            <li>
-                                Sri Lankan Leopard,Fishing Cat
-                            </li>
-                            <li>
-                                Fishing Cat
-                            </li>
-                        </ul>
+                    <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
+                        <li>
+                            Sri Lankan Elephant
+                        </li>
+                        <li>
+                            Purple-faced Langur
+                        </li>
+                        <li>
+                            Sri Lankan Leopard,Fishing Cat
+                        </li>
+                        <li>
+                            Fishing Cat
+                        </li>
+                    </ul>
                     </p>
                 </div>
                 <div class="col-span-1">
                     <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
                     <p class="text-s ml-[75%] pt-[2%]">
-                        <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
-                            <li>
-                                Sri Lankan Wildlife,<br>
-                                11B,Dewala Rd,<br>
-                                Colombo,Sri Lanka.
-                            </li>
-                            <li>
-                                Email:Wildlife@sl.lk
-                            </li>
-                            <li>
-                                Phone:+94 772517094<br>
-                                Fax:+94 772517094
-                            </li>
-                        </ul>
+                    <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                        <li>
+                            Sri Lankan Wildlife,<br>
+                            11B,Dewala Rd,<br>
+                            Colombo,Sri Lanka.
+                        </li>
+                        <li>
+                            Email:Wildlife@sl.lk
+                        </li>
+                        <li>
+                            Phone:+94 772517094<br>
+                            Fax:+94 772517094
+                        </li>
+                    </ul>
                     </p>
                 </div>
 
-                
+
                 <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
-                
-                    <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                    <a href="https://www.instagram.com/wildlifepages/?hl=en"><ion-icon name="logo-instagram" class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                    <a href="https://twitter.com/wildnetorg?lang=en"><ion-icon name="logo-twitter" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                    <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                    <a href="https://lk.linkedin.com/company/wildlife-and-nature-protection-society-of-sri-lanka"><ion-icon name="logo-linkedin" class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-               
+
+                    <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://www.instagram.com/wildlifepages/?hl=en"><ion-icon name="logo-instagram"
+                            class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://twitter.com/wildnetorg?lang=en"><ion-icon name="logo-twitter"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://lk.linkedin.com/company/wildlife-and-nature-protection-society-of-sri-lanka"><ion-icon
+                            name="logo-linkedin"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+
                 </div>
-            <div class="teal-950 text-white">
-                <div class="container text-xs mt-[2%]">
-                    <div class="flex justify-between">
-                        <p class="text-center py-2 ml-[2%]">
-                            All Copyrights Reserved © Department of Wildlife Conservation
-                        </p>
-                        <p class="text-center py-2">
-                            Developed by <a href="">SM Sandaruwan</a>
-                        </p>
+                <div class="teal-950 text-white">
+                    <div class="container text-xs mt-[2%]">
+                        <div class="flex justify-between">
+                            <p class="text-center py-2 ml-[2%]">
+                                All Copyrights Reserved © Department of Wildlife Conservation
+                            </p>
+                            <p class="text-center py-2">
+                                Developed by <a href="">SM Sandaruwan</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-           
+
         </footer>
 
 
-   
-        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
 
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('_home', () => ({
-                init() {
-                    var swiper = new Swiper(".swiper-container", {                    
-                        loop: true,
-                        autoplay: {
-                            delay: 5000,
-                            disableOnInteraction: false,
-                        },
-    
-                    });
-                }
-            }))
-        })
-    </script>
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script type="text/javascript" src="js/store/about.js"></script>
+
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('_home', () => ({
+                    init() {
+                        var swiper = new Swiper(".swiper-container", {
+                            loop: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                            },
+
+                        });
+                    }
+                }))
+            })
+        </script>
+    </div>
+</body>
 
 </html>

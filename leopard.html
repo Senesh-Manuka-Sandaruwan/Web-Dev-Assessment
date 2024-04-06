@@ -44,7 +44,8 @@
 
         <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
             <div class="container mx-auto flex justify-between">
-                <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation" class="w-[100px] h-20">
+                <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation"
+                    class="w-[100px] h-20">
                 <nav class="grid content-center ml-[35%]">
                     <ul class="flex space-x-7 text-xl">
                         <li>
@@ -54,7 +55,8 @@
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/about.html">About</a>
                         </li>
                         <li>
-                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife-dept.html">Wildlife Dept</a>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife-dept.html">Wildlife
+                                Dept</a>
                         </li>
                         <li>
                             <a class="hover:text-teal-500 decoration-2 border-b-2 border-white"
@@ -81,9 +83,9 @@
             <!------- header end ------->
 
             <!-------wildlife dep start ------->
-            <main>
+            <!-- <main>
                 <div class="image-only image-wrapper relative group">
-                    <img src="/Web-Dev-Assessment/images/leo.jpg" alt="Placeholder" class="w-full h-auto">
+                    <img src="images/leo.jpg" alt="Placeholder" class="w-full h-auto">
 
                     <div id="main" class="absolute inset-0 flex items-center justify-left">
                         <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
@@ -91,15 +93,109 @@
                         </div>
                     </div>
                 </div>
-            </main>
+            </main> -->
+            <div class="container mx-auto relative">
+                <div class="container mx-auto">
+                    <div class="image-only image-wrapper relative group">
+                        <div>
+                            <img x-bind:src="$store.common.imageSrc($store.leopard.block_one.image)"
+                                class="w-full h-auto" alt="Placeholder">
+                        </div>
+                        <div class="relative">
+                            <h2 x-text="$store.leopard.block_one.title"
+                                class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                            </h2>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.leopard.toggleEditor(1)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 1">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(1)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_one.title">
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_one.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+            </div>
 
             <!-------wildlife dep end ------->
 
             <!-------Venues Where Sri Lankan Leopards Are Found start ------->
-            <div class="container">
+            <!-- <div class="container">
                 <h2 class="text-5xl font-semibold mt-10 ml-[15%] mt-[5%] text-teal-700">Venues Where Sri Lankan Leopards
                     Are Found
                 </h2>
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="container">
+                    <div class="image-only image-wrapper relative group">
+                        <div class="relative">
+                            <h2 x-text="$store.leopard.block_two.title"
+                                class="text-5xl font-semibold mt-10 ml-[15%] mt-[5%] text-teal-700">
+                            </h2>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.leopard.toggleEditor(2)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 2">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(2)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_two.title">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
             </div>
 
             <!-------Venues Where Sri Lankan Leopards Are Found end ------->
@@ -107,7 +203,7 @@
 
             <!-------Yala National Park leopards start------->
 
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <h2 class="text-4xl font-normal text-black mt-[5%] ml-[-4%] decoration-2 border-b-2 border-black">Yala
                     National Park leopards</h2>
 
@@ -214,13 +310,92 @@
                         a jeep safari at the Yala National Park is your best bet!
                     </p>
                 </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.leopard.block_three.title"
+                    class="text-4xl font-normal text-black mt-[5%] ml-[-4%] decoration-2 border-b-2 border-black"></h2>
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+
+                    <div class="relative">
+                        <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_three.body1"></p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_three.image1)"
+                            class="rounded-lg float-right mt-[15%]" alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_three.image2)"
+                            class="rounded-lg mt-[15%]" alt="Placeholder">
+                    </div>
+
+                    <p class="text-sm leading-7 mt-[15%]" x-text="$store.leopard.block_three.body2"></p>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.leopard.toggleEditor(3)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 3">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(3)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_three.title">
+                                </div>
+
+                                <div>
+                                    <label for="body1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 1</label>
+                                    <textarea id="body1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_three.body1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 2</label>
+                                    <textarea id="body2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_three.body2"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_three.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_three.image2">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
 
             <!-------Yala National Park leopards end------->
 
             <!-------wilpattu National Park leopards start------->
 
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <h2 class="text-4xl font-normal text-black mt-[5%] ml-[-4%] decoration-2 border-b-2 border-black">
                     Wilpattu National Park leopards</h2>
 
@@ -325,264 +500,554 @@
                         our travellers with plenty of close-ups.
                     </p>
                 </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.leopard.block_four.title"
+                    class="text-4xl font-normal text-black mt-[5%] ml-[-4%] decoration-2 border-b-2 border-black"></h2>
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+
+                    <div class="relative">
+                        <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_four.body1"></p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_four.image1)"
+                            class="rounded-lg float-right mt-[15%]" alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_four.image2)"
+                            class="rounded-lg mt-[25%]" alt="Placeholder">
+                    </div>
+
+                    <p class="text-sm leading-7 mt-[15%]" x-text="$store.leopard.block_four.body2"></p>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.leopard.toggleEditor(4)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 4">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(4)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_four.title">
+                                </div>
+
+                                <div>
+                                    <label for="body1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 1</label>
+                                    <textarea id="body1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_four.body1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 2</label>
+                                    <textarea id="body2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_four.body2"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_four.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_four.image2">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+            <!-------wilpattu National Park leopards end------->
+
+
+            <!-------Horton Plains National Park leopards start------->
+            <!-- <div class="container mx-auto">
+                <div>
+                    <h2 class="text-4xl font-normal text-black mt-[5%] ml-[-4%] decoration-2 border-b-2 border-black">
+                        c</h2>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div class="relative">
+                        <p class="text-sm leading-7 mt-2">
+
+                            With its rolling hills, misty landscapes and unique biodiversity, the Horton Plains
+                            National Park holds a special place in the hearts of nature enthusiasts and
+                            conservationists.
+
+                            Its iconic World’s End cliff, cloud forests and picturesque waterfalls are just a
+                            few of the awe-inspiring features that make this small 32-sq.km park a must-visit
+                            destination. Like many other natural habitats around the world, Horton Plains too
+                            faces challenges such as habitat degradation, invasive species and impacts of
+                            climate change.
+
+                            Finding a leopard (Panthera pardus kotiya) at the Horton Plains National Park was
+                            extremely difficult before 2021. The ‘process of habituation’ (being accustomed or
+                            used to something) took place after 2021 when a female leopard got habituated and
+                            birthed three cubs here and the cubs got habituated through their mother
+
+                            As of late, when compared to past years, leopards are seen more often in Horton
+                            Plains. The increasing frequency of leopard sightings may seem like a positive
+                            development, but it may also be indicative of a problem. As leopards get habituated
+                            to humans and vehicles, a dangerous situation could arise for both animals and
+                            humans. Habituated leopards may become more aggressive and territorial, posing a
+                            threat to tourists who venture too close.
+
+                            With Sri Lanka Leopard Day being celebrated on August 1 (Tuesday), it is crucial to
+                            address this issue to minimize a human leopard conflict to safeguard this iconic
+                            creature.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/Web-Dev-Assessment/images/leo10.jpg" class="rounded-lg" alt="Placeholder">
+                    </div>
+
+                    <div>
+                        <img src="/Web-Dev-Assessment/images/leo11.webp" class="rounded-lg mt-[15%]" alt="Placeholder">
+                    </div>
+                    <p class="text-sm leading-7 mt-[15%]">
+                        Conservation efforts in Horton Plains focus on preserving the delicate montane
+                        ecosystem, recognizing its importance for the well-being of leopards and other wildlife.
+                        Research and monitoring activities are likely conducted to assess the leopard
+                        population, study their behavior, and understand the impact of human activities on their
+                        habitat. These efforts aim to strike a balance between conservation and sustainable use
+                        of the natural resources in the park.
+                        One of the challenges faced by leopards in Horton Plains is the potential for
+                        human-wildlife conflict. As human activities and settlements encroach upon wildlife
+                        habitats, instances of conflict may arise. Additionally, managing tourism to minimize
+                        disturbance to wildlife is crucial. Striking a balance between allowing visitors to
+                        appreciate the natural beauty of the park and protecting the resident wildlife is
+                        essential for the long-term conservation of the ecosystem.
+
+                        For the most up-to-date and specific information regarding the leopard population in
+                        Horton Plains National Park, including ongoing research and conservation initiatives, it
+                        is advisable to consult local wildlife authorities, conservation organizations, and
+                        recent scientific publications related to Sri Lankan leopards.
+                    </p>
+                </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.leopard.block_five.title"
+                    class="text-4xl font-normal text-black mt-[5%] ml-[-4%] decoration-2 border-b-2 border-black"></h2>
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+
+                    <div class="relative">
+                        <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_five.body1"></p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_five.image1)"
+                            class="rounded-lg float-right mt-[15%]" alt="Placeholder">
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_five.image2)"
+                            class="rounded-lg mt-[15%]" alt="Placeholder">
+                    </div>
+
+                    <p class="text-sm leading-7 mt-[15%]" x-text="$store.leopard.block_five.body2"></p>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.leopard.toggleEditor(4)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 4">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(4)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_five.title">
+                                </div>
+
+                                <div>
+                                    <label for="body1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 1</label>
+                                    <textarea id="body1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_five.body1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 2</label>
+                                    <textarea id="body2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_five.body2"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_five.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_five.image2">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
 
-    </div>
+            <!-------Horton Plains National Park leopards end------->
 
 
+            <!-------Threats to Sri Lankan Leopards start------->
 
-    <!-------wilpattu National Park leopards end------->
-
-
-    <!-------Horton Plains National Park leopards start------->
-    <div class="container mx-auto">
-        <div>
-            <h2 class="text-4xl font-normal text-black mt-[5%] ml-[-4%] decoration-2 border-b-2 border-black">
-                Horton Plains National Park</h2>
-        </div>
-        <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
-            <div class="relative">
-                <p class="text-sm leading-7 mt-2">
-
-                    With its rolling hills, misty landscapes and unique biodiversity, the Horton Plains
-                    National Park holds a special place in the hearts of nature enthusiasts and
-                    conservationists.
-
-                    Its iconic World’s End cliff, cloud forests and picturesque waterfalls are just a
-                    few of the awe-inspiring features that make this small 32-sq.km park a must-visit
-                    destination. Like many other natural habitats around the world, Horton Plains too
-                    faces challenges such as habitat degradation, invasive species and impacts of
-                    climate change.
-
-                    Finding a leopard (Panthera pardus kotiya) at the Horton Plains National Park was
-                    extremely difficult before 2021. The ‘process of habituation’ (being accustomed or
-                    used to something) took place after 2021 when a female leopard got habituated and
-                    birthed three cubs here and the cubs got habituated through their mother
-
-                    As of late, when compared to past years, leopards are seen more often in Horton
-                    Plains. The increasing frequency of leopard sightings may seem like a positive
-                    development, but it may also be indicative of a problem. As leopards get habituated
-                    to humans and vehicles, a dangerous situation could arise for both animals and
-                    humans. Habituated leopards may become more aggressive and territorial, posing a
-                    threat to tourists who venture too close.
-
-                    With Sri Lanka Leopard Day being celebrated on August 1 (Tuesday), it is crucial to
-                    address this issue to minimize a human leopard conflict to safeguard this iconic
-                    creature.
-                </p>
+            <!-- <div class="container">
+                <h2 class="text-5xl font-semibold mt-10 ml-[30%] mt-[5%] text-teal-700">Threats to Sri Lankan
+                    Leopards</h2>
             </div>
+
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-8 mt-[10%]">
+                    <div class="relative">
+                        <h4 class="text-m text-black italic">Panthera pardus kotiya</h4>
+                        <h2 class="text-2xl font-bold text-black mt-2">
+                            1. Habitat Loss
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+
+                            The Sri Lankan leopard, Panthera pardus kotiya, confronts a significant threat from
+                            habitat loss, primarily induced by escalating
+                            human activities. Extensive deforestation for timber, agricultural expansion, and
+                            rapid urbanization have collectively led to the
+                            reduction and fragmentation of the leopard's natural habitats. This jeopardizes the
+                            species by limiting their territorial space,
+                            disrupting ecological balance, and increasing conflicts with humans as they encroach
+                            into settlements in search of food.
+                            The consequences are dire, resulting in a diminished prey base, restricted breeding
+                            opportunities, and an overall decline
+                            in the Sri Lankan leopard population. Conservation efforts, including the
+                            establishment of protected areas, habitat restoration projects,
+                            and community engagement initiatives,
+                            are crucial to mitigate the impact of habitat loss and ensure the long-term survival
+                            of this unique and endangered species.
+                    </div>
+                    <div>
+                        <img src="/Web-Dev-Assessment/images/leo9.jpg" alt="Placeholder">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-6 my-8 mt-[10%]">
+                    <div class="relative">
+                        <h4 class="text-m text-black italic">Panthera pardus kotiya</h4>
+                        <h2 class="text-2xl font-bold text-black mt-2">
+                            2. Illegal Wildlife Trade
+                        </h2>
+                        <p class="text-sm leading-7 mt-2">
+                            The Sri Lankan Leopard, scientifically known as Panthera pardus kotiya, graces the
+                            island's landscapes with its captivating presence.
+                            Illegal wildlife trade poses a grave threat to the Sri Lankan leopard (Panthera
+                            pardus kotiya), as its coveted body parts and skins are sought
+                            after in black markets. The consequences are severe, leading to a decline in the
+                            leopard population and disrupting the delicate balance of the ecosystem. This
+                            illicit activity not only
+                            fuels the loss of biodiversity but also has socio-economic repercussions. Efforts to
+                            combat illegal wildlife trade involve stringent anti-poaching measures,
+                            collaboration with law enforcement agencies, and public awareness campaigns to
+                            educate communities about the importance of preserving Sri Lanka's rich wildlife.
+                            Conservation institutions, such as [insert relevant organization],
+                            play a vital role in implementing these strategies and safeguarding the Sri Lankan
+                            leopard from the perils of the illegal wildlife trade.
+                    </div>
+                    <div>
+                        <img src="/Web-Dev-Assessment/images/leo7.jpg" alt="Placeholder">
+                    </div>
+                </div>
+            </div>
+
             <div>
-                <img src="/Web-Dev-Assessment/images/leo10.jpg" class="rounded-lg" alt="Placeholder">
-            </div>
-
-            <div>
-                <img src="/Web-Dev-Assessment/images/leo11.webp" class="rounded-lg mt-[15%]" alt="Placeholder">
-            </div>
-            <p class="text-sm leading-7 mt-[15%]">
-                Conservation efforts in Horton Plains focus on preserving the delicate montane
-                ecosystem, recognizing its importance for the well-being of leopards and other wildlife.
-                Research and monitoring activities are likely conducted to assess the leopard
-                population, study their behavior, and understand the impact of human activities on their
-                habitat. These efforts aim to strike a balance between conservation and sustainable use
-                of the natural resources in the park.
-                One of the challenges faced by leopards in Horton Plains is the potential for
-                human-wildlife conflict. As human activities and settlements encroach upon wildlife
-                habitats, instances of conflict may arise. Additionally, managing tourism to minimize
-                disturbance to wildlife is crucial. Striking a balance between allowing visitors to
-                appreciate the natural beauty of the park and protecting the resident wildlife is
-                essential for the long-term conservation of the ecosystem.
-
-                For the most up-to-date and specific information regarding the leopard population in
-                Horton Plains National Park, including ongoing research and conservation initiatives, it
-                is advisable to consult local wildlife authorities, conservation organizations, and
-                recent scientific publications related to Sri Lankan leopards.
-            </p>
-        </div>
-    </div>
-
-    <!-------Horton Plains National Park leopards start------->
-
-
-    <!-------Threats to Sri Lankan Leopards start------->
-
-    <div class="container">
-        <h2 class="text-5xl font-semibold mt-10 ml-[30%] mt-[5%] text-teal-700">Threats to Sri Lankan
-            Leopards</h2>
-    </div>
-
-    <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-6 my-8 mt-[10%]">
-            <div class="relative">
-                <h4 class="text-m text-black italic">Panthera pardus kotiya</h4>
-                <h2 class="text-2xl font-bold text-black mt-2">
-                    1. Habitat Loss
-                </h2>
-                <p class="text-sm leading-7 mt-2">
-
-                    The Sri Lankan leopard, Panthera pardus kotiya, confronts a significant threat from
-                    habitat loss, primarily induced by escalating
-                    human activities. Extensive deforestation for timber, agricultural expansion, and
-                    rapid urbanization have collectively led to the
-                    reduction and fragmentation of the leopard's natural habitats. This jeopardizes the
-                    species by limiting their territorial space,
-                    disrupting ecological balance, and increasing conflicts with humans as they encroach
-                    into settlements in search of food.
-                    The consequences are dire, resulting in a diminished prey base, restricted breeding
-                    opportunities, and an overall decline
-                    in the Sri Lankan leopard population. Conservation efforts, including the
-                    establishment of protected areas, habitat restoration projects,
-                    and community engagement initiatives,
-                    are crucial to mitigate the impact of habitat loss and ensure the long-term survival
-                    of this unique and endangered species.
-            </div>
-            <div>
-                <img src="/Web-Dev-Assessment/images/leo9.jpg" alt="Placeholder">
-            </div>
-        </div>
-    </div>
-
-    <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-6 my-8 mt-[10%]">
-            <div class="relative">
-                <h4 class="text-m text-black italic">Panthera pardus kotiya</h4>
-                <h2 class="text-2xl font-bold text-black mt-2">
-                    2. Illegal Wildlife Trade
-                </h2>
-                <p class="text-sm leading-7 mt-2">
-                    The Sri Lankan Leopard, scientifically known as Panthera pardus kotiya, graces the
-                    island's landscapes with its captivating presence.
-                    Illegal wildlife trade poses a grave threat to the Sri Lankan leopard (Panthera
-                    pardus kotiya), as its coveted body parts and skins are sought
-                    after in black markets. The consequences are severe, leading to a decline in the
-                    leopard population and disrupting the delicate balance of the ecosystem. This
-                    illicit activity not only
-                    fuels the loss of biodiversity but also has socio-economic repercussions. Efforts to
-                    combat illegal wildlife trade involve stringent anti-poaching measures,
-                    collaboration with law enforcement agencies, and public awareness campaigns to
-                    educate communities about the importance of preserving Sri Lanka's rich wildlife.
-                    Conservation institutions, such as [insert relevant organization],
-                    play a vital role in implementing these strategies and safeguarding the Sri Lankan
-                    leopard from the perils of the illegal wildlife trade.
-            </div>
-            <div>
-                <img src="/Web-Dev-Assessment/images/leo7.jpg" alt="Placeholder">
-            </div>
-        </div>
-    </div>
-
-    <!-------Threats to Sri Lankan Leopards end------->
-
-    <div>
-        <a href="https://SriLankaWildlifeConservationSociety/?_rdc=1&_rdr"
-            class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                <a href="https://SriLankaWildlifeConservationSociety/?_rdc=1&_rdr"
+                    class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
              px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Conservation Institution</a>
-    </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <h2 x-text="$store.leopard.block_six.title1"
+                    class="text-5xl font-semibold mt-10 ml-[25%] mt-[5%] text-teal-700"></h2>
+                <div class="grid lg:grid-cols-2 gap-6 my-8 mt-[10%]">
 
+                    <div class="relative">
+                        <h4 class="text-m text-black italic" x-text="$store.leopard.block_six.sub_title1"></h4>
+                        <h2 x-text="$store.leopard.block_six.title2" class="text-2xl font-bold text-black mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_six.body1"></p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_six.image1)" class="rounded-lg"
+                            alt="Placeholder">
+                    </div>
 
+                </div>
+                <div class="grid lg:grid-cols-2 gap-6 my-8 mt-[10%]">
 
+                    <div class="relative">
 
+                        <h4 class="text-m text-black italic" x-text="$store.leopard.block_six.sub_title2"></h4>
+                        <h2 x-text="$store.leopard.block_six.title3" class="text-2xl font-bold text-black mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_six.body2"></p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_six.image2)" class="rounded-lg"
+                            alt="Placeholder">
+                    </div>
 
-    <!------- footer ------->
+                </div>
+                <div>
+                    <button x-bind:href="$store.leopard.block_six.link"
+                        class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                        px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Conservation Institution</button>
+                </div>
 
-    <footer class="text-white ">
-        <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
-            <div class="col-span-1">
-                <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
-                <p class="text-s ml-[5%] pt-[2%]">
-                    The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
-                </p>
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.leopard.toggleEditor(6)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg mb-4">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 6">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(6)">
+
+                                <div>
+                                    <label for="title1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 1</label>
+                                    <input type="text" id="title1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.title1">
+                                </div>
+
+                                <div>
+                                    <label for="title2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 2</label>
+                                    <input type="text" id="title2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.title2">
+                                </div>
+                                <div>
+                                    <label for="title3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 3</label>
+                                    <input type="text" id="title3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.title3">
+                                </div>
+
+                                <div>
+                                    <label for="sub_title1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 1</label>
+                                    <input type="text" id="sub_title1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.sub_title1">
+                                </div>
+                                <div>
+                                    <label for="sub_title2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 2</label>
+                                    <input type="text" id="sub_title2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.sub_title2">
+                                </div>
+
+                                <div>
+                                    <label for="body1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 1</label>
+                                    <textarea id="body1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.body1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 2</label>
+                                    <textarea id="body2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.body2"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.image1">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.image2">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.leopard.block_six.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
-            <div>
-                <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
-                <p class="text-s pt-[5%] ml-[40%] ">
-                <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
-                    <li>
-                        Sri Lankan Elephant
-                    </li>
-                    <li>
-                        Purple-faced Langur
-                    </li>
-                    <li>
-                        Sri Lankan Leopard,Fishing Cat
-                    </li>
-                    <li>
-                        Fishing Cat
-                    </li>
-                </ul>
-                </p>
-            </div>
-            <div class="col-span-1">
-                <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
-                <p class="text-s ml-[75%] pt-[2%]">
-                <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
-                    <li>
-                        Sri Lankan Wildlife,<br>
-                        11B,Dewala Rd,<br>
-                        Colombo,Sri Lanka.
-                    </li>
-                    <li>
-                        Email:Wildlife@sl.lk
-                    </li>
-                    <li>
-                        Phone:+94 772517094<br>
-                        Fax:+94 772517094
-                    </li>
-                </ul>
-                </p>
-            </div>
+            <!-------Threats to Sri Lankan Leopards end------->
+        </main>
 
 
-            <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
-            
-                <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook"
-                        class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                <a href="https://www.instagram.com/wildlifepages/?hl=en"><ion-icon name="logo-instagram"
-                        class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                <a href="#https://twitter.com/wildnetorg?lang=en"><ion-icon name="logo-twitter"
-                        class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google"
-                        class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-                <a href="https://lk.linkedin.com/company/wildlife-and-nature-protection-society-of-sri-lanka"><ion-icon name="logo-linkedin"
-                        class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
-            
-            </div>
-            <div class="teal-950 text-white">
-                <div class="container text-xs mt-[2%]">
-                    <div class="flex justify-between">
-                        <p class="text-center py-2 ml-[2%]">
-                            All Copyrights Reserved © Department of Wildlife Conservation
-                        </p>
-                        <p class="text-center py-2">
-                            Developed by <a href="">SM Sandaruwan</a>
-                        </p>
+
+
+
+        <!------- footer ------->
+
+        <footer class="text-white ">
+            <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
+                <div class="col-span-1">
+                    <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
+                    <p class="text-s ml-[5%] pt-[2%]">
+                        The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
+                    <p class="text-s pt-[5%] ml-[40%] ">
+                    <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
+                        <li>
+                            Sri Lankan Elephant
+                        </li>
+                        <li>
+                            Purple-faced Langur
+                        </li>
+                        <li>
+                            Sri Lankan Leopard,Fishing Cat
+                        </li>
+                        <li>
+                            Fishing Cat
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-span-1">
+                    <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
+                    <p class="text-s ml-[75%] pt-[2%]">
+                    <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                        <li>
+                            Sri Lankan Wildlife,<br>
+                            11B,Dewala Rd,<br>
+                            Colombo,Sri Lanka.
+                        </li>
+                        <li>
+                            Email:Wildlife@sl.lk
+                        </li>
+                        <li>
+                            Phone:+94 772517094<br>
+                            Fax:+94 772517094
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+
+
+                <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
+
+                    <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://www.instagram.com/wildlifepages/?hl=en"><ion-icon name="logo-instagram"
+                            class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="#https://twitter.com/wildnetorg?lang=en"><ion-icon name="logo-twitter"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://lk.linkedin.com/company/wildlife-and-nature-protection-society-of-sri-lanka"><ion-icon
+                            name="logo-linkedin"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+
+                </div>
+                <div class="teal-950 text-white">
+                    <div class="container text-xs mt-[2%]">
+                        <div class="flex justify-between">
+                            <p class="text-center py-2 ml-[2%]">
+                                All Copyrights Reserved © Department of Wildlife Conservation
+                            </p>
+                            <p class="text-center py-2">
+                                Developed by <a href="">SM Sandaruwan</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
 
 
-    </footer>
+        </footer>
 
 
 
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script type="text/javascript" src="js/store/leopard.js"></script>
 
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('_home', () => ({
-                init() {
-                    var swiper = new Swiper(".swiper-container", {
-                        loop: true,
-                        autoplay: {
-                            delay: 5000,
-                            disableOnInteraction: false,
-                        },
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('_home', () => ({
+                    init() {
+                        var swiper = new Swiper(".swiper-container", {
+                            loop: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                            },
 
-                    });
-                }
-            }))
-        })
-    </script>
+                        });
+                    }
+                }))
+            })
+        </script>
+    </div>
+</body>
 
 </html>

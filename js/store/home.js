@@ -1,20 +1,20 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('home', {
         is_editor_visible: false,
-        // slideshow: [
-        //     {
-        //         image: '/Web-Dev-Assessment/images/SS1.jpg',
-        //         title: 'Slide 1',
-        //     },
-        //     {
-        //         image: '/Web-Dev-Assessment/images/SS2.jpg',
-        //         title: 'Slide 2',
-        //     },
-        //     {
-        //         image: '/Web-Dev-Assessment/images/SS3.jpg',
-        //         title: 'Slide 3',
-        //     },
-        // ],
+        block_six: [
+            {
+                image1: '/Web-Dev-Assessment/images/SS1.jpg',
+                title1: 'Welcome to Sri Lankan Wildlife',
+            },
+            {
+                image2: '/Web-Dev-Assessment/images/SS2.jpg',
+                title2: 'Welcome to Sri Lankan Wildlife',
+            },
+            {
+                image3: '/Web-Dev-Assessment/images/SS3.jpg',
+                title3: 'Welcome to Sri Lankan Wildlife',
+            },
+        ],
         block_one: {
             title: 'INTRODUCTION',
             body: "Welcome to Sri Lanka's rich wildlife tapestry. From rainforests to coastal wonders, "
@@ -62,6 +62,54 @@ document.addEventListener('alpine:init', () => {
                 + "where nature thrives in harmony with the park's breathtaking landscapes.",
             image: '/Web-Dev-Assessment/images/wilpattu.jpeg',
             link: '/Web-Dev-Assessment/willpattu.html',
+        },
+        block_five: {
+            title: 'Explore the Wonders',
+
+            sub_title1: '1. The Rainforests',
+            body1: " Delve into the heart of Sri Lanka's rainforests, where towering trees and"
+                + " exotic"
+                + "creatures create a mesmerizing ecosystem."
+                + "Dense canopies shelter rare species, such as the vibrant Ceylon Frogmouth,"
+                +"while"
+                + "cascading waterfalls provide a picturesque backdrop to this lush haven.",
+            body2: "Venture through winding trails and let the symphony of bird calls guide you"
+                +"to"
+                +"hidden treasures."
+                +"As you explore, encounter playful troops of macaques swinging through the"
+                +"trees"
+                +"and elusive leopards prowling in the undergrowth.", 
+            image2: '/Web-Dev-Assessment/images/wonders1.jpg',
+            link1: '/Web-Dev-Assessment/rainforest.html',
+
+            sub_title2: '2. Coastal Marvels',
+            body3:"Embrace the serene beauty of Sri Lanka's coastal regions, where sandy shores"
+                +"meet"
+                +"the azure waters of the Indian Ocean."
+                +"Witness ancient sea turtles nesting along the beaches, a heartwarming"
+                +"testament"
+                +"to the country's commitment to conservation.",
+            body4:"Dive into the vibrant coral reefs that teem with colorful fish, showcasing"
+                +"the"
+                +"underwater wonders of Sri Lanka."
+                +"Learn about the efforts to protect these fragile ecosystems and the"
+                +"importance"
+                +"of sustainable tourism in preserving the marine environment.",
+            image1: '/Web-Dev-Assessment/images/wonders2.jpg',
+            link2: '/Web-Dev-Assessment/Coastal Marvels.html',
+
+            sub_title3: '3. Highland Sanctuary',
+            body5:"Ascend to the misty highlands, where emerald tea plantations and rolling"
+                +"hills"
+                +"create a picturesque setting for unique wildlife encounters."
+                +"Marvel at the graceful dance of Sri Lanka's national bird, the majestic Sri"
+                +"Lankan Junglefowl, against the backdrop of scenic tea estates.",
+            body6:"Encounter herds of majestic elephants peacefully grazing in expansive"
+                +"grasslands,"
+                +"and gain insight into the delicate balance between wildlife conservation and"
+                +"human activities in this enchanting region.",
+            image3: '/Web-Dev-Assessment/images/wonders3.jpg',
+            link3: '/Web-Dev-Assessment/Highland Sanctuary.html',
         },
 
         toggleEditor(block_id){

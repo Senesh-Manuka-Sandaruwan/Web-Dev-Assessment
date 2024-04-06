@@ -81,7 +81,7 @@
 
             <main>
                 <!------- our wildlife start ------->
-                <div class="image-only image-wrapper relative group">
+                <!-- <div class="image-only image-wrapper relative group">
                     <img src="/Web-Dev-Assessment/images/animal.jpeg" alt="Placeholder" class="w-full h-auto">
 
                     <div id="main"
@@ -90,6 +90,58 @@
                             <span>Indigenous Animals of Sri Lanka</span>
                         </div>
                     </div>
+                </div> -->
+                <div class="container mx-auto relative">
+                    <div class="container mx-auto">
+                        <div class="image-only image-wrapper relative group">
+                            <div>
+                                <img x-bind:src="$store.common.imageSrc($store.wildlife.block_one.image)" class="w-full h-auto"
+                                    alt="Placeholder">
+                            </div>
+                            <div class="relative">
+                                <h2 x-text="$store.wildlife.block_one.title"
+                                    class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+    
+                    <template x-if="$store.auth.user">
+                        <div>
+                            <div class="flex justify-end">
+                                <button x-on:click="$store.wildlife.toggleEditor(1)"
+                                    class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                            </div>
+    
+                            <div class="max-w-xl mx-auto" x-show="$store.wildlife.is_editor_visible == 1">
+                                <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wildlife.saveBlock(1)">
+    
+                                    <div>
+                                        <label for="title"
+                                            class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                        <input type="text" id="title"
+                                            class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.wildlife.block_one.title">
+                                    </div>
+    
+                                    <div>
+                                        <label for="image"
+                                            class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                        <input type="text" id="image"
+                                            class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                            x-model="$store.wildlife.block_one.image">
+                                    </div>
+    
+                                    <div>
+                                        <button type="submit"
+                                            class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </template>
                 </div>
 
                 <!-------our wildlife end ------->
@@ -97,7 +149,7 @@
 
             <!-------introduction start ------->
 
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <h2 class="text-5xl font-semibold text-teal-700 mt-10">
                     INTRODUCTION
                 </h2>
@@ -108,12 +160,58 @@
                     for a wide array of unique wildlife.
                     Here's a brief overview of some notable indigenous animals in Sri Lanka.
                 </p>
+            </div> -->
+            <div class="container mx-auto relative">
+
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.wildlife.block_two.title" class="text-5xl font-semibold text-teal-700 mt-10">
+                        </h2>
+                        <p class="text-s mt-10 pt-5 leading-8 font-thin" x-text="$store.wildlife.block_two.body">
+                        </p>
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wildlife.toggleEditor(2)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wildlife.is_editor_visible == 2">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wildlife.saveBlock(2)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_two.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_two.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
             </div>
             <!-------introduction start ------->
 
 
             <!------- Asian Elephant block start ------->
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
                     <div>
                         <img src="/Web-Dev-Assessment/images/animal2.jpg" class="rounded-full" alt="Placeholder">
@@ -149,12 +247,78 @@
                         </p>
                     </div>
                 </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wildlife.block_three.image)"  class="rounded-full" alt="Placeholder">
+                    </div>
+
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic" x-text="$store.wildlife.block_three.sub_title"></h4>
+                        <h2 x-text="$store.wildlife.block_three.title" class="text-2xl font-bold text-teal-500 mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.wildlife.block_three.body"></p>
+                    </div>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wildlife.toggleEditor(3)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wildlife.is_editor_visible == 3">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wildlife.saveBlock(3)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_three.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_three.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_three.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_three.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
             <!------- Asian Elephant block start end ------->
 
 
             <!-- Sloth Bear Block start -->
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-8">
                     <div class="relative">
                         <h4 class="text-m text-teal-950 font-thin italic">Melursus ursinus inornatus</h4>
@@ -183,11 +347,77 @@
                         <img src="/Web-Dev-Assessment/images/animal3.jpg" class="rounded-full" alt="Placeholder">
                     </div>
                 </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-8">
+
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic" x-text="$store.wildlife.block_four.sub_title"></h4>
+                        <h2 x-text="$store.wildlife.block_four.title" class="text-2xl font-bold text-teal-500 mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.wildlife.block_four.body"></p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wildlife.block_four.image)"  class="rounded-full" alt="Placeholder">
+                    </div>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wildlife.toggleEditor(4)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wildlife.is_editor_visible == 4">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wildlife.saveBlock(4)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_four.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_four.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_four.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_four.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
             <!-- Sloth Bear Block end -->
             
             <!------- Spotted Deer block start ------->
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
                     <div>
                         <img src="/Web-Dev-Assessment/images/animal4.jpg" class="rounded-full" alt="Placeholder">
@@ -214,11 +444,77 @@
                         </p>
                     </div>
                 </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wildlife.block_five.image)"  class="rounded-full" alt="Placeholder">
+                    </div>
+
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic" x-text="$store.wildlife.block_five.sub_title"></h4>
+                        <h2 x-text="$store.wildlife.block_five.title" class="text-2xl font-bold text-teal-500 mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.wildlife.block_five.body"></p>
+                    </div>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wildlife.toggleEditor(5)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wildlife.is_editor_visible == 5">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wildlife.saveBlock(5)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_five.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_five.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_five.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_five.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
             <!------- Spotted Deer block start end ------->
             
             <!-- Purple-faced Langur Block start -->
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-8">
                     <div class="relative">
                         <h4 class="text-m text-teal-950 font-thin italic">Semnopithecus vetulus</h4>
@@ -245,11 +541,77 @@
                         <img src="/Web-Dev-Assessment/images/animal5.jpg" class="rounded-full" alt="Placeholder">
                     </div>
                 </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-8">
+
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic" x-text="$store.wildlife.block_six.sub_title"></h4>
+                        <h2 x-text="$store.wildlife.block_six.title" class="text-2xl font-bold text-teal-500 mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.wildlife.block_six.body"></p>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wildlife.block_six.image)"  class="rounded-full" alt="Placeholder">
+                    </div>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wildlife.toggleEditor(6)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wildlife.is_editor_visible == 6">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wildlife.saveBlock(6)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_six.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_six.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_six.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_six.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
             <!-- Purple-faced Langur Block end -->
             
             <!------- The Saltwater Crocodile  block start ------->
-            <div class="container mx-auto">
+            <!-- <div class="container mx-auto">
                 <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
                     <div>
                         <img src="/Web-Dev-Assessment/images/animal6.jpg" class="rounded-full" alt="Placeholder">
@@ -279,6 +641,72 @@
                         </p>
                     </div>
                 </div>
+            </div> -->
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.wildlife.block_seven.image)"  class="rounded-full" alt="Placeholder">
+                    </div>
+
+                    <div class="relative">
+                        <h4 class="text-m text-teal-950 font-thin italic" x-text="$store.wildlife.block_seven.sub_title"></h4>
+                        <h2 x-text="$store.wildlife.block_seven.title" class="text-2xl font-bold text-teal-500 mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.wildlife.block_seven.body"></p>
+                    </div>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.wildlife.toggleEditor(7)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg mb-4">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.wildlife.is_editor_visible == 7">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.wildlife.saveBlock(7)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_seven.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_seven.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_seven.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.wildlife.block_seven.image">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
             </div>
             <!------- The Saltwater Crocodile  block start end ------->
 
@@ -366,6 +794,7 @@
 
             <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
             <script type="text/javascript" src="/js/app.js"></script>
+            <script type="text/javascript" src="js/store/wildlife.js"></script>
 
             <script>
                 document.addEventListener('alpine:init', () => {
