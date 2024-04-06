@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <div id="_home" x-data="_home">
+    <div id="_wildlife_dept" x-data="_wildlife_dept">
 
         <!------- header start ------->
 
@@ -1334,39 +1334,14 @@
 
 
             <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-            <script type="text/javascript" src="/js/app.js"></script>
-            <script type="text/javascript" src="js/store/wildlife_dept.js"></script>
+            <script type="text/javascript" src="/Web-Dev-Assessment/js/app.js"></script>
+            <script type="text/javascript" src="/Web-Dev-Assessment/js/store/wildlife_dept.js"></script>
 
             <script>
                 document.addEventListener('alpine:init', () => {
-                    Alpine.data('_home', () => ({
-                        init() {
-                            var swiper = new Swiper(".swiper-container", {
-                                loop: true,
-                                autoplay: {
-                                    delay: 5000,
-                                    disableOnInteraction: false,
-                                },
-
-                            });
-                        }
+                    Alpine.data('_wildlife_dept', () => ({
                     }))
                 })
-            </script>
-            <script>
-                function showContent(id) {
-                    // Hide all content elements
-                    var contents = document.querySelectorAll('.content');
-                    contents.forEach(function (content) {
-                        content.classList.add('hidden');
-                    });
-
-                    // Show the selected content
-                    var selectedContent = document.getElementById(id);
-                    if (selectedContent) {
-                        selectedContent.classList.remove('hidden');
-                    }
-                }
             </script>
     </div>
 </body>

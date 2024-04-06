@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <div id="_home" x-data="_home">
+    <div id="_leopard" x-data="_leopard">
 
         <!------- header start ------->
 
@@ -1031,22 +1031,12 @@
 
 
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-        <script type="text/javascript" src="/js/app.js"></script>
-        <script type="text/javascript" src="js/store/leopard.js"></script>
+        <script type="text/javascript" src="/Web-Dev-Assessment/js/app.js"></script>
+        <script type="text/javascript" src="/Web-Dev-Assessment/js/store/leopard.js"></script>
 
         <script>
             document.addEventListener('alpine:init', () => {
-                Alpine.data('_home', () => ({
-                    init() {
-                        var swiper = new Swiper(".swiper-container", {
-                            loop: true,
-                            autoplay: {
-                                delay: 5000,
-                                disableOnInteraction: false,
-                            },
-
-                        });
-                    }
+                Alpine.data('_leopard', () => ({
                 }))
             })
         </script>
