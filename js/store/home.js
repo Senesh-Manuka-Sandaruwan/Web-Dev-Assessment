@@ -31,7 +31,7 @@ document.addEventListener('alpine:init', () => {
                 + "navigating the diverse habitats of dense jungles and open plains. Thriving in protected areas such as Yala and Wilpattu National Parks, "
                 + "the leopard has become an icon of wildlife conservation in Sri Lanka. Its agile movements and remarkable adaptability have earned it a reputation as a skilled "
                 + "hunter, primarily preying on deer and other small mammals.",
-            image: 'https://Web-Dev-Assessment/images/leopard.jpg',
+            image: '/Web-Dev-Assessment/images/leopard.jpg',
             link: '/Web-Dev-Assessment/leopard.html',
         },
           block_three: {
@@ -61,7 +61,7 @@ document.addEventListener('alpine:init', () => {
                 + "wilderness. A safari through Wilpattu unfolds a captivating narrative of conservation, "
                 + "where nature thrives in harmony with the park's breathtaking landscapes.",
             image: '/Web-Dev-Assessment/images/wilpattu.jpeg',
-            link: '/Web-Dev-Assessment/willpattu.html',
+            link: '/Web-Dev-Assessment/wilpattu.html',
         },
         block_five: {
             title: 'Explore the Wonders',
