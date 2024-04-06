@@ -3,15 +3,15 @@ document.addEventListener('alpine:init', () => {
         is_editor_visible: false,
         block_six: [
             {
-                image1: 'http://127.0.0.1:5501/Web-Dev-Assessment/images/SS1.jpg',
+                image1: 'https://Web-Dev-Assessment/images/SS1.jpg',
                 title1: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image2: 'http://127.0.0.1:5501/Web-Dev-Assessment/images/SS2.jpg',
+                image2: 'https://home.com/Web-Dev-Assessment/images/SS2.jpg',
                 title2: 'Welcome to Sri Lankan Wildlife',
             },
             {
-                image3: 'http://127.0.0.1:5501/Web-Dev-Assessment/images/SS3.jpg',
+                image3: 'https://HOME.com/Web-Dev-Assessment/images/SS3.jpg',
                 title3: 'Welcome to Sri Lankan Wildlife',
             },
         ],
