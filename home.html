@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/Web-Dev-Assessment/css/styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal': {
+                            '50': '#f0fdfa',
+                            '100': '#ccfbf1',
+                            '200': '#99f6e4',
+                            '300': '#5eead4',
+                            '400': '#2dd4bf',
+                            '500': '#14b8a6',
+                            '600': '#0d9488',
+                            '700': '#0f766e',
+                            '800': '#115e59',
+                            '900': '#134e4a',
+                            '950': '#042f2e',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="_app" x-data="_home">
+
+        <!------- header ------->
+
+        <header class="bg-teal-950 text-white fixed top-0 w-full z-10">
+            <div class="container mx-auto flex justify-between">
+                <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation"
+                    class="w-[100px] h-20 bg-teal-950">
+                <nav class="grid content-center ml-[30%]">
+                    <ul class="flex space-x-7 text-xl">
+                        <li>
+                            <a href="/Web-Dev-Assessment/home.html"
+                                class="hover:text-teal-500 decoration-2 border-b-2 border-white">Home</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/about.html">About</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife_dept.html">Wildlife
+                                Dept</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/leopard.html">Leopard</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife.html">Our Wildlife</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/yala.html">Yala</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wilpattu.html">Wilpattu</a>
+                        </li>
+                        <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/login.html">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+
+            <!-- Slideshow Start -->
+            <div class="container mx-auto relative">
+                <div class="container mx-auto overflow-hidden">
+                    <div class="swiper-container h-screen">
+                        <div class="swiper-wrappe">
+                            <div class="swiper-slide relative">
+                                <div class="relative">
+                                    <h2 x-text="$store.home.block_six.title1" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]"></h2>
+                                </div>
+                                <div>
+                                    <img x-bind:src="$store.common.imageSrc($store.home.block_six.image1)" class="absolute inset-0 w-auto h-auto" alt="Placeholder">
+                                </div>
+                                <div class="relative">
+                                    <h2 x-text="$store.home.block_six.title2" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]"></h2>
+                                </div>
+                                <div>
+                                    <img x-bind:src="$store.common.imageSrc($store.home.block_six.image2)" class="absolute inset-0 w-auto h-auto" alt="Placeholder">
+                                </div>
+                                <div class="relative">
+                                    <h2 x-text="$store.home.block_six.title3" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]"></h2>
+                                </div>
+                                <div>
+                                    <img x-bind:src="$store.common.imageSrc($store.home.block_six.image3)" class="absolute inset-0 w-auto h-auto" alt="Placeholder">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(6)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 6">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(6)">
+
+                                <div>
+                                    <label for="title1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 1</label>
+                                    <input type="text" id="title1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_six.title1">
+                                </div>
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_six.image1">
+                                </div>
+
+                                <div>
+                                    <label for="title2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 2</label>
+                                    <input type="text" id="title2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_six.title2">
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_six.image2">
+                                </div>
+
+                                <div>
+                                    <label for="title3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 3</label>
+                                    <input type="text" id="title3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_six.title3">
+                                </div>
+                                <div>
+                                    <label for="image3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
+                                    <input type="text" id="image3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_six.image3">
+                                </div>
+
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+            <!-- Slideshow End -->
+
+
+
+            <!------- intro start ------->
+
+
+            <div class="container mx-auto relative">
+
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <h2 x-text="$store.home.block_one.title" class="text-5xl font-semibold text-teal-700 mt-10">
+                        </h2>
+                        <p class="text-s mt-10 pt-5 leading-8 font-thin" x-text="$store.home.block_one.body"></p>
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(1)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 1">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(1)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_one.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_one.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!------- intro end ------->
+
+
+
+
+            <!-- Leopard Block start -->
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+
+                    <div class="relative">
+                        <h4 class="text-m text-black" x-text="$store.home.block_two.sub_title"></h4>
+                        <h2 x-text="$store.home.block_two.title" class="text-2xl font-bold text-black mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.home.block_two.body"></p>
+                        <a x-bind:href="$store.home.block_two.link" class="absolute inset-0"></a>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_two.image)" alt="Placeholder">
+                    </div>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(2)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 2">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(2)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.image">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_two.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+            <!-- Leopard Block end -->
+
+
+            <!-- Yala Block Start -->
+            <div class="container mx-auto relative">
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_three.image)" alt="Placeholder">
+                    </div>
+
+                    <div class="relative">
+                        <h4 class="text-m text-black" x-text="$store.home.block_three.sub_title"></h4>
+                        <h2 x-text="$store.home.block_three.title" class="text-2xl font-bold text-black mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.home.block_three.body"></p>
+                        <a x-bind:href="$store.home.block_three.link" class="absolute inset-0"></a>
+                    </div>
+
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(3)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 3">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(3)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_three.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_three.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_three.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_three.image">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_three.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+            <!-- Yala Block End -->
+
+
+            <!-- Wilpattu Block Start -->
+            <div class="container mx-auto relative">
+
+                <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
+
+                    <div class="relative">
+                        <h4 class="text-m text-black" x-text="$store.home.block_four.sub_title"></h4>
+                        <h2 x-text="$store.home.block_four.title" class="text-2xl font-bold text-black mt-2"></h2>
+                        <p class="text-sm leading-7 mt-2" x-text="$store.home.block_four.body"></p>
+                        <a x-bind:href="$store.home.block_four.link" class="absolute inset-0"></a>
+                    </div>
+                    <div>
+                        <img x-bind:src="$store.common.imageSrc($store.home.block_four.image)" alt="Placeholder">
+                    </div>
+                </div>
+
+
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(4)"
+                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 4">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(4)">
+
+                                <div>
+                                    <label for="sub_title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_four.sub_title">
+                                </div>
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_four.title">
+                                </div>
+
+                                <div>
+                                    <label for="body"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                    <textarea id="body"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_four.body"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="image"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
+                                    <input type="text" id="image"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_four.image">
+                                </div>
+
+                                <div>
+                                    <label for="link"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_four.link">
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+            <!-- Wilpattu Block End -->
+
+            <!------- Explore the Wonders start ------->
+            <div class="container mx-auto relative">
+
+                <div class="relative">
+
+                    <section class="min-h-[155vh] w-full bg-cover relative" style="background-color:white;">
+                        <div
+                            class="text-box absolute top-[25%] left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-white w-[90%] text-center">
+
+                            <h2 x-text="$store.home.block_five.title" class="text-7xl font-bold text-black"></h2>
+
+                            <div class="container ml-auto">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
+                                    <div>
+                                        <img x-bind:src="$store.common.imageSrc($store.home.block_five.image1)"
+                                            class="rounded-lg" alt="Placeholder">
+                                        <div class="text-sm text-black leading-7 p-10 m-4 text-left">
+                                            <h4 class="text-2xl font-bold mb-4"
+                                                x-text="$store.home.block_five.sub_title1"></h4>
+                                            <p x-text="$store.home.block_five.body1"></p>
+                                            <p x-text="$store.home.block_five.body2"></p>
+                                            <a x-bind:href="$store.home.block_five.link1" class="absolute inset-0"></a>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <img x-bind:src="$store.common.imageSrc($store.home.block_five.image2)"
+                                            class="rounded-lg" alt="Placeholder">
+                                        <div class="text-sm text-black leading-7 p-10 m-4 text-left">
+                                            <h4 class="text-2xl font-bold mb-4"
+                                                x-text="$store.home.block_five.sub_title2"></h4>
+                                            <p x-text="$store.home.block_five.body3"></p>
+                                            <p x-text="$store.home.block_five.body4"></p>
+                                            <a x-bind:href="$store.home.block_five.link2" class="absolute inset-0"></a>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <img x-bind:src="$store.common.imageSrc($store.home.block_five.image3)"
+                                            class="rounded-lg" alt="Placeholder">
+                                        <div class="text-sm text-black leading-7 p-10 m-4 text-left">
+                                            <h4 class="text-2xl font-bold mb-4"
+                                                x-text="$store.home.block_five.sub_title3"></h4>
+                                            <p x-text="$store.home.block_five.body5"></p>
+                                            <p x-text="$store.home.block_five.body6"></p>
+                                            <a x-bind:href="$store.home.block_five.link3" class="absolute inset-0"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+
+                <template x-if="$store.auth.user">
+                    <div>
+                        <div class="flex justify-end">
+                            <button x-on:click="$store.home.toggleEditor(5)"
+                                class="bg-teal-950 text-white px-4 py-2 mb-4 rounded-lg">Edit</button>
+                        </div>
+
+                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 5">
+                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(5)">
+
+                                <div>
+                                    <label for="title"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                    <input type="text" id="title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.title">
+                                </div>
+
+
+                                <div>
+                                    <label for="sub_title1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title1</label>
+                                    <input type="text" id="sub_title"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.sub_title1">
+                                </div>
+                                <div>
+                                    <label for="body1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 1</label>
+                                    <textarea id="body1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.body1"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 2</label>
+                                    <textarea id="body2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.body2"></textarea>
+                                </div>
+                                <div>
+                                    <label for="image1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
+                                    <input type="text" id="image1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.image1">
+                                </div>
+                                <div>
+                                    <label for="link1"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link 1</label>
+                                    <input type="text" id="link1"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.link1">
+                                </div>
+
+
+                                <div>
+                                    <label for="sub_title2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title2</label>
+                                    <input type="text" id="sub_title2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.sub_title2">
+                                </div>
+                                <div>
+                                    <label for="body3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 3</label>
+                                    <textarea id="body3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.body3"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body4"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 4</label>
+                                    <textarea id="body4"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.body4"></textarea>
+                                </div>
+                                <div>
+                                    <label for="image2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
+                                    <input type="text" id="image2"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.image2">
+                                </div>
+                                <div>
+                                    <label for="link2"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link 2</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.link2">
+                                </div>
+
+
+                                <div>
+                                    <label for="sub_title3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title3</label>
+                                    <input type="text" id="sub_title3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.sub_title3">
+                                </div>
+                                <div>
+                                    <label for="body5"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 5</label>
+                                    <textarea id="body5"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.body5"></textarea>
+                                </div>
+                                <div>
+                                    <label for="body6"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Content 6</label>
+                                    <textarea id="body6"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.body6"></textarea>
+                                </div>
+                                <div>
+                                    <label for="image3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
+                                    <input type="text" id="image3"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.image3">
+                                </div>
+                                <div>
+                                    <label for="link3"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Link 3</label>
+                                    <input type="text" id="link"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        x-model="$store.home.block_five.link3">
+                                </div>
+                                
+                                <div>
+                                    <button type="submit"
+                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <!------- Explore the Wonders end ------->
+        </main>
+
+        <!------- footer ------->
+
+        <footer class="text-white ">
+            <div class="bg-cover bg-center text-white bg-teal-950 ; height: 40vh;">
+                <div class="col-span-1">
+                    <h2 class="text-lg pt-[5%] ml-[12%]">About Us</h2>
+                    <p class="text-s ml-[5%] pt-[2%]">
+                        The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
+                    <p class="text-s pt-[5%] ml-[40%] ">
+                    <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
+                        <li>
+                            Sri Lankan Elephant
+                        </li>
+                        <li>
+                            Purple-faced Langur
+                        </li>
+                        <li>
+                            Sri Lankan Leopard,Fishing Cat
+                        </li>
+                        <li>
+                            Fishing Cat
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-span-1">
+                    <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
+                    <p class="text-s ml-[75%] pt-[2%]">
+                    <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                        <li>
+                            Sri Lankan Wildlife,<br>
+                            11B,Dewala Rd,<br>
+                            Colombo,Sri Lanka.
+                        </li>
+                        <li>
+                            Email:Wildlife@sl.lk
+                        </li>
+                        <li>
+                            Phone:+94 772517094<br>
+                            Fax:+94 772517094
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+
+
+                <div class="icons mt-4 mb-4 ml-[8%] text-3xl">
+
+                    <a href="https://www.facebook.com/wnpssl?mibextid=zLoPMf"><ion-icon name="logo-facebook"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://www.instagram.com/wildlifepages/?hl=en"><ion-icon name="logo-instagram"
+                            class="hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://twitter.com/wildnetorg?lang=en"><ion-icon name="logo-twitter"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://en.wikipedia.org/wiki/Wildlife_of_Sri_Lanka"><ion-icon name="logo-google"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+                    <a href="https://lk.linkedin.com/company/wildlife-and-nature-protection-society-of-sri-lanka"><ion-icon
+                            name="logo-linkedin"
+                            class=" hover:text-teal-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"></ion-icon></a>
+
+                </div>
+                <div class="teal-950 text-white">
+                    <div class="container text-xs mt-[2%]">
+                        <div class="flex justify-between">
+                            <p class="text-center py-2 ml-[2%]">
+                                All Copyrights Reserved © Department of Wildlife Conservation
+                            </p>
+                            <p class="text-center py-2">
+                                Developed by <a href="">SM Sandaruwan</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </footer>
+
+
+
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="/Web-Dev-Assessment/js/app.js"></script>
+        <script type="text/javascript" src="/Web-Dev-Assessment/js/store/home.js"></script>
+
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('_home', () => ({
+                    init() {
+                        var swiper = new Swiper(".swiper-container", {
+                            loop: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                            },
+
+                        });
+                    }
+                }))
+            })
+        </script>
+    </div>
+</body>
+
+</html>
