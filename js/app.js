@@ -35,7 +35,6 @@ document.addEventListener('alpine:init', () => {
         logout(){
             localStorage.removeItem('user');
             this.user = null;
-            location.href = 'index.html';
         },
         init(){
             let user = localStorage.getItem('user');

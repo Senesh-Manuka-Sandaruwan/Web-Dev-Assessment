@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAGE TITLE</title>
+    <title>Yala Page</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/Web-Dev-Assessment/css/styles.css" />
@@ -46,16 +46,17 @@
             <div class="container mx-auto flex justify-between">
                 <img src="/Web-Dev-Assessment/images/logo.jpg" alt="Department of Wildlife Conservation"
                     class="w-[100px] h-20">
-                <nav class="grid content-center ml-[30%]">
+                <nav class="grid content-center ml-[20%] mt-5">
                     <ul class="flex space-x-7 text-xl">
                         <li>
-                            <a href="/Web-Dev-Assessment/index.html" class="hover:text-teal-500">Home</a>
+                            <a href="/Web-Dev-Assessment/home.html" class="hover:text-teal-500">Home</a>
                         </li>
                         <li>
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/about.html">About</a>
                         </li>
                         <li>
-                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife_dept.html">Wildlife Dept</a>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife_dept.html">Wildlife
+                                Dept</a>
                         </li>
                         <li>
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/leopard.html">Leopard</a>
@@ -64,17 +65,26 @@
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wildlife.html">Our Wildlife</a>
                         </li>
                         <li>
-                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white" href="/Web-Dev-Assessment/yala.html">Yala</a>
+                            <a class="hover:text-teal-500 decoration-2 border-b-2 border-white"
+                                href="/Web-Dev-Assessment/yala.html">Yala</a>
                         </li>
                         <li>
                             <a class="hover:text-teal-500" href="/Web-Dev-Assessment/wilpattu.html">Wilpattu</a>
                         </li>
-                        <li>
-                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/login.html">Login</a>
-                        </li>
+                        <!-- <li>
+                            <a class="hover:text-teal-500" href="/Web-Dev-Assessment/logout.html">Login</a>
+                        </li> -->
+                        <div x-show="">
+
+                            <button class="text-white px-4 py-1 rounded-md hover:text-teal-500 inline-block font-semibold no-underline border rounded-full
+                            text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-800 transition duration-200 hover:text-white" style="display: block;"
+                                x-on:click="$store.auth.logout()">Logout</button>
+                                    
+                        </div>
                     </ul>
                 </nav>
             </div>
+            
         </header>
 
         <!------- header end ------->
@@ -87,8 +97,8 @@
                 <div class="container mx-auto">
                     <div class="image-only image-wrapper relative group">
                         <div>
-                            <img x-bind:src="$store.common.imageSrc($store.yala.block_one.image)"
-                                class="w-full h-auto" alt="Placeholder">
+                            <img x-bind:src="$store.common.imageSrc($store.yala.block_one.image)" class="w-full h-auto"
+                                alt="Placeholder">
                         </div>
                         <div class="relative">
                             <h2 x-text="$store.yala.block_one.title"
@@ -397,7 +407,7 @@
 
             </div>
 
-            
+
             <div class="container mx-auto relative">
                 <div class="container mx-auto">
                     <div class="relative">
