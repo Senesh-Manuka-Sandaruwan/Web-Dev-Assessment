@@ -17,16 +17,16 @@
 // }
 
 function saveSubscription(event) {
-    event.preventDefalt();
-    var email = document.getElementById('emailInput').value;
+    event.preventDefault();
+    var email = document.getElementById('email').value;
     if (email.trim() !== '') {
-        var subscriptions = JSON.parse(localStorage.getItem( 'subscriptions'))
+        var subscriptions = JSON.parse(localStorage.getItem('subscriptions')) || [];
         subscriptions.push(email);
         localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
-        alert('You have subscribed to the newsletter successfully!!!')
+        alert('You have subscribed to the newsletter successfully!!!');
     } else {
         alert('Please enter a valid email address...');
-    };
+    }
 }
 
 
