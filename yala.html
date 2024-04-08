@@ -554,29 +554,11 @@
                         The Department of Wildlife Conservation<br> Conserves the Biodiversity of Sri Lanka.
                     </p>
                 </div>
-                <div>
-                    <h2 class="text-lg mt-[-7%] ml-[45%] ">Discover More</h2>
-                    <p class="text-s pt-[5%] ml-[40%] ">
-                    <ul class="space-y-2 list-disc ml-[45%] mt-[-3%]">
-                        <li>
-                            Sri Lankan Elephant
-                        </li>
-                        <li>
-                            Purple-faced Langur
-                        </li>
-                        <li>
-                            Sri Lankan Leopard,Fishing Cat
-                        </li>
-                        <li>
-                            Fishing Cat
-                        </li>
-                    </ul>
-                    </p>
-                </div>
-                <div class="col-span-1">
+                
+                <div class="col-span-1 ml-[30%]">
                     <h2 class="text-lg mt-[-12%] ml-[75%]">Contact Us</h2>
                     <p class="text-s ml-[75%] pt-[2%]">
-                    <ul class="space-y-2 list-disc ml-[75%] mt-[top-0]">
+                    <ul class="space-y-4 list-disc ml-[75%] mt-[top-0]">
                         <li>
                             Sri Lankan Wildlife,<br>
                             11B,Dewala Rd,<br>
@@ -591,6 +573,18 @@
                         </li>
                     </ul>
                     </p>
+                </div>
+
+                <div class="relative bg-gray-200 mt-[5%] mt-[40%] ml-10">
+                    <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-teal-950 border border-gray-300 rounded-md shadow-sm text-center py-10 px-20">
+                        <h2 class="mb-3 text-2xl">Subscribe to Our Newsletter</h2>
+                        <form id="newsletterForm" x-data="{ email: '' }" class="items-center mt-10" @submit.prevent="saveSubscription">
+                            <input type="email" id="email" placeholder="Enter your email" required
+                                class="mb-3 px-4 py-2 border border-gray-300 rounded-md text-black">
+                            <button type="submit" 
+                                class="px-6 py-3 ml-3 bg-teal-950 text-white border border-gray-300 rounded-md hover:bg-teal-800">Subscribe</button>
+                        </form>
+                    </div>
                 </div>
 
 
@@ -630,6 +624,8 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script type="text/javascript" src="/Web-Dev-Assessment/js/app.js"></script>
         <script type="text/javascript" src="/Web-Dev-Assessment/js/store/yala.js"></script>
+        <script type="text/javascript" src="/Web-Dev-Assessment/js/store/newsletter.js"></script>
+
 
         <script>
             document.addEventListener('alpine:init', () => {
