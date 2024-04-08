@@ -82,103 +82,40 @@
         <main>
 
             <!-- Slideshow Start -->
-            <div class="container mx-auto relative">
-                <div class="container mx-auto overflow-hidden">
-                    <div class="swiper-container h-screen">
-                        <div class="swiper-wrappe">
-                            <div class="swiper-slide relative">
-                                <div class="relative">
-                                    <h2 x-text="$store.home.block_six.title1" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]"></h2>
+            <div class="container mx-auto overflow-hidden">
+                <div class="swiper-container h-screen">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide relative">
+                            <img src="/Web-Dev-Assessment/images/SS1.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
+                            <div id="main"
+                                class="absolute inset-0 flex items-center justify-left">
+                                <div id="show" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]">
+                                    <span>Welcome to Sri Lankan Wildlife</span>
                                 </div>
-                                <div>
-                                    <img x-bind:src="$store.common.imageSrc($store.home.block_six.image1)" class="absolute inset-0 w-auto h-auto" alt="Placeholder">
-                                </div>
-                                <div class="relative">
-                                    <h2 x-text="$store.home.block_six.title2" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]"></h2>
-                                </div>
-                                <div>
-                                    <img x-bind:src="$store.common.imageSrc($store.home.block_six.image2)" class="absolute inset-0 w-auto h-auto" alt="Placeholder">
-                                </div>
-                                <div class="relative">
-                                    <h2 x-text="$store.home.block_six.title3" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]"></h2>
-                                </div>
-                                <div>
-                                    <img x-bind:src="$store.common.imageSrc($store.home.block_six.image3)" class="absolute inset-0 w-auto h-auto" alt="Placeholder">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/Web-Dev-Assessment/images/SS2.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
+                            <div id="main"
+                                class="absolute inset-0 flex items-center justify-left">
+                                <div id="show" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]">
+                                    <span>Welcome to Sri Lankan Wildlife</span>
                                 </div>
                             </div>
 
                         </div>
+                        <div class="swiper-slide">
+                            <img src="/Web-Dev-Assessment/images/SS3.jpg" alt="Placeholder" class="absolute inset-0 w-auto h-auto">
+                            <div id="main"
+                                class="absolute inset-0 flex items-center justify-left">
+                                <div id="show" class="text-white text-7xl font-bold ml-10 mt-[10%] pt-[35%]">
+                                    <span>Welcome to Sri Lankan Wildlife</span>
+                                </div>
+                            </div>
 
+                        </div>
                     </div>
-
-
                 </div>
-
-                <template x-if="$store.auth.user">
-                    <div>
-                        <div class="flex justify-end">
-                            <button x-on:click="$store.home.toggleEditor(6)"
-                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
-                        </div>
-
-                        <div class="max-w-xl mx-auto" x-show="$store.home.is_editor_visible == 6">
-                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.home.saveBlock(6)">
-
-                                <div>
-                                    <label for="title1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 1</label>
-                                    <input type="text" id="title1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_six.title1">
-                                </div>
-                                <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_six.image1">
-                                </div>
-
-                                <div>
-                                    <label for="title2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 2</label>
-                                    <input type="text" id="title2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_six.title2">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_six.image2">
-                                </div>
-
-                                <div>
-                                    <label for="title3"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Title 3</label>
-                                    <input type="text" id="title3"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_six.title3">
-                                </div>
-                                <div>
-                                    <label for="image3"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
-                                    <input type="text" id="image3"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_six.image3">
-                                </div>
-
-
-                                <div>
-                                    <button type="submit"
-                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </template>
-
             </div>
             <!-- Slideshow End -->
 
@@ -249,7 +186,7 @@
                         <a x-bind:href="$store.home.block_two.link" class="absolute inset-0"></a>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.home.block_two.image)" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leopard.jpg" class="rounded-lg" alt="Placeholder">
                     </div>
                 </div>
 
@@ -288,14 +225,6 @@
                                 </div>
 
                                 <div>
-                                    <label for="image"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
-                                    <input type="text" id="image"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_two.image">
-                                </div>
-
-                                <div>
                                     <label for="link"
                                         class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
                                     <input type="text" id="link"
@@ -320,7 +249,7 @@
             <div class="container mx-auto relative">
                 <div class="grid lg:grid-cols-2 gap-6 my-[10%]">
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.home.block_three.image)" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/yala.jpg" class="rounded-lg" alt="Placeholder">
                     </div>
 
                     <div class="relative">
@@ -367,14 +296,6 @@
                                 </div>
 
                                 <div>
-                                    <label for="image"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
-                                    <input type="text" id="image"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_three.image">
-                                </div>
-
-                                <div>
                                     <label for="link"
                                         class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
                                     <input type="text" id="link"
@@ -407,7 +328,7 @@
                         <a x-bind:href="$store.home.block_four.link" class="absolute inset-0"></a>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.home.block_four.image)" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/wilpattu.jpeg" class="rounded-lg" alt="Placeholder">
                     </div>
                 </div>
 
@@ -448,14 +369,6 @@
                                 </div>
 
                                 <div>
-                                    <label for="image"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
-                                    <input type="text" id="image"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_four.image">
-                                </div>
-
-                                <div>
                                     <label for="link"
                                         class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
                                     <input type="text" id="link"
@@ -489,7 +402,7 @@
                             <div class="container ml-auto">
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
                                     <div>
-                                        <img x-bind:src="$store.common.imageSrc($store.home.block_five.image1)"
+                                        <img src="/Web-Dev-Assessment/images/wonders1.jpg" class="rounded-lg" alt="Placeholder">
                                             class="rounded-lg" alt="Placeholder">
                                         <div class="text-sm text-black leading-7 p-10 m-4 text-left">
                                             <h4 class="text-2xl font-bold mb-4"
@@ -501,7 +414,7 @@
                                     </div>
 
                                     <div>
-                                        <img x-bind:src="$store.common.imageSrc($store.home.block_five.image2)"
+                                        <img src="/Web-Dev-Assessment/images/wonders2.jpg" class="rounded-lg" alt="Placeholder">
                                             class="rounded-lg" alt="Placeholder">
                                         <div class="text-sm text-black leading-7 p-10 m-4 text-left">
                                             <h4 class="text-2xl font-bold mb-4"
@@ -513,7 +426,7 @@
                                     </div>
 
                                     <div>
-                                        <img x-bind:src="$store.common.imageSrc($store.home.block_five.image3)"
+                                        <img src="/Web-Dev-Assessment/images/wonders3.jpg" class="rounded-lg" alt="Placeholder">
                                             class="rounded-lg" alt="Placeholder">
                                         <div class="text-sm text-black leading-7 p-10 m-4 text-left">
                                             <h4 class="text-2xl font-bold mb-4"
@@ -571,12 +484,6 @@
                                         x-model="$store.home.block_five.body2"></textarea>
                                 </div>
                                 <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_five.image1">
-                                </div>
                                 <div>
                                     <label for="link1"
                                         class="block text-xs font-semibold text-gray-600 uppercase">Link 1</label>
@@ -606,13 +513,6 @@
                                     <textarea id="body4"
                                         class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                         x-model="$store.home.block_five.body4"></textarea>
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_five.image2">
                                 </div>
                                 <div>
                                     <label for="link2"
@@ -645,13 +545,6 @@
                                         x-model="$store.home.block_five.body6"></textarea>
                                 </div>
                                 <div>
-                                    <label for="image3"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
-                                    <input type="text" id="image3"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.home.block_five.image3">
-                                </div>
-                                <div>
                                     <label for="link3"
                                         class="block text-xs font-semibold text-gray-600 uppercase">Link 3</label>
                                     <input type="text" id="link"
@@ -660,7 +553,7 @@
                                 </div>
                                 
                                 <div>
-                                    <button type="submit"
+                                    <button type="submit" @click="saveToLocalStorage"
                                         class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
                                 </div>
                             </form>
