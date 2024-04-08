@@ -705,7 +705,7 @@
                 <div class="relative bg-gray-200 mt-[5%] mt-[40%] ml-10">
                     <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-teal-950 border border-gray-300 rounded-md shadow-sm text-center py-10 px-20">
                         <h2 class="mb-3 text-2xl">Subscribe to Our Newsletter</h2>
-                        <form id="newsletterForm" x-data="newsletterForm()" class="items-center mt-10" onsubmit = "saveSubscription(event)">
+                        <form id="newsletterForm" x-data="{ email: '' }" class="items-center mt-10" @submit.prevent="saveSubscription">
                             <input type="email" id="email" x-model="@email" placeholder="Enter your email" required
                                 class="mb-3 px-4 py-2 border border-gray-300 rounded-md text-black">
                             <button type="submit" 
