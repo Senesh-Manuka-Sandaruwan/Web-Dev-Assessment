@@ -1,13 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('yala', {
         is_editor_visible: false,
-        block_one: [
-            {
-                image: '/Web-Dev-Assessment/images/yalaB3.jpg',
-                title: 'YALA NATIONAL PARK',
-            },
-
-        ],
         block_two: {
             title: 'INTRODUCTION',
             body: "Yala National Park is one of the largest and most popular parks in Sri Lanka. It owes its fame to"
@@ -88,9 +81,6 @@ document.addEventListener('alpine:init', () => {
                 +" between Kataragama and Buttala can drop you off at the Galge ticket office, and you can usually pick"
                 +" up"
                 +" a jeep on-site, although just as well (and inexpensively) it can do in Kataragama.",
-
-            image1: "/Web-Dev-Assessment/images/yalaB1.jpg",
-            image2: "/Web-Dev-Assessment/images/yalaB4.jpg",
         },
 
         block_four: {
@@ -105,7 +95,6 @@ document.addEventListener('alpine:init', () => {
             +"are the two coral reefs of Great Basses and Little Basses, as well as the two lighthouses of Maha"
             +"Ravana,"
             +"and Kuda Ravana.",
-            image: "/Web-Dev-Assessment/images/yalamap.jpg",
         },
 
         block_five: {
@@ -166,7 +155,6 @@ document.addEventListener('alpine:init', () => {
                 +" town of Arugum Bay. Kumana has many wetland tracts, which attract many migrating birds between April"
                 +" and"
                 +" July. Blocks 3 and 4 are covered with dense vegetation, which can make that we won’t see animals.",
-            image: "/Web-Dev-Assessment/images/yalablock.jpg",
         },
 
         block_seven: {
@@ -179,9 +167,6 @@ document.addEventListener('alpine:init', () => {
                 +" peacocks,"
                 +" parrots, eagles, herons, birds of the trogon (genus), or pelicans.",
             body2:"Some of the more popular local trees are the tamarind and the tamanu tree",
-
-            image1:"/Web-Dev-Assessment/images/yalaplant.jpg",
-            image2:"/Web-Dev-Assessment/images/yalaanimal.jpg",
         },
 
         toggleEditor(block_id){

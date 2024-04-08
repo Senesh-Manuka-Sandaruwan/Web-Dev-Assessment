@@ -1,13 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('leopard', {
         is_editor_visible: false,
-        block_one: [
-            {
-                image: '/Web-Dev-Assessment/images/leo.jpg',
-                title: 'LEOPARDS OF SRI LANKA',
-            },
-
-        ],
 
         block_two: {
             title: 'Venues Where Sri Lankan Leopards Are Found',
@@ -103,9 +96,6 @@ document.addEventListener('alpine:init', () => {
                 +" wild,"
                 +" a jeep safari at the Yala National Park is your best bet!",
 
-            image1: "/Web-Dev-Assessment/images/leo3.webp",
-            image2: "/Web-Dev-Assessment/images/leo4.webp",
-
         },
 
         block_four: {
@@ -197,9 +187,6 @@ document.addEventListener('alpine:init', () => {
             +" that leaves the animals undisturbed in their natural habitats while satisfying"
             +" our travellers with plenty of close-ups.",
 
-            image1: "/Web-Dev-Assessment/images/leo5.webp",
-            image2: "/Web-Dev-Assessment/images/leo6.webp",
-
         },
 
         block_five: {
@@ -248,9 +235,6 @@ document.addEventListener('alpine:init', () => {
             +" is advisable to consult local wildlife authorities, conservation organizations, and"
             +" recent scientific publications related to Sri Lankan leopards.",
 
-            image1: "/Web-Dev-Assessment/images/leo10.jpg",
-            image2: "/Web-Dev-Assessment/images/leo11.webp",
-
         },
 
         block_six: {
@@ -291,9 +275,6 @@ document.addEventListener('alpine:init', () => {
             +" Conservation institutions, such as [insert relevant organization],"
             +" play a vital role in implementing these strategies and safeguarding the Sri Lankan"
             +" leopard from the perils of the illegal wildlife trade.",
-
-            image1: "/Web-Dev-Assessment/images/leo9.jpg",
-            image2: "/Web-Dev-Assessment/images/leo7.jpg",
 
             link: "https://SriLankaWildlifeConservationSociety/?_rdc=1&_rdr",
 

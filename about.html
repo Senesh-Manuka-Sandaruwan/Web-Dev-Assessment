@@ -74,7 +74,8 @@
                         </li>
                         <li>
                             <a class="inline-block font-semibold no-underline border rounded-lg py-2 ml-[5%] mb-2 
-                            px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-800 transition duration-200 hover:text-white" style="display: block;" href="/Web-Dev-Assessment/index.html">Logout</a>
+                            px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-800 transition duration-200 hover:text-white"
+                                style="display: block;" href="/Web-Dev-Assessment/index.html">Logout</a>
                         </li>
                     </ul>
                 </nav>
@@ -85,57 +86,14 @@
             <!------- header end ------->
 
             <!-------about start ------->
-            <div class="container mx-auto relative">
-                <div class="container mx-auto">
-                    <div class="image-only image-wrapper relative group">
-                        <div>
-                            <img x-bind:src="$store.common.imageSrc($store.about.block_one.image)" class="w-full h-auto"
-                                alt="Placeholder">
-                        </div>
-                        <div class="relative">
-                            <h2 x-text="$store.about.block_one.title"
-                                class="text-white text-7xl font-bold ml-10 pt-[35%]">
-                            </h2>
-                        </div>
+            <div class="image-only image-wrapper relative group">
+                <img src="/Web-Dev-Assessment/images/aboutpic.jpg" alt="Placeholder" class="w-full h-auto">
+
+                <div id="main" class="absolute inset-0 flex items-center justify-left">
+                    <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                        <span>THE SRI LANKAN WILDLIFE EXPLORATION</span>
                     </div>
                 </div>
-
-
-
-                <template x-if="$store.auth.user">
-                    <div>
-                        <div class="flex justify-end">
-                            <button x-on:click="$store.about.toggleEditor(1)"
-                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
-                        </div>
-
-                        <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 1">
-                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(1)">
-
-                                <div>
-                                    <label for="title"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
-                                    <input type="text" id="title"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_one.title">
-                                </div>
-
-                                <div>
-                                    <label for="image"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
-                                    <input type="text" id="image"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_one.image">
-                                </div>
-
-                                <div>
-                                    <button type="submit"
-                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </template>
             </div>
             <!-------about end ------->
 
@@ -145,99 +103,68 @@
                 <h2 x-text="$store.about.block_two.title"
                     class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black"></h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_two.image1)"
-                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_two.image2)"
-                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_two.image2)"
-                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
+                    <img src="/Web-Dev-Assessment/images/hp2.jpg" alt="Placeholder"
+                        class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/hp1.jpg" alt="Placeholder"
+                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/hp3.jpg" alt="Placeholder"
+                        class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                 </div>
-                <div class="relative">
-                    <p class="text-sm text-black leading-7 p-8 m-4 ml-[10%]" x-text="$store.about.block_two.body"></p>
-                </div>
-
-                <div>
-                    <button x-bind:href="$store.about.block_two.link"
-                        class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
-                            px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
-                        us to know more</button>
-                </div>
-
-                <template x-if="$store.auth.user">
-                    <div>
-                        <div class="flex justify-end">
-                            <button x-on:click="$store.about.toggleEditor(2)"
-                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
-                        </div>
-
-                        <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 2">
-                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(2)">
-
-                                <div>
-                                    <label for="title"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
-                                    <input type="text" id="title"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_two.title">
-                                </div>
-
-                                <div>
-                                    <label for="body"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
-                                    <textarea id="body"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_two.body"></textarea>
-                                </div>
-
-                                <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_two.image1">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_two.image2">
-                                </div>
-                                <div>
-                                    <label for="image3"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
-                                    <input type="text" id="image3"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_two.image3">
-                                </div>
-
-                                <div>
-                                    <label for="link"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
-                                    <input type="text" id="link"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_two.link">
-                                </div>
-
-                                <div>
-                                    <button type="submit"
-                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </template>
-
             </div>
+            <div class="relative">
+                <p class="text-sm text-black leading-7 p-8 m-4 ml-[10%]" x-text="$store.about.block_two.body"></p>
+            </div>
+
+            <div>
+                <button x-bind:href="$store.about.block_two.link"
+                    class="inline-block font-semibold no-underline border rounded-full py-2 mb-10 ml-[12%] 
+                            px-4 text-l bg-transparent relative cursor-pointer hits-btn hover:border-black hover:bg-teal-900 transition duration-200 hover:text-white">Visit
+                    us to know more</button>
+            </div>
+
+            <template x-if="$store.auth.user">
+                <div>
+                    <div class="flex justify-end">
+                        <button x-on:click="$store.about.toggleEditor(2)"
+                            class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
+                    </div>
+
+                    <div class="max-w-xl mx-auto" x-show="$store.about.is_editor_visible == 2">
+                        <form action="" class="grid space-y-6" x-on:submit.prevent="$store.about.saveBlock(2)">
+
+                            <div>
+                                <label for="title"
+                                    class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
+                                <input type="text" id="title"
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                    x-model="$store.about.block_two.title">
+                            </div>
+
+                            <div>
+                                <label for="body"
+                                    class="block text-xs font-semibold text-gray-600 uppercase">Content</label>
+                                <textarea id="body"
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                    x-model="$store.about.block_two.body"></textarea>
+                            </div>
+
+                            <div>
+                                <label for="link"
+                                    class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
+                                <input type="text" id="link"
+                                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                    x-model="$store.about.block_two.link">
+                            </div>
+
+                            <div>
+                                <button type="submit" class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </template>
+
+
 
 
 
@@ -246,21 +173,12 @@
                 <h2 x-text="$store.about.block_three.title"
                     class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black"></h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_three.image1)"
-                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_three.image2)"
-                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_three.image2)"
-                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
+                    <img src="/Web-Dev-Assessment/images/sf1.jpg" alt="Placeholder"
+                        class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/sf2.jpp" alt="Placeholder"
+                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/sf3.jpg" alt="Placeholder"
+                        class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                 </div>
                 <div class="relative">
                     <p class="text-sm text-black leading-7 p-8 m-4 ml-[10%]" x-text="$store.about.block_three.body"></p>
@@ -300,28 +218,6 @@
                                 </div>
 
                                 <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_three.image1">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_three.image2">
-                                </div>
-                                <div>
-                                    <label for="image3"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
-                                    <input type="text" id="image3"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_three.image3">
-                                </div>
-
-                                <div>
                                     <label for="link"
                                         class="block text-xs font-semibold text-gray-600 uppercase">Link</label>
                                     <input type="text" id="link"
@@ -347,21 +243,12 @@
                 <h2 x-text="$store.about.block_four.title"
                     class="text-5xl font-semibold mt-10 ml-5 decoration-2 border-b-2 border-black"></h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-20 p-10 ml-[10%] mt-[7%]">
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_four.image1)"
-                            class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_four.image2)"
-                            class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
-                    <div>
-                        <img x-bind:src="$store.common.imageSrc($store.about.block_four.image2)"
-                            class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                            alt="Placeholder">
-                    </div>
+                    <img src="/Web-Dev-Assessment/images/mf1.jpg" alt="Placeholder"
+                        class="rounded-l-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/mf2.jpg" alt="Placeholder"
+                        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                    <img src="/Web-Dev-Assessment/images/mf3.jpg" alt="Placeholder"
+                        class="rounded-r-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                 </div>
                 <div class="relative">
                     <p class="text-sm text-black leading-7 p-8 m-4 ml-[10%]" x-text="$store.about.block_four.body"></p>
@@ -398,28 +285,6 @@
                                     <textarea id="body"
                                         class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                         x-model="$store.about.block_four.body"></textarea>
-                                </div>
-
-                                <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_four.image1">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_four.image2">
-                                </div>
-                                <div>
-                                    <label for="image3"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 3</label>
-                                    <input type="text" id="image3"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.about.block_four.image3">
                                 </div>
 
                                 <div>
@@ -522,7 +387,8 @@
 
                                 <div>
                                     <label for="sub_title1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 1</label>
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub
+                                        Title 1</label>
                                     <input type="text" id="sub_title11"
                                         class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                         x-model="$store.about.block_five.sub_title1">
@@ -572,7 +438,8 @@
 
                                 <div>
                                     <label for="sub_title2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 2</label>
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub
+                                        Title 2</label>
                                     <input type="text" id="sub_title2"
                                         class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                         x-model="$store.about.block_five.sub_title2">
@@ -622,7 +489,8 @@
 
                                 <div>
                                     <label for="sub_title3"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub Title 3</label>
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Sub
+                                        Title 3</label>
                                     <input type="text" id="sub_title3"
                                         class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                         x-model="$store.about.block_five.sub_title3">
@@ -717,12 +585,14 @@
                 </div>
 
                 <div class="relative bg-gray-200 mt-[5%] mt-[40%] ml-10">
-                    <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-teal-950 border border-gray-300 rounded-md shadow-sm text-center py-10 px-20">
+                    <div
+                        class="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-teal-950 border border-gray-300 rounded-md shadow-sm text-center py-10 px-20">
                         <h2 class="mb-3 text-2xl">Subscribe to Our Newsletter</h2>
-                        <form id="newsletterForm" x-data="{ email: '' }" class="items-center mt-10" @submit.prevent="saveSubscription">
+                        <form id="newsletterForm" x-data="{ email: '' }" class="items-center mt-10"
+                            @submit.prevent="saveSubscription">
                             <input type="email" id="email" placeholder="Enter your email" required
                                 class="mb-3 px-4 py-2 border border-gray-300 rounded-md text-black">
-                            <button type="submit" 
+                            <button type="submit"
                                 class="px-6 py-3 ml-3 bg-teal-950 text-white border border-gray-300 rounded-md hover:bg-teal-800">Subscribe</button>
                         </form>
                     </div>
@@ -772,10 +642,12 @@
 
         <script>
             document.addEventListener('alpine:init', () => {
-                Alpine.data('_about', () => ({                    
+                Alpine.data('_about', () => ({
                 }))
             })
         </script>
+    </div>
+    </main>
     </div>
 </body>
 

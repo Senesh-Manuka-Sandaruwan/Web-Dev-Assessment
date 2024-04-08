@@ -84,61 +84,18 @@
 
 
             <!-------wildlife dep start ------->
-            <div class="container mx-auto relative">
-                <div class="container mx-auto">
-                    <div class="image-only image-wrapper relative group">
-                        <div>
-                            <img x-bind:src="$store.common.imageSrc($store.wildlife_dept.block_one.image)"
-                                class="w-full h-auto" alt="Placeholder">
-                        </div>
-                        <div class="relative">
-                            <h2 x-text="$store.wildlife_dept.block_one.title"
-                                class="text-white text-7xl font-bold ml-10 pt-[35%]">
-                            </h2>
 
-                        </div>
+            <div class="image-only image-wrapper relative group">
+                <img src="/Web-Dev-Assessment/images/wildi.webp" alt="Placeholder" class="w-full h-auto">
+
+                <div id="main"
+                    class="absolute inset-0 flex items-center justify-left">
+                    <div id="show" class="text-white text-7xl font-bold ml-10 pt-[55%] mb-[25%]">
+                        <span>THE DEPARTMENT OF WILDLIFE CONVERSATION</span>
                     </div>
                 </div>
-
-
-
-                <template x-if="$store.auth.user">
-                    <div>
-                        <div class="flex justify-end">
-                            <button x-on:click="$store.wildlife_dept.toggleEditor(1)"
-                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
-                        </div>
-
-                        <div class="max-w-xl mx-auto" x-show="$store.wildlife_dept.is_editor_visible == 1">
-                            <form action="" class="grid space-y-6"
-                                x-on:submit.prevent="$store.wildlife_dept.saveBlock(1)">
-
-                                <div>
-                                    <label for="title"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
-                                    <input type="text" id="title"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.wildlife_dept.block_one.title">
-                                </div>
-
-                                <div>
-                                    <label for="image"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
-                                    <input type="text" id="image"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.wildlife_dept.block_one.image">
-                                </div>
-
-                                <div>
-                                    <button type="submit"
-                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </template>
             </div>
-
+            
             <!-------wildlife dep end ------->
 
             <!-------introduction start ------->
@@ -284,8 +241,7 @@
                         </div>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.wildlife_dept.block_three.image)"
-                            alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/map.jpg" alt="Placeholder">
                     </div>
                 </div>
 
@@ -456,15 +412,6 @@
                                         class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                         x-model="$store.wildlife_dept.block_three.vpoint2"></textarea>
                                 </div>
-
-                                <div>
-                                    <label for="image"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
-                                    <input type="text" id="image"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.wildlife_dept.block_three.image">
-                                </div>
-
 
                                 <div>
                                     <button type="submit"

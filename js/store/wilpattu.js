@@ -1,13 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('wilpattu', {
         is_editor_visible: false,
-        block_one: [
-            {
-                image: '/Web-Dev-Assessment/images/wilpattu1.JPG',
-                title: 'WILPATTU NATIONAL PARK',
-            },
-
-        ],
         block_two: {
             title: 'INTRODUCTION',
             body: "Wilpattu National Park is one of the oldest and largest national parks in Sri Lanka, located on the"
@@ -50,10 +43,8 @@ document.addEventListener('alpine:init', () => {
                 +" scrub."
                 +" Popular visiting periods span between the months of February and October, although there are a"
                 +" number of private ecotourism groups that conduct safaris year-round.",
-
-            image1: '/Web-Dev-Assessment/images/wilpattu2.jpg',
-            image2: '/Web-Dev-Assessment/images/wilpattu3.jpg',
         },
+
         block_four: {
             title: 'LOCATION',
             body: "Wilpattu lies inland on the northwest coast of Sri Lanka, approximately 26 km north of Puttalam"
@@ -69,7 +60,7 @@ document.addEventListener('alpine:init', () => {
                 +" 1905, and was upgraded to National Park status on 25th February 1938. Wilpattu is bounded to the"
                 +" north and south by 2 main rivers, the Modara Gamaru towards the north of the park and the Kala Oya to "
                 +" the south of the park.",
-            image: '/Web-Dev-Assessment/images/wilpattumap.webp',
+
         },
         block_five: {
             title: 'HISTORY',
@@ -114,7 +105,6 @@ document.addEventListener('alpine:init', () => {
             point3:"Wet seasons: September to December, and March to May.",
             point4:"Dry seasons: January to February, and May to September.",
 
-            image: '/Web-Dev-Assessment/images/wilpattu4.jpg',
         },
 
         block_seven: {
@@ -157,8 +147,6 @@ document.addEventListener('alpine:init', () => {
                 +" water buffalo (Bubalus bubalis). sambar (Rusa unicolor unicolor), spotted deer (Axis axis"
                 +" ceylonensis), mongoose, mouse and shrew are more of Wilpattu's residents.",
 
-            image1:"/Web-Dev-Assessment/images/wilpattuplant.jpg",
-            image2:"/Web-Dev-Assessment/images/wilpattuanimal.jpg",
         },
           
 

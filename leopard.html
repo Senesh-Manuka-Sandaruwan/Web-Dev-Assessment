@@ -84,61 +84,18 @@
             <!------- header end ------->
 
             <!-------wildlife dep start ------->
-            <div class="container mx-auto relative">
-                <div class="container mx-auto">
-                    <div class="image-only image-wrapper relative group">
-                        <div>
-                            <img x-bind:src="$store.common.imageSrc($store.leopard.block_one.image)"
-                                class="w-full h-auto" alt="Placeholder">
-                        </div>
-                        <div class="relative">
-                            <h2 x-text="$store.leopard.block_one.title"
-                                class="text-white text-7xl font-bold ml-10 pt-[35%]">
-                            </h2>
+            <div class="image-only image-wrapper relative group">
+                <img src="/Web-Dev-Assessment/images/leo.jpg" alt="Placeholder" class="w-full h-auto">
 
-                        </div>
+                <div id="main" class="absolute inset-0 flex items-center justify-left">
+                    <div id="show" class="text-white text-7xl font-bold ml-10 pt-[35%]">
+                        <span>LEOPARDS OF SRI LANKA</span>
                     </div>
                 </div>
-
-
-
-                <template x-if="$store.auth.user">
-                    <div>
-                        <div class="flex justify-end">
-                            <button x-on:click="$store.leopard.toggleEditor(1)"
-                                class="bg-teal-950 text-white px-4 py-2 rounded-lg">Edit</button>
-                        </div>
-
-                        <div class="max-w-xl mx-auto" x-show="$store.leopard.is_editor_visible == 1">
-                            <form action="" class="grid space-y-6" x-on:submit.prevent="$store.leopard.saveBlock(1)">
-
-                                <div>
-                                    <label for="title"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Title</label>
-                                    <input type="text" id="title"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_one.title">
-                                </div>
-
-                                <div>
-                                    <label for="image"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image</label>
-                                    <input type="text" id="image"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_one.image">
-                                </div>
-
-                                <div>
-                                    <button type="submit"
-                                        class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </template>
             </div>
-
             <!-------wildlife dep end ------->
+
+
 
             <!-------Venues Where Sri Lankan Leopards Are Found start ------->
             <div class="container mx-auto relative">
@@ -196,12 +153,11 @@
                         <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_three.body1"></p>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_three.image1)"
-                            class="rounded-lg float-right mt-[15%]" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo3.webp" class="rounded-lg float-right mt-[15%]" alt="Placeholder">
                     </div>
+
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_three.image2)"
-                            class="rounded-lg mt-[15%]" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo4.webp" class="rounded-lg mt-[15%]" alt="Placeholder">
                     </div>
 
                     <p class="text-sm leading-7 mt-[15%]" x-text="$store.leopard.block_three.body2"></p>
@@ -242,21 +198,6 @@
                                 </div>
 
                                 <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_three.image1">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_three.image2">
-                                </div>
-
-                                <div>
                                     <button type="submit"
                                         class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
                                 </div>
@@ -280,12 +221,11 @@
                         <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_four.body1"></p>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_four.image1)"
-                            class="rounded-lg float-right mt-[15%]" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo5.webp" class="rounded-lg float-right mt-[15%]" alt="Placeholder">
                     </div>
+
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_four.image2)"
-                            class="rounded-lg mt-[25%]" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo6.webp" class="rounded-lg mt-[25%]" alt="Placeholder">
                     </div>
 
                     <p class="text-sm leading-7 mt-[15%]" x-text="$store.leopard.block_four.body2"></p>
@@ -326,21 +266,6 @@
                                 </div>
 
                                 <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_four.image1">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_four.image2">
-                                </div>
-
-                                <div>
                                     <button type="submit"
                                         class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
                                 </div>
@@ -363,12 +288,11 @@
                         <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_five.body1"></p>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_five.image1)"
-                            class="rounded-lg float-right mt-[15%]" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo10.jpg" class="rounded-lg" alt="Placeholder">
                     </div>
+        
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_five.image2)"
-                            class="rounded-lg mt-[15%]" alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo11.webp" class="rounded-lg mt-[15%]" alt="Placeholder">
                     </div>
 
                     <p class="text-sm leading-7 mt-[15%]" x-text="$store.leopard.block_five.body2"></p>
@@ -409,21 +333,6 @@
                                 </div>
 
                                 <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_five.image1">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_five.image2">
-                                </div>
-
-                                <div>
                                     <button type="submit"
                                         class="bg-teal-950 text-white px-4 py-2 rounded-lg">Save</button>
                                 </div>
@@ -448,8 +357,7 @@
                         <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_six.body1"></p>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_six.image1)" class="rounded-lg"
-                            alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo9.jpg" alt="Placeholder">
                     </div>
 
                 </div>
@@ -462,8 +370,7 @@
                         <p class="text-sm leading-7 mt-2" x-text="$store.leopard.block_six.body2"></p>
                     </div>
                     <div>
-                        <img x-bind:src="$store.common.imageSrc($store.leopard.block_six.image2)" class="rounded-lg"
-                            alt="Placeholder">
+                        <img src="/Web-Dev-Assessment/images/leo7.jpg" alt="Placeholder">
                     </div>
 
                 </div>
@@ -534,21 +441,6 @@
                                     <textarea id="body2"
                                         class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
                                         x-model="$store.leopard.block_six.body2"></textarea>
-                                </div>
-
-                                <div>
-                                    <label for="image1"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 1</label>
-                                    <input type="text" id="image1"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_six.image1">
-                                </div>
-                                <div>
-                                    <label for="image2"
-                                        class="block text-xs font-semibold text-gray-600 uppercase">Image 2</label>
-                                    <input type="text" id="image2"
-                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-                                        x-model="$store.leopard.block_six.image2">
                                 </div>
 
                                 <div>

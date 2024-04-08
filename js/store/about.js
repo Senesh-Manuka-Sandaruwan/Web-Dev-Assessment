@@ -1,14 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('about', {
         is_editor_visible: false,
-        block_one: [
-            {
-                image: '/Web-Dev-Assessment/images/aboutpic.jpg',
-                title: 'THE SRI LANKAN WILDLIFE EXPLORATION',
-            },
-
-        ],
-
         block_two: {
             title: "Horton Plains National Park",
 
@@ -25,9 +17,6 @@ document.addEventListener('alpine:init', () => {
                 +" making it a haven for nature enthusiasts and a vital sanctuary for Sri Lanka's remarkable"
                 +" biodiversity.",
 
-            image1: "/Web-Dev-Assessment/images/hp2.jpg",
-            image2: "/Web-Dev-Assessment/images/hp1.jpg",
-            image3: "/Web-Dev-Assessment/images/hp3.jpg",
             link: "https://maps.app.goo.gl/Wrrz4XpCVzx5yiTD6",
         },
 
@@ -47,9 +36,7 @@ document.addEventListener('alpine:init', () => {
                 +" contributing to the preservation of Sri Lanka's unique biological heritage and providing a"
                 +" living classroom for those eager to explore the wonders of a tropical rainforest ecosystem.",
 
-            image1: "/Web-Dev-Assessment/images/sf1.jpg",
-            image2: "/Web-Dev-Assessment/images/sf2.jpp",
-            image3: "/Web-Dev-Assessment/images/sf3.jpg",
+
             link: "https://maps.app.goo.gl/psNkuhGDPV9DzLD59",
         },
 
@@ -69,9 +56,6 @@ document.addEventListener('alpine:init', () => {
                 +" inscriptions and ruins among its natural beauty."
                 +" A safari via Minneriya provides.",
 
-            image1: "/Web-Dev-Assessment/images/mf1.jpg",
-            image2: "/Web-Dev-Assessment/images/mf2.jpg",
-            image3: "/Web-Dev-Assessment/images/mf3.jpg",
             link: "https://maps.app.goo.gl/xaRtRcg7WEyhokqL6",
         },
 

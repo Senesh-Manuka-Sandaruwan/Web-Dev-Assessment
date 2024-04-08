@@ -1,13 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('wildlife', {
         is_editor_visible: false,
-        block_one: [
-            {
-                image: '/Web-Dev-Assessment/images/animal.jpeg',
-                title: 'INDIGENOUS ANIMAL OF SRI LANKA',
-            },
-
-        ],
 
         block_two: {
             title: "INTRODUCTION",
@@ -42,7 +35,6 @@ document.addEventListener('alpine:init', () => {
                 +" in national parks like Yala and Wilpattu offers a glimpse into their vital role in shaping"
                 +" ecosystems"
                 +" and contributes to ongoing conservation endeavors.",
-            image: "/Web-Dev-Assessment/images/animal2.jpg",
         },
 
         block_four: {
@@ -63,7 +55,6 @@ document.addEventListener('alpine:init', () => {
                 +" particularly in protected areas like Yala and Wilpattu National Parks,"
                 +" provides a unique opportunity to appreciate the natural behaviors of this intriguing species"
                 +" while contributing to their conservation.",
-            image: "/Web-Dev-Assessment/images/animal3.jpg",
         },
 
         block_five: {
@@ -81,7 +72,6 @@ document.addEventListener('alpine:init', () => {
                 +" habitats and addressing challenges such as"
                 +" habitat fragmentation and human-wildlife conflicts, ensuring the continued existence of this iconic"
                 +" species in the island nation's natural landscapes.",
-            image: "/Web-Dev-Assessment/images/animal4.jpg",
         },
 
         block_six: {
@@ -99,7 +89,6 @@ document.addEventListener('alpine:init', () => {
                 +" biodiversity, observing these langurs in"
                 +" their natural habitat provides a rare opportunity to witness the intricate behaviors of this endemic"
                 +" primate while contributing to the ongoing efforts to ensure its survival.",
-            image: "/Web-Dev-Assessment/images/animal5.jpg",
         },
         block_seven: {
             title: "The Saltwater Crocodile",
@@ -118,7 +107,6 @@ document.addEventListener('alpine:init', () => {
                 +" Lanka's coastal ecosystems,"
                 +" highlighting the importance of conserving these habitats for the overall health of the region's"
                 +" biodiversity.",
-            image: "/Web-Dev-Assessment/images/animal6.jpg",
         },
 
         toggleEditor(block_id){

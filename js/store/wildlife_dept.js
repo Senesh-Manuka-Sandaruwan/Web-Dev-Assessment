@@ -1,13 +1,6 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('wildlife_dept', {
         is_editor_visible: false,
-        block_one: [
-            {
-                image: '/Web-Dev-Assessment/images/wildi.webp',
-                title: 'THE DEPARTMENT OF WILDLIFE CONVERSATION',
-            },
-
-        ],
 
         block_two: {
             title: 'INTRODUCTION',
@@ -93,8 +86,6 @@ document.addEventListener('alpine:init', () => {
             vpoint2: "Mission -" 
                 +" To ensure conservation of wildlife resources by all together under"
                 +" Professional Management.",
-            
-                image: "/Web-Dev-Assessment/images/map.jpg",
 
         },
 
