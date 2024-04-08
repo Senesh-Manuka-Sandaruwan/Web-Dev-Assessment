@@ -24,7 +24,6 @@ function saveSubscription(event) {
         subscriptions.push(email);
         localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
         alert('You have subscribed to the newsletter successfully!!!');
-        this.email = '';
     } else {
         alert('Please enter a valid email address...');
     }
